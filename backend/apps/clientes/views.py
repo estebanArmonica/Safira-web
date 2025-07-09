@@ -12,3 +12,6 @@ def contacto(request):
 
 def cotizacion(request):
     return render(request, 'cotizacion.html')
+
+def mercado_libre(request):
+    return render(request, 'mercado-libre.html')
