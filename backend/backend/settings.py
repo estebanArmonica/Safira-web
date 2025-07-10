@@ -147,3 +147,8 @@ MEDIA_URL = '/img/'
 MEDIA_ROOT = join(BASE_DIR, 'img/')
 
 SWEETIFY_SWEETALERT_LIBRARY = 'sweetalert2'
+
+# reCAPTCHA settings
+RECAPTCHA_SECRET_KEY = '6LfMxH4rAAAAABV6nVDlJw71MkqU346gNmfuKdwE'
+RECAPTCHA_SITE_KEY = '6LfMxH4rAAAAAHfPQziwJ0bi00v3QBiL1xmyr1J-'
+RECAPTCHA_VERIFY_URL = 'https://www.google.com/recaptcha/api/siteverify'
