@@ -27,50 +27,48 @@ Safira Energía - Contactanos en Safira Chile
                 <div class="p-lg-5 ps-lg-0">
                     <h6 class="text-blue" style="color: #022873;">Contactanos</h6>
                     <h1 class="mb-4">No dudes en contactarnos</h1>
-                    <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form
-                        with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're
-                        done.</p>
-                    <form id="contactForm" method="post">
+                    <p class="mb-4">
+                        Escribenos a travéz de este formulario para saber de ti y de tu interes con nosotros 
+                        para dentro de unos días poder contactarte.
+                    </p>
+
+                    <form id="contactForm" method="post" action="{% url 'contactos' %}">
                         {% csrf_token %}
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Su Nombre" required>
-                                    <label for="name">Su Nombre</label>
+                                    {{ form.nombre }}
+                                    <label for="name"><strong class="text-danger">*</strong> Su Nombre</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="email"
-                                        placeholder="Su Correo Electrónico" required>
-                                    <label for="email">Su Correo Electrónico</label>
+                                    {{ form.email }}
+                                    <label for="email"><strong class="text-danger">*</strong> Su Correo Electrónico</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="subject" placeholder="Asunto" required>
-                                    <label for="subject">Asunto</label>
+                                    {{ form.asunto }}
+                                    <label for="subject"><strong class="text-danger">*</strong> Asunto</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Deje un mensaje aquí" id="message"
-                                        style="height: 100px"></textarea>
-                                    <label for="message">Mensaje</label>
+                                    {{ form.mensaje }}
+                                    <label for="message"><strong class="text-danger">*</strong> Mensaje</label>
                                 </div>
                             </div>
 
                             <div class="col-12">
-                                <div class="g-recaptcha" data-sitekey="{{ RECAPTCHA_SITE_KEY }}"></div>
-                                <div id="recaptcha-error" class="alert alert-danger mt-2" style="display:none;"></div>
+                                <strong class="text-danger">*</strong>
+                                <br>
+                                <div class="g-recaptcha" data-sitekey="6LfMxH4rAAAAAHfPQziwJ0bi00v3QBiL1xmyr1J-" data-callback="onRecaptchaSuccess"></div>
                             </div>
 
 
                             <div class="col-12">
-                                <button class="btn btn-blue rounded-pill py-3 px-5"
-                                    style="background-color: #022873; color: white;" type="submit"
-                                    id="submitButton">Enviar
-                                    Mensaje</button>
+                                <input class="btn btn-blue rounded-pill py-3 px-5" style="background-color: #022873; color: white;" type="submit" id="submitButton" value="Enviar Mensaje" />
                             </div>
                         </div>
                     </form>

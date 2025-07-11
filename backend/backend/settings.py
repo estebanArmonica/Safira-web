@@ -152,3 +152,15 @@ SWEETIFY_SWEETALERT_LIBRARY = 'sweetalert2'
 RECAPTCHA_SECRET_KEY = '6LfMxH4rAAAAABV6nVDlJw71MkqU346gNmfuKdwE'
 RECAPTCHA_SITE_KEY = '6LfMxH4rAAAAAHfPQziwJ0bi00v3QBiL1xmyr1J-'
 RECAPTCHA_VERIFY_URL = 'https://www.google.com/recaptcha/api/siteverify'
+
+#Email settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' # modo produccion
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # modo desarrollo
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+
+EMAIL_HOST_USER = 'esteban.hernan.lobos@gmail.com'
+EMAIL_HOST_PASSWORD = 'umksqvsxlzylcckr'
+
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
