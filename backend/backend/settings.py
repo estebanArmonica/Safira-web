@@ -12,13 +12,8 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 from os.path import join
-import os
-import environ
-
-env = environ.Env()
-environ.Env.read_env()
-
-ENVIRONMENT = env
+from decouple import config
+from django import conf
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,16 +22,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'armh@i!ozgxu1_%&*m4n^00j2jcuaczlgod&peap0!^c_w!3z!'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG')
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -45,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.clientes.apps.ClientesConfig',
+    'apps.oferta.apps.OfertaConfig',
     'sweetify',
 ]
 
@@ -86,11 +80,11 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 POSTGRESQL = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'facturacion',
-        'USER': 'esteban_lobos',
-        'PASSWORD': '12345',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME': config('POSTGRESQL_NAME'),
+        'USER': config('POSTGRESQL_USER'),
+        'PASSWORD': config('POSTGRESQL_PASSWORD'),
+        'HOST': config('POSTGRESQL_HOST'),
+        'PORT': config('POSTGRESQL_PORT'),
     }
 }
 
@@ -149,9 +143,9 @@ MEDIA_ROOT = join(BASE_DIR, 'img/')
 SWEETIFY_SWEETALERT_LIBRARY = 'sweetalert2'
 
 # reCAPTCHA settings
-RECAPTCHA_SECRET_KEY = '6LfMxH4rAAAAABV6nVDlJw71MkqU346gNmfuKdwE'
-RECAPTCHA_SITE_KEY = '6LfMxH4rAAAAAHfPQziwJ0bi00v3QBiL1xmyr1J-'
-RECAPTCHA_VERIFY_URL = 'https://www.google.com/recaptcha/api/siteverify'
+RECAPTCHA_SECRET_KEY = config('RECAPTCHA_SECRET_KEY')
+RECAPTCHA_SITE_KEY = config('RECAPTCHA_SITE_KEY')
+RECAPTCHA_VERIFY_URL = config('RECAPTCHA_VERIFY_URL')
 
 #Email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' # modo produccion
@@ -160,7 +154,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 
-EMAIL_HOST_USER = 'esteban.hernan.lobos@gmail.com'
-EMAIL_HOST_PASSWORD = 'umksqvsxlzylcckr'
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER

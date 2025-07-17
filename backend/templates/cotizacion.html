@@ -32,9 +32,11 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
             <div class="col-lg-6 quote-text py-5 wow fadeIn" data-wow-delay="0.5s">
                 <div class="p-lg-5 pe-lg-0">
                     <h6 class="text-blue" style="color: #022873;">Envianos tu cotización</h6>
-                    <h1 class="mb-4">Get A Free Quote</h1>
-                    <p class="mb-4 pb-2">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet
-                        diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet
+                    <h1 class="mb-4">Rellena el formulario</h1>
+                    <p class="mb-4 pb-2">
+                        Rellena los campos y en minutos tendras una oferta por parte de safira.
+                        Si estas interesado en contactarte con nosotros ingresa a este
+                        <a style="color: #80BF21; text-decoration: underline;" href="{% url 'contactos' %}">link para enviarnos un correo</a>
                     </p>
 
                     <form>
@@ -55,40 +57,48 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
                                 <input type="number" class="form-control border-0" placeholder="* Su Teléfono"
                                     style="height: 55px;" required>
                             </div>
+
+                            <!--
+                            <div class="input-group col-12">
+                                <span class="input-group-text">#</span>
+                                <input type="number" class="form-control border-0" placeholder="* Su Teléfono"
+                                    style="height: 55px;" required>
+                            </div>
+                            -->
                             <div class="col-12 col-sm-6">
                                 <select name="comuna" class="form-select border-0" style="height: 55px;" required>
-                                    <option value="">Región</option>
+                                    <option value="" disabled selected>* Región</option>
                                     <option value="Cerrillos">Cerrillos</option>
                                 </select>
                             </div>
                             <div class="col-12 col-sm-6">
                                 <select name="comuna" class="form-select border-0" style="height: 55px;" required>
-                                    <option value="">Comuna</option>
+                                    <option value="" disabled selected>* Comuna</option>
                                     <option value="Cerrillos">Cerrillos</option>
                                 </select>
                             </div>
                             <div class="col-12 col-sm-6">
-                                <select name="tipo_cliente" class="form-select border-0" style="height: 55px;" required>
-                                    <option value="">Tipo de cliente</option>
+                                <select name="tipo_cliente" class="form-select border-0" aria-placeholder="Tipo Cliente"
+                                    style="height: 55px;" required>
+                                    <option value="" disabled selected>* Tipo de cliente</option>
                                     <option value="REGULADO">Regulado</option>
                                     <option value="LIBRE">Libre</option>
                                 </select>
                             </div>
                             <div class="col-12 col-sm-6">
-                                <select name="distribuidora" class="form-select border-0" style="height: 55px;" required>
-                                    <option value="">Distribuidora</option>
+                                <select name="distribuidora" class="form-select border-0" style="height: 55px;"
+                                    required>
+                                    <option value="" disabled selected>* Distribuidora</option>
                                     <option value="ENEL">Enel</option>
                                 </select>
                             </div>
                             <div class="col-12">
-                                <textarea class="form-control border-0" placeholder="* Dirección completa" required></textarea>
+                                <textarea class="form-control border-0" placeholder="* Dirección completa"
+                                    required></textarea>
                             </div>
                             <div class="col-12">
-                                <button class="btn rounded-pill py-3 px-5" type="submit"
-                                    style="background-color: #D95C14; color: white;">
-                                    Enviar Cotización
-                                    <i class="fa fa-check-circle" style="font-size:20px"></i>
-                                </button>
+                                <input class="btn rounded-pill py-3 px-5" type="submit"
+                                    style="background-color: #D95C14; color: white;" value="Enviar Cotización" />
                             </div>
                         </div>
                     </form>

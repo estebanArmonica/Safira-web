@@ -1,7 +1,7 @@
 from pydoc import text
+from django.conf import settings
 from django.shortcuts import render
-from backend.settings import EMAIL_HOST_USER, RECAPTCHA_SECRET_KEY
-from django.contrib import messages
+from backend.settings import EMAIL_HOST_USER, RECAPTCHA_SECRET_KEY, RECAPTCHA_VERIFY_URL, RECAPTCHA_SITE_KEY
 from django.core.mail import EmailMessage
 from django.shortcuts import redirect
 from sweetify import sweetify
@@ -24,7 +24,8 @@ def contacto(request):
     
     if request.method == 'GET':
         contexto = {
-            'form': form
+            'form': form,
+            'RECAPTCHA_SITE_KEY': RECAPTCHA_SITE_KEY,
         }
         return render(request, 'contacto.html', contexto)
     
@@ -45,7 +46,7 @@ def contacto(request):
                 'response': recaptcha_response
             }
             
-            url = f'https://www.google.com/recaptcha/api/siteverify'
+            url = RECAPTCHA_VERIFY_URL
             
             r = requests.post(url, data=data)
             result = r.json()

@@ -1,4 +1,3 @@
-from re import A
 from django import forms
 
 class FormularioContacto(forms.Form):
