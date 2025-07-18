@@ -1,42 +1,43 @@
 from django import forms
+from .models import Comuna, Distribuidora, Region
 
 class FormularioCotizacion(forms.Form):
-    nom_person = forms.CharField(label='* Su Nombre',
+    nom_person = forms.CharField(label='nombrePersona',
                                  min_length=4, max_length=50,
                                  widget=forms.TextInput(attrs={
                                      'class': 'form-control',
-                                     'style': 'height: 55px;',
+                                     'placeholder': '* Su Nombre',
                                      'id': 'nombrePersona'}),
                                  required=True)
     
-    nom_emp = forms.CharField(label='* Empresa',
+    nom_emp = forms.CharField(label='nombreEmpresa',
                               min_length=7, max_length=100,
                               widget=forms.TextInput(attrs={
                                   'class': 'form-control',
+                                  'placeholder': '* Empresa',
                                   'style': 'height: 55px;',
                                   'id': 'nombreEmpresa'}),
                               required=True)
     
-    correo = forms.EmailField(label='* Su Correo Electrónico',
+    correo = forms.EmailField(label='correoElectronico',
                              min_length=12, max_length=100,
-                             widget=forms.EmailField(attrs={
+                             widget=forms.EmailInput(attrs={
                                  'class': 'form-control',
                                  'placeholder': '* Su Correo Electrónico',
                                  'style': 'height: 55px;',
                                  'id': 'correoElectronico'}),
                              required=True)
     
-    telefono = forms.CharField(label='* Su Telefono',
-                               max_length=20,
-                               widget=forms.TextInput(attrs={
+    telefono = forms.IntegerField(label='numTelefono',
+                               widget=forms.NumberInput(attrs={
                                    'class': 'form-control',
                                    'style': 'height: 55px;',
-                                   'required': 'required',
+                                   'placeholder': '* Su Telefono',
                                    'type': 'number',
                                    'id': 'numTelefono'}),
                                required=True)
     
-    region = forms.ModelChoiceField(label='* Región',
+    region = forms.ModelChoiceField(label='regions',
                                     queryset=Region.objects.all(),
                                     empty_label='* Región',
                                     widget=forms.Select(attrs={
@@ -47,7 +48,7 @@ class FormularioCotizacion(forms.Form):
                                     }),
                                     required=True)
     
-    comuna = forms.ModelChoiceField(label='* Comuna',
+    comuna = forms.ModelChoiceField(label='comunas',
                                     queryset=Comuna.objects.none(),
                                     empty_label='* Comuna',
                                     widget=forms.Select(attrs={
@@ -57,7 +58,7 @@ class FormularioCotizacion(forms.Form):
                                         'required': 'required'}),
                                     required=True)
     
-    tipo_cliente = forms.ChoiceField(label='* Tipo de Cliente',
+    tipo_cliente = forms.ChoiceField(label='tip_cliente',
                                      choices=[
                                          ('', '* Tipo de Cliente'),
                                          ('REGULADO', 'Regulado'),
@@ -71,7 +72,7 @@ class FormularioCotizacion(forms.Form):
                                         'id': 'id_tip_cli'}),
                                      required=True)
     
-    distribuidora = forms.ModelChoiceField(label='* Distribuidora',
+    distribuidora = forms.ModelChoiceField(label='dx',
                                            queryset=Distribuidora.objects.all(),
                                            empty_label='* Distribuidora',
                                            widget=forms.Select(attrs={
@@ -80,10 +81,11 @@ class FormularioCotizacion(forms.Form):
                                                 'required': 'required'})
                                            )
     
-    direccion = forms.CharField(label='* Direccion Completa',
+    direccion = forms.CharField(label='direccion',
                                 min_length=12, max_length=255,
                                 widget=forms.Textarea(attrs={
                                     'class': 'form-control',
+                                    'placeholder': '* Dirección Completa',
                                     'style': 'height: 55px;',
                                     'id': 'direcciones',
                                     'rows': 3}),

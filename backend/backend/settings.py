@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'apps.clientes.apps.ClientesConfig',
     'apps.oferta.apps.OfertaConfig',
     'sweetify',
+    'mapbox_location_field'
 ]
 
 MIDDLEWARE = [

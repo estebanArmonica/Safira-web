@@ -39,7 +39,8 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
                         <a style="color: #80BF21; text-decoration: underline;" href="{% url 'contactos' %}">link para enviarnos un correo</a>
                     </p>
 
-                    <form>
+                    <form >
+                        {% csrf_token %}
                         <div class="row g-3">
                             <div class="col-12 col-sm-6">
                                 <input type="text" class="form-control border-0" placeholder="* Su Nombre"
