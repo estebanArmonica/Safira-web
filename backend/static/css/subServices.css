@@ -1,0 +1,122 @@
+:root {
+    --primary: #80BF21;
+    --light: #F6F7F8;
+    --dark: #1A2A36;
+    --blue: #022873;
+}
+
+/*** About ***/
+@media (min-width: 992px) {
+    .container.about {
+        max-width: 100% !important;
+    }
+
+    .about-text {
+        padding-right: calc(((100% - 960px) / 2) + .75rem);
+    }
+}
+
+@media (min-width: 1200px) {
+    .about-text {
+        padding-right: calc(((100% - 1140px) / 2) + .75rem);
+    }
+}
+
+@media (min-width: 1400px) {
+    .about-text {
+        padding-right: calc(((100% - 1320px) / 2) + .75rem);
+    }
+}
+
+
+/*** Service ***/
+.service-item {
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+}
+
+.service-icon {
+    position: relative;
+    margin: -50px 0 25px 0;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    background: #FFFFFF;
+    border-radius: 100px;
+    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+    transition: .5s;
+}
+
+.service-item:hover .service-icon {
+    color: #FFFFFF;
+    background: var(--primary);
+}
+
+/** migraciones **/
+.step-circle-outline {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 2rem;
+    border: 3px solid;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.pulse-animation {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.step-orbital .step-circle-outline:hover {
+    transform: scale(1.1);
+}
+
+.step-content {
+    max-width: 200px;
+    padding: 10px;
+}
+
+/* Mobile */
+@media (max-width: 991.98px) {
+    .step-circle-outline {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+
+    .mobile-step {
+        transition: transform 0.3s ease;
+    }
+
+    .mobile-step:hover {
+        transform: translateY(-3px);
+    }
+}
+
+@media (max-width: 767.98px) {
+    .step-circle-outline {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+    }
+}

@@ -1,5 +1,5 @@
 from django import forms
-from .models import Comuna, Distribuidora, Region
+from .models import Comuna, Distribuidora, Region, TipoCliente
 
 class FormularioCotizacion(forms.Form):
     nom_person = forms.CharField(label='nombrePersona',

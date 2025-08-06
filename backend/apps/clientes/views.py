@@ -18,6 +18,9 @@ def principal(request):
 def nosotros(request):
     return render(request, 'nosotros.html')
 
+def prueba(request):
+    return render(request, 'cotizacion.html')
+
 def contacto(request):
     # creamos la instancia del formulario
     form = FormularioContacto()
@@ -96,3 +99,6 @@ def contacto(request):
 
 def mercado_libre(request):
     return render(request, 'mercado-libre.html')
+
+def preguntas_frecuentes(request):
+    return render(request, 'preguntas-frecuentes.html')

@@ -1,0 +1,150 @@
+:root {
+    --primary: #80BF21;
+    --light: #F6F7F8;
+    --dark: #1A2A36;
+    --blue: #022873;
+}
+
+/*** Footer ***/
+.footer {
+    width: 100%;
+    background-color: #022873;
+    color: white;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px; /* Compensa el padding de las columnas */
+}
+
+.footer .col-lg-3 {
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+
+/* Estilos para los botones sociales */
+.footer .btn-social {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
+    color: #9B9B9B;
+    border: 1px solid #9B9B9B;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    background-color: transparent;
+}
+
+.footer .btn-social:hover {
+    color: white !important;
+    border-color: var(--primary);
+    background-color: var(--primary);
+    transform: translateY(-3px);
+}
+
+.footer .btn-social:hover i {
+    color: inherit;
+}
+
+/* Estilos para los links */
+.footer .btn-link {
+    display: block;
+    margin-bottom: 12px;
+    padding: 0;
+    text-align: left;
+    color: #9B9B9B;
+    font-weight: normal;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer .btn-link::before {
+    content: ">";
+    margin-right: 8px;
+    color: #F2BD1D;
+}
+
+.footer .btn-link:hover {
+    color: white;
+    padding-left: 5px;
+}
+
+/* Copyright */
+.footer .copyright {
+    padding: 25px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+/* Botón "Back to Top" */
+.back-to-top {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 50px;
+    height: 50px;
+    background-color: #80BF21;
+    border-color: #80BF21;
+    color: white;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    z-index: 9999;
+    transition: all 0.3s ease;
+}
+
+.back-to-top i {
+    font-size: 20px;
+}
+
+.back-to-top:hover {
+    background-color: #6da11c;
+    border-color: #6da11c;
+    transform: translateY(-3px);
+}
+
+/* Asegurar visibilidad en móviles */
+@media (max-width: 768px) {
+    .back-to-top {
+        right: 15px;
+        bottom: 15px;
+        width: 45px;
+        height: 45px;
+    }
+}
+/* Media Queries para responsividad */
+@media (max-width: 992px) {
+    .footer .col-lg-3 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer .col-lg-3 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .footer .btn-link {
+        text-align: center;
+    }
+    
+    .footer .d-flex {
+        justify-content: center;
+    }
+}

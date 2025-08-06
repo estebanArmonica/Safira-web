@@ -1,0 +1,187 @@
+.fixed-cards-container {
+    position: relative;
+    min-height: 200px;
+    width: 100%;
+    padding: 0 5%;
+}
+
+.fixed-cards {
+    position: absolute;
+    bottom: 60px; /* Aumenta este valor para bajar las cards */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 90%; /* Ajusta el ancho según sea necesario */
+    z-index: 10; /* Asegúrate de que esté encima del carrusel */
+    gap: 0; /* Elimina espacios entre los cards */
+}
+
+.fixed-cards .card,
+.fixed-cards .card-orange {
+    background: linear-gradient(135deg, #091f4b 50%, #022873 50%);
+    border: none;
+    border-radius: 0; /* Eliminamos bordes redondeados para unirlos */
+    padding: 30px 25px;
+    flex: 0 1 300px;
+    text-align: center;
+    box-shadow: none; /* Eliminamos sombra individual */
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin: 0 -1px; /* Solapamiento para eliminar espacios */
+}
+
+.fixed-cards .card-orange {
+    background: linear-gradient(135deg, #96491c 50%, #D95C14 50%);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+    background-color: transparent !important;
+    border-bottom: none !important;
+    padding: 0 !important;
+}
+
+.card-icon {
+    font-size: 2rem;
+    color: white;
+}
+
+.card-icon-container {
+    width: 70px;
+    height: 70px;
+    background: #022873;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.card-title {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 40px;
+    text-align: left;
+    margin: 0;
+    flex: 1;
+}
+
+.fixed-cards .card p,
+.fixed-cards .card-orange p {
+    color: #fff; /* Color gris para el texto */
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* Colores temáticos para cada card */
+.fixed-cards .card:nth-child(1) .card-icon-container {
+    background: linear-gradient(135deg, #D95C14 0%, #D95C14 100%);
+}
+
+.fixed-cards .card:nth-child(2) .card-icon-container {
+    background: linear-gradient(135deg, #022873 0%, #022873 100%);
+}
+
+.fixed-cards .card:nth-child(3) .card-icon-container {
+    background: linear-gradient(135deg, #D95C14 0%, #D95C14 100%);
+}
+
+/* Versión móvil */
+@media (max-width: 768px) {
+    .fixed-cards {
+        position: relative;
+        width: 100%; /* Ocupa todo el ancho */
+        margin: 0 auto; /* Elimina margen superior */
+        flex-direction: column;
+        gap: 0;
+        box-shadow: none;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        padding: 0 5%; /* Padding lateral igual al contenedor */
+    }
+
+    .fixed-cards .card,
+    .fixed-cards .card-orange {
+        border-radius: 0 !important;
+        margin: 0;
+        box-shadow: none;
+        border: none !important;
+        width: 100%;
+        padding: 20px 15px; /* Padding reducido */
+        margin-bottom: 0;
+        border-top: 1px solid rgba(255,255,255,0.2); /* Separador sutil */
+        background: linear-gradient(135deg, #091f4b 50%, #022873 50%);
+    }
+
+    .fixed-cards .card-orange {
+        background: linear-gradient(135deg, #96491c 50%, #D95C14 50%);
+    }
+
+    /* Ajustes de contenido */
+    .card-header {
+        background-color: transparent !important;
+        border-bottom: none !important;
+        padding: 0 !important;
+        margin-bottom: 40px; /* Reducido */
+    }
+
+    .card-icon-container {
+        width: 70px;
+        height: 70px;
+        margin-right: 15px;
+    }
+
+    .card-icon {
+        font-size: 1.3rem;
+    }
+
+    .fixed-cards .card h3,
+    .fixed-cards .card-orange h3 {
+        font-size: 1.5rem;
+        margin-bottom: 6px;
+    }
+
+    .fixed-cards .card p,
+    .fixed-cards .card-orange p {
+        font-size: 1rem;
+        line-height: 1.4;
+        margin-left: 57px; /* 45px icono + 12px margen */
+    }
+}
+
+/* ESTILOS SOLO ESCRITORIO (min-width: 769px) */
+@media (min-width: 769px) {
+    .fixed-cards {
+        justify-content: center;
+    }
+    
+    .fixed-cards .card,
+    .fixed-cards .card-orange {
+        flex: 0 1 390px;
+        min-height: 320px;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 40px 30px;
+    }
+    
+    .card-icon-container {
+        width: 60px;
+        height: 60px;
+        margin: 0 0 20px 0;
+    }
+    
+    .card-icon {
+        font-size: 1.8rem;
+    }
+}

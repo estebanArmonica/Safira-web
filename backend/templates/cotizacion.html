@@ -20,7 +20,7 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
 <!-- Page Header End -->
 
 <!-- Quote Start -->
-<div class="container-fluid bg-light overflow-hidden my-5 px-lg-0">
+<div class="container-fluid overflow-hidden my-5 px-lg-0">
     <div class="container quote px-lg-0">
         <div class="row g-0 mx-lg-0">
             <div class="col-lg-6 ps-lg-0 wow fadeIn" data-wow-delay="0.1s" style="min-height: 400px;">
@@ -34,7 +34,7 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
                     <h6 class="text-blue" style="color: #022873;">Envianos tu cotización</h6>
                     <h1 class="mb-4">Rellena el formulario</h1>
                     <p class="mb-4 pb-2">
-                        Rellena los campos y en minutos tendras una oferta por parte de safira.
+                        Rellena los campos <strong class="text-danger">(*)</strong> y en minutos tendras una oferta por parte de safira.
                         Si estas interesado en contactarte con nosotros ingresa a este
                         <a style="color: #80BF21; text-decoration: underline;" href="{% url 'contactos' %}">link para enviarnos un correo</a>
                     </p>
@@ -42,8 +42,14 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
                     <form >
                         {% csrf_token %}
                         <div class="row g-3">
+                            <div class="col-12">
+                                <input type="file" class="form-control border-0" placeholder="* Ingrese el archivo"required>
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control border-0" placeholder="* Su Nombre" style="height: 55px;" required>
+                            </div>
                             <div class="col-12 col-sm-6">
-                                <input type="text" class="form-control border-0" placeholder="* Su Nombre"
+                                <input type="text" class="form-control border-0" placeholder="* Rut Empresa"
                                     style="height: 55px;" required>
                             </div>
                             <div class="col-12 col-sm-6">
@@ -54,23 +60,9 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
                                 <input type="email" class="form-control border-0" placeholder="* Su Correo Electrónico"
                                     style="height: 55px;" required>
                             </div>
-                            <div class="col-12">
-                                <input type="number" class="form-control border-0" placeholder="* Su Teléfono"
-                                    style="height: 55px;" required>
-                            </div>
-
-                            <!--
-                            <div class="input-group col-12">
-                                <span class="input-group-text">#</span>
-                                <input type="number" class="form-control border-0" placeholder="* Su Teléfono"
-                                    style="height: 55px;" required>
-                            </div>
-                            -->
                             <div class="col-12 col-sm-6">
-                                <select name="comuna" class="form-select border-0" style="height: 55px;" required>
-                                    <option value="" disabled selected>* Región</option>
-                                    <option value="Cerrillos">Cerrillos</option>
-                                </select>
+                                <input type="number" class="form-control border-0" placeholder="* Su Teléfono"
+                                    style="height: 55px;" required>
                             </div>
                             <div class="col-12 col-sm-6">
                                 <select name="comuna" class="form-select border-0" style="height: 55px;" required>
@@ -98,8 +90,7 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
                                     required></textarea>
                             </div>
                             <div class="col-12">
-                                <input class="btn rounded-pill py-3 px-5" type="submit"
-                                    style="background-color: #D95C14; color: white;" value="Enviar Cotización" />
+                                <input class="btn btn-orange rounded-pill py-3 px-5" type="submit" value="Enviar Cotización" />
                             </div>
                         </div>
                     </form>

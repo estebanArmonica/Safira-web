@@ -13,7 +13,8 @@ logger = logging.getLogger(__name__)
 
 # funcion para crear cotizaciones a los clientes nuevos de safira
 def realizarCotizacion(request):
-    
+    return render(request, 'cotizacion.html')
+    """
     # instancioa del formulario para generar la oferta a cliente
     formularioOferta = FormularioCotizacion()
     logger.info(f'Formulario instanciado correctamente: {formularioOferta}')
@@ -26,7 +27,8 @@ def realizarCotizacion(request):
         logger.info(f'Campos del formulario: {contexto}')
         print(f'Campos del formulario: {contexto}')
         return render(request, 'cotizacion.html', contexto)
-    
+    """
+    """
     if request.method == 'POST':
         formularioOferta = FormularioCotizacion(data=request.POST)
         
@@ -78,7 +80,8 @@ def realizarCotizacion(request):
                 text='Por favor corriga los errores marcados',
                 button='OK'
             )
-            return render(request, 'cotizacion.html', {'formularioOferta': formularioOferta})
+            return render(request, 'cotizacion.html', {'formularioOferta': formularioOferta})     
+    """
 #=======================================================================================================================================================
 
 # funcion que cargara todos las comunas dependiendo de la region escogida

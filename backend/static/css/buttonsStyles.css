@@ -1,0 +1,156 @@
+:root {
+    --primary: #80BF21;
+    --light: #F6F7F8;
+    --dark: #1A2A36;
+    --blue: #022873;
+}
+
+/*** Button ***/
+.btn {
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/** btn orange **/
+.btn-orange {
+    background-color: #D95C14;
+    color: white;
+    border: none;
+}
+
+.btn-orange:hover {
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(217, 92, 20, 0.3);
+}
+
+.btn-orange::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #b34a0c;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease;
+}
+
+.btn-orange:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Efecto en el texto */
+.btn-orange span {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.btn-orange:hover span {
+    transform: translateX(5px);
+    animation: bounce 0.5s;
+}
+/** end btn orange **/
+
+/** btn green **/
+.btn-green {
+    background-color: #80BF21;
+    color: white;
+    border: none;
+}
+
+.btn-green:hover {
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(65, 153, 25, 0.3);
+}
+
+.btn-green::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #73a02f;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease;
+}
+
+.btn-green:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+/** end btn green **/
+
+/** btn blue **/
+.btn-blue {
+    background-color: #022873;
+    color: white;
+    border: none;
+}
+
+.btn-blue:hover {
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(17, 24, 117, 0.3);
+}
+
+.btn-blue::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #12264f;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease;
+}
+
+.btn-blue:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+/** end btn blue **/
+
+.btn.btn-primary,
+.btn.btn-outline-primary:hover {
+    color: #FFFFFF;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+}
+/*** end Buttons***/
