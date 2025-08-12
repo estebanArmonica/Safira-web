@@ -1,58 +1,141 @@
 <!-- Footer Start -->
 <footer class="footer" role="contentinfo">
+    <!-- Ola decorativa -->
+    <div class="footer-wave">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+                d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+                opacity=".25" fill="#F2BD1D"></path>
+            <path
+                d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+                opacity=".5" fill="#F2BD1D"></path>
+            <path
+                d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+                fill="#F2BD1D"></path>
+        </svg>
+    </div>
+
     <div class="container py-5">
-        <div class="row">
-            <div class="col-lg-3 col-md-6">
-                <h2 class="text-white mb-4">Información</h2>
-                <address>
-                    <p class="mb-2">
-                        <i class="fa fa-map-marker-alt me-3" style="color: #F2BD1D;" aria-hidden="true"></i>
-                        <span>Orinoco 90, piso 21, Las Condes</span>
-                    </p>
-                    <p class="mb-2">
-                        <i class="fa fa-phone-alt me-3" style="color: #F2BD1D;" aria-hidden="true"></i>
-                        <span>+569 93715375</span>
-                    </p>
-                    <p class="mb-2">
-                        <i class="fa fa-envelope me-3" style="color: #F2BD1D;" aria-hidden="true"></i>
-                        <a href="mailto:contacto@safiraenergia.cl" class="text-white">contacto@safiraenergia.cl</a>
-                    </p>
-                </address>
+        <div class="row g-5">
+            <!-- Columna Logo + Descripción -->
+            <div class="col-xl-4 col-lg-6">
+                <div class="footer-brand mb-4 animated-logo">
+                    <img src="https://blog.safiraenergia.com.br/wp-content/uploads/2024/04/logo_safira_branco.png"
+                        alt="Logo Safira Energía" width="250" loading="lazy" class="logo-hover">
+                </div>
+                <p class="footer-description mb-4">
+                    Innovación energética para un futuro sostenible. Transformamos el mercado con soluciones
+                    inteligentes y eficientes.
+                </p>
+                <div class="trust-badge mb-4">
+                    <div class="badge-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <span>Empresa certificada en calidad energética</span>
+                </div>
                 <div class="social-links">
-                    <a class="btn btn-social" href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-social" href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-social" href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a class="btn btn-social" href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-social linkedin" href="#" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a class="btn btn-social twitter" href="#" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="btn btn-social instagram" href="#" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="btn btn-social youtube" href="#" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
                 </div>
             </div>
-            
-            <div class="col-lg-3 col-md-6">
-                <h2 class="text-white mb-4">Links Rápidos</h2>
-                <nav aria-label="Enlaces rápidos">
-                    <a class="btn-link" href="/nosotros">Conoce quién es Safira Energía</a>
-                    <a class="btn-link" href="/contacto">Contáctanos</a>
-                    <a class="btn-link" href="/cotizacion">Solicita tu Cotización</a>
-                    <a class="btn-link" href="/mercado-libre-safira">Mercado Libre de Energía</a>
+
+            <!-- Columna Enlaces Rápidos -->
+            <div class="col-xl-2 col-lg-3 col-md-4">
+                <h3 class="footer-title">Navegación</h3>
+                <nav class="footer-links">
+                    <a href="{% url 'nosotros' %}" class="footer-link">
+                        <span class="link-icon"><i class="fas fa-chevron-right"></i></span>
+                        <span class="link-text">Sobre Nosotros</span>
+                    </a>
+                    <a href="{% url 'cotizaciones' %}" class="footer-link">
+                        <span class="link-icon"><i class="fas fa-chevron-right"></i></span>
+                        <span class="link-text">Cotizaciones</span>
+                    </a>
+                    <a href="{% url 'mercado-libre-safira' %}" class="footer-link">
+                        <span class="link-icon"><i class="fas fa-chevron-right"></i></span>
+                        <span class="link-text">Mercado Libre</span>
+                    </a>
+                    <a href="{% url 'faq-frecuentes-safira' %}" class="footer-link">
+                        <span class="link-icon"><i class="fas fa-chevron-right"></i></span>
+                        <span class="link-text">Preguntas Frecuentes</span>
+                    </a>
+                    <a href="{% url 'contactos' %}" class="footer-link">
+                        <span class="link-icon"><i class="fas fa-chevron-right"></i></span>
+                        <span class="link-text">Contacto</span>
+                    </a>
                 </nav>
             </div>
-            
-            <div class="col-lg-3 col-md-6">
-                <div class="logo-container">
-                    <img src="https://blog.safiraenergia.com.br/wp-content/uploads/2024/04/logo_safira_branco.png" 
-                         alt="Logo Safira Energía" 
-                         width="370" 
-                         height="110"
-                         loading="lazy">
+
+            <!-- Columna Contacto -->
+            <div class="col-xl-3 col-lg-3 col-md-4">
+                <h3 class="footer-title">Contacto</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <span>Orinoco 90, piso 21</span>
+                            <span>Las Condes, Santiago</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <a href="tel:+56993715375">+56 9 9371 5375</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <a href="mailto:contacto@safiraenergia.cl">contacto@safiraenergia.cl</a>
+                        </div>
+                    </div>
                 </div>
+            </div>
+
+            <!-- Columna Newsletter -->
+            <div class="col-xl-3 col-lg-6 col-md-4">
+                <h3 class="footer-title">Suscríbete</h3>
+                <p class="newsletter-description">
+                    Recibe las últimas noticias, ofertas especiales y actualizaciones directamente en tu correo.
+                </p>
+                <a class="btn btn-subscribe border-0">
+                    Ver Blog
+                    <i class="fa-solid fa-message"></i>
+                </a>
             </div>
         </div>
     </div>
-    
+
+    <!-- Copyright -->
     <div class="copyright">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <p>&copy; <span id="current-year"></span> Todos los derechos reservados a <a href="#" class="text-warning">Grupo Safira</a>.</p>
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p>&copy; <span id="current-year"></span> Safira Energía. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="footer-legal-links">
+                        <a href="#">Política de Privacidad</a>
+                        <a href="#">Términos de Servicio</a>
+                        <a href="#">Aviso Legal</a>
+                        <a href="#">Cookies</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -60,7 +143,7 @@
 </footer>
 <!-- Footer End -->
 
-<!-- Back to Top -->
+<!-- Back to Top Button -->
 <button id="backToTop" class="back-to-top" aria-label="Volver arriba">
     <i class="fas fa-arrow-up"></i>
 </button>

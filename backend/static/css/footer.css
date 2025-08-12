@@ -1,150 +1,387 @@
 :root {
     --primary: #80BF21;
+    --primary-dark: #5E8D18;
+    --secondary: #F2BD1D;
+    --dark: #022873;
+    --darker: #1A2A36;
     --light: #F6F7F8;
-    --dark: #1A2A36;
-    --blue: #022873;
+    --gray: #9B9B9B;
+    --dark-blue: #0A1F3D;
 }
 
-/*** Footer ***/
+/* Footer Base */
 .footer {
-    width: 100%;
-    background-color: #022873;
+    background: linear-gradient(135deg, var(--dark) 0%, var(--darker) 100%);
     color: white;
-    padding: 0;
-    margin: 0;
     position: relative;
+    overflow: hidden;
+    padding-top: 80px;
 }
 
-.footer .container {
-    max-width: 1200px;
-    margin: 0 auto;
+.footer-wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    transform: rotate(180deg);
 }
 
-.footer .row {
+/* Logo Animado */
+.animated-logo {
+    position: relative;
+    display: inline-block;
+}
+
+.logo-hover {
+    transition: all 0.5s ease;
+    filter: drop-shadow(0 5px 15px rgba(242, 189, 29, 0.3));
+}
+
+.animated-logo:hover .logo-hover {
+    transform: translateY(-5px);
+    filter: drop-shadow(0 10px 20px rgba(242, 189, 29, 0.4));
+}
+
+/* Texto Descripción */
+.footer-description {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 300;
+    line-height: 1.7;
+    position: relative;
+    padding-left: 20px;
+    border-left: 3px solid var(--secondary);
+}
+
+/* Trust Badge */
+.trust-badge {
     display: flex;
-    flex-wrap: wrap;
-    margin: 0 -15px; /* Compensa el padding de las columnas */
-}
-
-.footer .col-lg-3 {
-    padding: 0 15px;
-    margin-bottom: 30px;
-}
-
-/* Estilos para los botones sociales */
-.footer .btn-social {
-    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    margin-right: 8px;
-    color: #9B9B9B;
-    border: 1px solid #9B9B9B;
-    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px 15px;
+    border-radius: 50px;
+    width: fit-content;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
-    background-color: transparent;
 }
 
-.footer .btn-social:hover {
-    color: white !important;
-    border-color: var(--primary);
-    background-color: var(--primary);
+.trust-badge:hover {
+    background: rgba(255, 255, 255, 0.1);
     transform: translateY(-3px);
 }
 
-.footer .btn-social:hover i {
-    color: inherit;
+.badge-icon {
+    background-color: var(--secondary);
+    color: var(--dark);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    font-size: 14px;
 }
 
-/* Estilos para los links */
-.footer .btn-link {
-    display: block;
-    margin-bottom: 12px;
-    padding: 0;
-    text-align: left;
-    color: #9B9B9B;
-    font-weight: normal;
+/* Títulos */
+.footer-title {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--secondary), var(--primary));
+    border-radius: 3px;
+}
+
+/* Enlaces */
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-link {
+    display: flex;
+    align-items: center;
+    color: var(--gray);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 300;
+}
+
+.link-icon {
+    width: 20px;
+    color: var(--secondary);
+    opacity: 0;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-link:hover {
+    color: white;
+    transform: translateX(5px);
+}
+
+.footer-link:hover .link-icon {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.link-text {
+    transition: all 0.3s ease;
+}
+
+/* Contacto */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-item {
+    display: flex;
+    gap: 15px;
+}
+
+.contact-icon {
+    color: var(--secondary);
+    font-size: 1.1rem;
+    margin-top: 3px;
+}
+
+.contact-text {
+    display: flex;
+    flex-direction: column;
+    color: var(--gray);
+    font-weight: 300;
+}
+
+.contact-text a {
+    color: var(--gray);
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
-.footer .btn-link::before {
-    content: ">";
-    margin-right: 8px;
-    color: #F2BD1D;
+.contact-text a:hover {
+    color: white;
 }
 
-.footer .btn-link:hover {
+/* subcripciones */
+.btn-subscribe {
+    background: linear-gradient(135deg, var(--secondary), var(--primary));
     color: white;
-    padding-left: 5px;
+    border: none;
+    padding: 0 25px; /* Aumenté el padding horizontal */
+    height: 48px; /* Altura fija más grande */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 0; /* Eliminé bordes redondeados */
+    font-weight: 500; /* Texto un poco más grueso */
+    letter-spacing: 0.5px; /* Mejor espaciado de letras */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    font-size: 0.85rem; /* Tamaño de fuente ajustado */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Espacio entre icono y texto */
+    box-shadow: 0 2px 10px rgba(242, 189, 29, 0.3); /* Sutil sombra */
+}
+
+.btn-subscribe:hover {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    transform: translateY(-2px) scale(1.02); /* Efecto más sutil */
+    box-shadow: 0 4px 15px rgba(242, 189, 29, 0.4); /* Sombra más pronunciada al hover */
+    color: var(--dark);
+}
+
+/* Ajuste para el icono dentro del botón */
+.btn-subscribe i {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-subscribe:hover i {
+    transform: translateX(3px); /* Efecto de movimiento para el icono */
+    color: var(--dark);
+}
+
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.btn-social {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-social::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--secondary);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 0;
+}
+
+.btn-social i {
+    position: relative;
+    z-index: 1;
+}
+
+.btn-social:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    color: black;
+}
+
+.btn-social:hover::before {
+    opacity: 1;
 }
 
 /* Copyright */
-.footer .copyright {
-    padding: 25px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    text-align: center;
+.copyright {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 20px 0;
+    margin-top: 50px;
 }
 
-/* Botón "Back to Top" */
-.back-to-top {
-    position: fixed;
-    right: 25px;
-    bottom: 25px;
-    width: 50px;
-    height: 50px;
-    background-color: #80BF21;
-    border-color: #80BF21;
-    color: white;
-    border-radius: 50%;
-    display: none;
-    align-items: center;
+.copyright p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    margin: 0;
+    font-weight: 300;
+}
+
+.footer-legal-links {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 15px;
+}
+
+.footer-legal-links a {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.8rem;
     text-decoration: none;
-    z-index: 9999;
     transition: all 0.3s ease;
 }
 
-.back-to-top i {
-    font-size: 20px;
+.footer-legal-links a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--secondary), var(--primary));
+    color: white;
+    border: none;
+    border-radius: 0%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 25px rgba(242, 189, 29, 0.3);
+    cursor: pointer;
 }
 
 .back-to-top:hover {
-    background-color: #6da11c;
-    border-color: #6da11c;
-    transform: translateY(-3px);
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 10px 30px rgba(242, 189, 29, 0.4);
 }
 
-/* Asegurar visibilidad en móviles */
+/* Responsive */
+@media (max-width: 992px) {
+    .footer {
+        padding-top: 60px;
+    }
+    
+    .footer-wave {
+        height: 80px;
+    }
+    
+    .footer-brand img {
+        width: 200px;
+    }
+}
+
 @media (max-width: 768px) {
+    .footer {
+        padding-top: 40px;
+    }
+    
+    .footer-wave {
+        height: 60px;
+    }
+    
+    .footer-title {
+        font-size: 1.1rem;
+    }
+    
+    .footer-legal-links {
+        justify-content: center;
+        margin-top: 10px;
+    }
+    
     .back-to-top {
-        right: 15px;
-        bottom: 15px;
         width: 45px;
         height: 45px;
-    }
-}
-/* Media Queries para responsividad */
-@media (max-width: 992px) {
-    .footer .col-lg-3 {
-        flex: 0 0 50%;
-        max-width: 50%;
+        right: 20px;
+        bottom: 20px;
     }
 }
 
-@media (max-width: 768px) {
-    .footer .col-lg-3 {
-        flex: 0 0 100%;
-        max-width: 100%;
-        text-align: center;
+@media (max-width: 576px) {
+    .footer-wave {
+        height: 40px;
     }
     
-    .footer .btn-link {
-        text-align: center;
+    .footer-title {
+        margin-top: 20px;
     }
     
-    .footer .d-flex {
-        justify-content: center;
+    .app-badges {
+        flex-direction: column;
+    }
+    
+    .app-badge {
+        height: 35px;
     }
 }

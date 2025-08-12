@@ -24,21 +24,24 @@
 }
 
 .bg-multicolor {
-    background: linear-gradient(135deg, #f5f7fa 0%, #e4f0fb 50%, #f0f5f9 100%);
+    background: linear-gradient(135deg, #F2BD1D10 0%, #80BF2120 50%, #02287310 100%);
 }
 
 .bg-pattern {
     background-color: #f8f9fa;
-    background-image: radial-gradient(#D95C14 0.5px, transparent 0.5px),
+    background-image: 
+        radial-gradient(#F2BD1D 0.5px, transparent 0.5px),
+        radial-gradient(#80BF21 0.5px, transparent 0.5px),
+        radial-gradient(#D95C14 0.5px, transparent 0.5px),
         radial-gradient(#022873 0.5px, #f8f9fa 0.5px);
     background-size: 20px 20px;
-    background-position: 0 0, 10px 10px;
+    background-position: 0 0, 10px 10px, 5px 15px, 15px 5px;
 }
 
 .bg-clean {
     background-color: #f0f4f8;
-    border-top: 5px solid #D95C14;
-    border-bottom: 5px solid #022873;
+    border-top: 5px solid #F2BD1D;
+    border-bottom: 5px solid #80BF;
 }
 
 /** acordion **/

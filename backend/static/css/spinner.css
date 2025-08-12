@@ -11,4 +11,53 @@
     visibility: visible;
     opacity: 1;
 }
+
 /*** end Spinner ***/
+
+
+/** about de nosotros **/
+.image-container {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    /* Fondo blanco para mejor contraste */
+}
+
+.timeline-container {
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -30px;
+    top: 8px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.timeline-content {
+    padding-bottom: 15px;
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+    padding-left: 20px;
+}
+
+/* Asegurar que la imagen no se distorsione */
+@media (min-width: 992px) {
+    .image-container {
+        min-height: 700px !important;
+    }
+
+    .about-text {
+        min-height: 700px;
+    }
+}

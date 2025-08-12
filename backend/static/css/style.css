@@ -1,19 +1,201 @@
 /********** Template CSS **********/
 :root {
-    --primary: #80BF21;
-    --light: #F6F7F8;
-    --dark: #1A2A36;
-    --blue: #022873;
+  --primary: #80BF21;
+  --light: #F6F7F8;
+  --dark: #1A2A36;
+  --blue: #022873;
 }
 
 .fw-medium {
-    font-weight: 500 !important;
+  font-weight: 500 !important;
 }
 
 .fw-bold {
-    font-weight: 700 !important;
+  font-weight: 700 !important;
 }
 
 .fw-black {
-    font-weight: 900 !important;
+  font-weight: 900 !important;
+}
+
+.custom-line-title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--blue);
+  /* Azul profesional oscuro */
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.custom-line-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #6e45e2, #88d3ce, transparent);
+  background-image: linear-gradient(to right,
+      currentColor 50%,
+      transparent 50%);
+  background-size: 16px 3px;
+  /* Longitud de los segmentos y espacio entre ellos */
+  animation: lineScroll 1.5s linear infinite;
+}
+
+@keyframes lineScroll {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 16px 0;
+    /* Igual al background-size para movimiento continuo */
+  }
+}
+
+/** imagen en moviemiento principal **/
+.hover-zoom-img {
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform-origin: center center;
+}
+
+.hover-zoom-img:hover {
+  transform: scale(1.1);
+}
+
+/** imagen principal **/
+.image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(2, 40, 115, 0.3) 0%, rgba(2, 40, 115, 0) 100%);
+}
+
+.timeline-container {
+  position: relative;
+  padding-left: 30px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -30px;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.timeline-content {
+  padding-bottom: 15px;
+  border-left: 2px solid rgba(255, 255, 255, 0.1);
+  padding-left: 20px;
+}
+
+.btn-primary:hover {
+  background-color: #68a01a !important;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+/** contadores numericos **/
+.hover-card {
+  transition: all 0.4s ease;
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+}
+
+.hover-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+.hover-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #D95C14 0%, #022873 100%);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.hover-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Animación de contador */
+.counter {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #022873;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hover-card {
+    margin-bottom: 20px;
+  }
+}
+
+.thin-text {
+  font-weight: 200;
+  /* Más delgado que light (300) */
+  font-family: 'Roboto', sans-serif;
+  /* Usar una fuente que soporte pesos finos */
+}
+
+.bold-text {
+  font-weight: 700;
+}
+
+/** clientes de safira **/
+.client-logo-container {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.client-logo-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.client-logo {
+  max-height: 70px;
+  width: auto;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.client-logo:hover {
+  filter: grayscale(0%);
+  opacity: 1;
 }

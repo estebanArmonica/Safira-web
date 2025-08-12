@@ -1,394 +1,168 @@
 :root {
-    --primary: #80BF21;
-    --light: #F6F7F8;
-    --dark: #1A2A36;
-    --blue: #022873;
+  --primary: #022873;
+  --secondary: #80BF21;
+  --light: #f8f9fa;
+  --dark: #212529;
+  --gray: #6c757d;
 }
 
-/*** Navbar ***/
-.navbar.sticky-top {
-    top: -100px;
-    transition: .5s;
+/* Top Bar */
+.top-bar {
+  background-color: #022873;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #e9ecef;
 }
 
-.navbar .navbar-brand,
-.navbar a.btn {
-    height: 25px;
+.top-bar-item {
+  display: flex;
+  align-items: center;
+  color: var(--light);
 }
 
-/* Animación del botón hamburguesa a X */
-.navbar-toggler {
-    border: none;
-    padding: 0.5rem;
-    transition: all 0.3s;
-    position: relative;
+.top-bar-item i {
+  font-size: 0.9rem;
 }
 
-.navbar-toggler .navbar-toggler-icon {
-    background-image: none;
-    width: 24px;
-    height: 2px;
-    background-color: #022873;
-    position: relative;
-    transition: all 0.3s;
+.social-icons a {
+  color: #F2BD1D;
+  margin-left: 1rem;
+  transition: color 0.2s;
 }
 
-.navbar-toggler .navbar-toggler-icon::before,
-.navbar-toggler .navbar-toggler-icon::after {
-    content: '';
-    position: absolute;
-    width: 24px;
-    height: 2px;
-    background-color: #022873;
-    left: 0;
-    transition: all 0.3s;
+.social-icons a:hover {
+  color: #F2BD1D;
 }
 
-.navbar-toggler .navbar-toggler-icon::before {
-    transform: translateY(-8px);
+/* Navbar Principal */
+.navbar {
+  padding: 1rem 0;
+  transition: all 0.3s ease;
 }
 
-.navbar-toggler .navbar-toggler-icon::after {
-    transform: translateY(8px);
+.navbar-brand img {
+  transition: transform 0.3s ease;
 }
 
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
-    background-color: transparent;
+.navbar-brand:hover img {
+  transform: scale(1.03);
 }
 
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
-    transform: rotate(45deg);
+.nav-link {
+  font-weight: 500;
+  color: var(--dark);
+  padding: 0.5rem 1rem !important;
+  position: relative;
+  margin: 0 0.25rem;
 }
 
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
-    transform: rotate(-45deg);
+/* Subrayado animado - permanente para activo, animado para hover */
+.nav-link:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 1rem;
+  right: 1rem;
+  height: 2px;
+  background-color: var(--secondary);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: center;
 }
 
-/* Estilo modal lateral */
-.offcanvas {
-    width: 85% !important;
-    max-width: 350px;
-    border-left: 1px solid rgba(0, 0, 0, 0.1);
+/* Estado hover */
+.nav-link:hover:before {
+  transform: scaleX(1);
 }
 
-.offcanvas-header {
-    padding: 1.5rem;
+/* Estado activo (página actual) */
+.nav-link.active:before {
+  transform: scaleX(1);
+  background-color: var(--primary); /* Cambiamos a color primario para distinguir */
 }
 
-/* Botón móvil */
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary);
+}
+
+/* Dropdown */
+.dropdown-menu {
+  border: none;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  margin-top: 0.5rem !important;
+}
+
+.dropdown-item {
+  padding: 0.5rem 1.5rem;
+  transition: all 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+  color: var(--primary);
+  padding-left: 1.75rem;
+}
+
+/* Botón de Cotización */
+.btn-outline-primary {
+  border-color: var(--primary);
+  color: var(--primary);
+  font-weight: 500;
+  padding: 0.5rem 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-outline-primary i {
+  transition: transform 0.3s ease;
+}
+
+.btn-outline-primary:hover i {
+  transform: translateX(3px);
+}
+
+/* Responsive */
 @media (max-width: 991.98px) {
-    .btn-blue {
-        width: 100%;
-        margin-top: 1rem;
-    }
-}
-/* Animación del botón hamburguesa a X end */
-
-
-/* Botón destacado */
-.btn-primary {
-    background-color: #022873 !important;
-    color: white !important;
-    border: none !important;
-    transition: all 0.3s !important;
-    height: 50px;
-}
-
-.btn-primary:hover {
-    background-color: #011a4a !important;
-    /* Color más oscuro */
-    transform: translateY(-2px);
-    /* Efecto sutil de elevación (opcional) */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Sombra al hover (opcional) */
-}
-
-.navbar .navbar-nav .nav-link {
-    margin-right: 30px;
-    padding: 25px 0;
-    color: var(--dark);
-    font-size: 15px;
-    font-weight: 500;
-    outline: none;
-    position: relative;
-    transition: all 0.3s ease;
-}
-
-/* Efecto hover dinámico */
-.navbar .navbar-nav .nav-link::before {
-    content: '';
-    position: absolute;
-    bottom: 20px;
+  .navbar-collapse {
+    padding: 1rem 0;
+  }
+  
+  .nav-link {
+    padding: 0.75rem 1rem !important;
+    margin: 0.25rem 0;
+  }
+  
+  .nav-link:before {
     left: 0;
-    width: 0;
-    height: 2px;
+    right: auto;
+    width: 3px;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  
+  .nav-link:hover:before,
+  .nav-link.active:before {
+    transform: scaleY(1);
+  }
+  
+  /* Subrayado lateral para móvil */
+  .nav-link.active:before {
     background-color: var(--primary);
-    transition: width 0.3s ease;
-}
-
-.navbar .navbar-nav .nav-link:hover::before {
+  }
+  
+  .dropdown-menu {
+    box-shadow: none;
+    border-left: 2px solid #f1f1f1;
+    margin-left: 1rem !important;
+  }
+  
+  .btn-outline-primary {
+    margin-top: 1rem;
     width: 100%;
-}
-
-/* Estilo para el link activo (subrayado permanente) */
-.navbar .navbar-nav .nav-link.active {
-    color: var(--primary);
-}
-
-.navbar .navbar-nav .nav-link.active::after {
-    content: '';
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: var(--primary);
-}
-
-/* Efecto hover para el link activo */
-.navbar .navbar-nav .nav-link.active:hover {
-    color: var(--primary);
-}
-
-.navbar .dropdown-toggle::after {
-    border: none;
-    content: "\f107";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    vertical-align: middle;
-    margin-left: 8px;
-}
-
-@media (max-width: 991.98px) {
-    .navbar .navbar-nav .nav-link {
-        margin-right: 0;
-        padding: 10px 15px !important;
-    }
-
-    .navbar .navbar-nav {
-        border-top: 1px solid #EEEEEE;
-    }
-}
-
-@media (min-width: 992px) {
-    .navbar .nav-item .dropdown-menu {
-        display: block;
-        border: none;
-        margin-top: 0;
-        top: 150%;
-        opacity: 0;
-        visibility: hidden;
-        transition: .5s;
-    }
-
-    .navbar .nav-item:hover .dropdown-menu {
-        top: 100%;
-        visibility: visible;
-        transition: .5s;
-        opacity: 1;
-    }
-}
-
-/* Elementos del menú en móvil */
-@media (max-width: 991.98px) {
-    .navbar-nav {
-        gap: 1rem;         /* Más espacio entre elementos */
-    }
-    
-    .nav-link {
-        padding: 0.75rem 1rem !important;  /* Más padding para mejor tacto */
-        font-size: 1.1rem !important;      /* Texto más grande */
-        border-radius: 0.25rem;            /* Bordes redondeados */
-        transition: all 0.2s;
-    }
-    
-    .nav-link:hover {
-        background-color: rgba(0, 0, 0, 0.03); /* Efecto hover sutil */
-    }
-    
-    /* Dropdowns en móvil */
-    .dropdown-menu {
-        width: 100% !important;
-        border: none !important;
-        box-shadow: none !important;
-        margin-top: 0.5rem;
-    }
-    
-    .dropdown-item {
-        padding: 0.75rem 1.5rem !important;
-        font-size: 1rem !important;
-    }
-    
-    /* Botón de cotización en móvil */
-    .btn-primary {
-        font-size: 1.1rem !important;
-        padding: 0.75rem !important;
-        margin-top: 1.5rem !important;
-    }
-}
-
-/* Animación de apertura más suave */
-.offcanvas.offcanvas-end {
-    transition: transform 0.3s ease-in-out;
-}
-
-/*** end Navbar ***/
-
-.navbar-toggler .navbar-toggler-icon::before {
-    transform: translateY(-8px);
-}
-
-.navbar-toggler .navbar-toggler-icon::after {
-    transform: translateY(8px);
-}
-
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
-    background-color: transparent;
-}
-
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
-    transform: rotate(45deg);
-}
-
-.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
-    transform: rotate(-45deg);
-}
-
-/* Efectos mejorados para desktop */
-.navbar .navbar-nav:not(.offcanvas-body .navbar-nav) .nav-link {
-    overflow: hidden;
-    padding-bottom: 5px; /* Espacio para el efecto */
-}
-
-.navbar .navbar-nav:not(.offcanvas-body .navbar-nav) .nav-link::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 3px; /* Más grueso */
-    background-color: var(--primary);
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1);
-    z-index: 1;
-}
-
-.navbar .navbar-nav:not(.offcanvas-body .navbar-nav) .nav-link:hover::before {
-    transform: scaleX(1);
-    transform-origin: left;
-}
-
-/* Efecto onda para el activo en desktop */
-.navbar .navbar-nav:not(.offcanvas-body .navbar-nav) .nav-link.active::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: var(--primary);
-    animation: waveUnderline 1.5s ease-in-out infinite;
-    z-index: 1;
-}
-
-@keyframes waveUnderline {
-    0%, 100% {
-        transform: scaleX(1);
-    }
-    50% {
-        transform: scaleX(0.9);
-    }
-}
-
-/* Efectos para desktop */
-.navbar .navbar-nav:not(.offcanvas-body .navbar-nav) .nav-link {
-    position: relative;
-    overflow: hidden;
-    padding-bottom: 5px;
-}
-
-/* Subrayado dinámico al hover */
-.navbar .navbar-nav:not(.offcanvas-body .navbar-nav) .nav-link::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: var(--primary);
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
-}
-
-.navbar .navbar-nav:not(.offcanvas-body .navbar-nav) .nav-link:hover::before {
-    transform: scaleX(1);
-    transform-origin: left;
-}
-
-/* Subrayado permanente para el activo */
-.navbar .navbar-nav:not(.offcanvas-body .navbar-nav) .nav-link.active {
-    color: var(--primary);
-}
-
-.navbar .navbar-nav:not(.offcanvas-body .navbar-nav) .nav-link.active::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: var(--primary);
-    animation: underlinePulse 2s infinite;
-}
-
-@keyframes underlinePulse {
-    0%, 100% { transform: scaleX(1); }
-    50% { transform: scaleX(0.95); }
-}
-
-/* Efectos para móvil */
-.offcanvas-body .navbar-nav .nav-link {
-    position: relative;
-    overflow: hidden;
-    padding-bottom: 8px;
-}
-
-.offcanvas-body .navbar-nav .nav-link::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 1rem;
-    width: calc(100% - 2rem);
-    height: 3px;
-    background-color: var(--primary);
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
-}
-
-.offcanvas-body .navbar-nav .nav-link:hover::before {
-    transform: scaleX(1);
-    transform-origin: left;
-}
-
-.offcanvas-body .navbar-nav .nav-link.active {
-    color: var(--primary);
-}
-
-.offcanvas-body .navbar-nav .nav-link.active::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 1rem;
-    width: calc(100% - 2rem);
-    height: 3px;
-    background-color: var(--primary);
-    animation: underlinePulseMobile 2s infinite;
-}
-
-@keyframes underlinePulseMobile {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.8; }
+  }
 }

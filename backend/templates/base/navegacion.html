@@ -1,158 +1,74 @@
-<!-- Topbar Start -->
-<div class="container-fluid p-0" style="background-color: #022873;">
-    <div class="row gx-0 d-none d-lg-flex">
-        <div class="col-lg-7 px-5 text-start">
-            <div class="h-100 d-inline-flex align-items-center me-4">
-                <small class="fa fa-map-marker-alt me-2" style="color: #80BF21;"></small>
-                <small class="text-white">Pedro de Valdivia 1215, Oficina 309 Providencia, Chile</small>
+<!-- Top Bar Minimalista -->
+<div class="top-bar">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center py-2">
+            <div class="d-flex align-items-center">
+                <div class="top-bar-item me-4">
+                    <i class="fas fa-map-marker-alt me-2 text-primary"></i>
+                    <span>Pedro de Valdivia 1215, Oficina 309 Providencia, Chile</span>
+                </div>
+                <div class="top-bar-item">
+                    <i class="far fa-clock me-2 text-primary"></i>
+                    <span>{% now "l" %} : {% now "H.i A" %}</span>
+                </div>
             </div>
-            <div class="h-100 d-inline-flex align-items-center">
-                <small class="far fa-clock me-2" style="color: #80BF21;"></small>
-                <small class="text-white">{% now "l" %} : {% now "H.i A" %}</small>
-            </div>
-        </div>
-        <div class="col-lg-5 px-5 text-end">
-            <div class="h-100 d-inline-flex align-items-center me-4">
-                <small class="fa fa-phone-alt me-2" style="color: #80BF21;"></small>
-                <small class="text-white">+569 93715375</small>
-            </div>
-            <div class="h-100 d-inline-flex align-items-center mx-n2">
-                <a class="btn btn-square btn-link rounded-0 border-0 border-end"
-                    href="https://www.facebook.com/share/19PqWwXbWB/"><i class="fab fa-facebook-f"
-                        style="color: #80BF21;"></i></a>
-                <a class="btn btn-square btn-link rounded-0 border-0 border-end" href=""><i class="fab fa-twitter"
-                        style="color: #80BF21;"></i></a>
-                <a class="btn btn-square btn-link rounded-0 border-0 border-end"
-                    href="https://www.linkedin.com/company/safiraenergia/"><i class="fab fa-linkedin-in"
-                        style="color: #80BF21;"></i></a>
-                <a class="btn btn-square btn-link rounded-0"
-                    href="https://www.instagram.com/safiraenergia_cl?igsh=MTNpNG5objYwbWgObA==">
-                    <i class="fab fa-instagram" style="color: #80BF21;"></i>
-                </a>
+            <div class="d-flex align-items-center">
+                <div class="top-bar-item me-4">
+                    <i class="fas fa-phone-alt me-2 text-primary"></i>
+                    <span>+569 93715375</span>
+                </div>
+                <div class="social-icons">
+                    <a href="#" class="text-muted"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-muted"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-muted"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="text-muted"><i class="fab fa-instagram"></i></a>
+                </div>
             </div>
         </div>
     </div>
 </div>
-<!-- Topbar End -->
 
-<!-- start navbar -->
-<nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-3">
-    <div class="container-fluid px-lg-5">
-        <!-- Logo -->
-        <div class="d-flex ms-lg-5 me-lg-2">
-            <a href="{% url 'home' %}">
-                <img src="https://blog.safiraenergia.com.br/wp-content/uploads/2024/03/logo_safira_energia.png"
-                    width="200" height="110" alt="Safira Energía">
-            </a>
-        </div>
+<!-- Navbar Principal -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top border-bottom">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'home' %}">
+            <img src="../../static/img/logo nuevo.PNG" width="220" alt="Safira Energía">
+        </a>
 
-        <!-- Botón móvil animado -->
-        <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Contenido del navbar -->
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <!-- Menú principal - visible en desktop -->
-            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-4 d-none d-lg-flex">
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a href="{% url 'home' %}" class="nav-link active fw-medium">
-                        <i class="bi bi-house-door"></i> Inicio
-                    </a>
+                    <a class="nav-link {% if 'home' in request.path %}active{% endif %}" href="{% url 'home' %}">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'nosotros' %}" class="nav-link fw-medium">
-                        <i class="bi bi-people"></i> Quiénes Somos
-                    </a>
+                    <a class="nav-link {% if 'nosotros' in request.path %}active{% endif %}" href="{% url 'nosotros' %}">Quiénes Somos</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'mercado-libre-safira' %}" class="nav-link fw-medium">
-                        <i class="fa-solid fa-leaf"></i> Mercado Libre de Energía
-                    </a>
+                    <a class="nav-link {% if 'mercado-libre-safira' in request.path %}active{% endif %}" href="{% url 'mercado-libre-safira' %}">Mercado Libre</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle fw-medium" data-bs-toggle="dropdown">
-                        <i class="bi bi-shop-window"></i> Empresas
-                    </a>
-                    <div class="dropdown-menu bg-light m-0">
-                        <a href="https://gpsafira.com.br/home" class="dropdown-item">Conoce a Grupo Safira</a>
+                    <a class="nav-link dropdown-toggle" href="#" id="empresasDropdown">Empresas</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="https://gpsafira.com.br/home">Grupo Safira</a>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'contactos' %}" class="nav-link fw-medium">
-                        <i class="bi bi-telephone"></i> Contactanos
-                    </a>
+                    <a class="nav-link {% if 'contacto' in request.path %}active{% endif %}" href="{% url 'contactos' %}">Contáctanos</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'faq-frecuentes-safira' %}" class="nav-link fw-medium">
-                        <i class="fa-regular fa-circle-question"></i> FAQs
-                    </a>
+                    <a class="nav-link {% if 'faq-frecuentes-safira' in request.path %}active{% endif %}" href="{% url 'faq-frecuentes-safira' %}">FAQs</a>
                 </li>
             </ul>
 
-            <!-- Botón de cotización - visible en desktop -->
-            <div class="d-flex ms-lg-4 me-lg-4 d-none d-lg-block">
-                <a href="{% url 'cotizaciones' %}"
-                    class="btn btn-primary rounded-0 px-4 py-2 fw-medium d-flex align-items-center justify-content-center"
-                    style="height: 50px;">
-                    Solicitar Cotización
-                    <i class="bi bi-arrow-up-right ms-2"></i>
+            <div class="d-flex">
+                <a href="{% url 'cotizaciones' %}" class="btn btn-outline-primary rounded-0">
+                    Solicitar Cotización <i class="fas fa-arrow-right ms-2"></i>
                 </a>
-            </div>
-
-            <!-- Menú móvil - offcanvas -->
-            <div class="offcanvas offcanvas-end bg-white d-lg-none" tabindex="-1" id="mobileMenu">
-                <div class="offcanvas-header justify-content-end">
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav gap-3">
-                        <li class="nav-item">
-                            <a href="{% url 'home' %}" class="nav-link active fw-medium">
-                                <i class="bi bi-house-door"></i> Inicio
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{% url 'nosotros' %}" class="nav-link fw-medium">
-                                <i class="bi bi-people"></i> Quiénes Somos
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{% url 'mercado-libre-safira' %}" class="nav-link fw-medium">
-                                <i class="fa-solid fa-leaf"></i> Mercado Libre de Energía
-                            </a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle fw-medium" data-bs-toggle="dropdown"
-                                id="mobileDropdown">
-                                <i class="bi bi-shop-window"></i> Empresas
-                            </a>
-                            <div class="dropdown-menu bg-light m-0">
-                                <a href="https://gpsafira.com.br/home" class="dropdown-item">Conoce a Grupo Safira</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{% url 'contactos' %}" class="nav-link fw-medium">
-                                <i class="bi bi-telephone"></i> Contactanos
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{% url 'faq-frecuentes-safira' %}" class="nav-link fw-medium">
-                                <i class="fa-regular fa-circle-question"></i> FAQs
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="mt-4">
-                        <a href="{% url 'cotizaciones' %}" class="btn btn-primary rounded-0 px-4 py-3 fw-medium w-100"
-                            style="height: 50px;">
-                            Solicitar Cotización
-                            <i class="bi bi-arrow-up-right ms-2"></i>
-                        </a>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
 </nav>
-<!-- end navbar -->
