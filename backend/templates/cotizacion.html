@@ -39,14 +39,14 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
         <form class="needs-validation" novalidate>
             {% csrf_token %}
 
-            <div class="col-md-6">
-                <label class="form-label fw-medium">Adjuntar archivo <span class="text-danger">*</span></label>
+            <div class="col-md-12">
+                <label class="form-label fw-medium" style="color: #022873;">Adjuntar archivo <span class="text-danger">*</span></label>
 
                 <div class="file-input-container">
                     <label for="archivo" class="file-input-label">
                         <i class="bi bi-cloud-arrow-up"></i>
                         <span>Seleccionar archivo</span>
-                        <small class="text-muted d-block mt-2">Formatos: PDF, JPG, PNG (Max. 5MB)</small>
+                        <small class="text-muted d-block mt-2">Formatos: PDF (Max. 5MB)</small>
                     </label>
                     <input type="file" id="archivo" class="file-input" required>
 
@@ -69,7 +69,7 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
             <!-- Fila 1: Información personal -->
             <div class="row g-4 mb-4">
                 <div class="col-md-6">
-                    <label for="nombre" class="form-label fw-medium">Nombre completo <span
+                    <label for="nombre" class="form-label fw-medium" style="color: #022873;">Nombre completo <span
                             class="text-danger">*</span></label>
                     <div class="input-group">
                         <span class="input-group-text"
@@ -80,7 +80,7 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
                 </div>
 
                 <div class="col-md-6">
-                    <label for="email" class="form-label fw-medium">Correo electrónico <span
+                    <label for="email" class="form-label fw-medium" style="color: #022873;">Correo electrónico <span
                             class="text-danger">*</span></label>
                     <div class="input-group">
                         <span class="input-group-text"
@@ -91,7 +91,7 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
                 </div>
 
                 <div class="col-md-6">
-                    <label for="telefono" class="form-label fw-medium">Teléfono <span
+                    <label for="telefono" class="form-label fw-medium" style="color: #022873;">Teléfono <span
                             class="text-danger">*</span></label>
                     <div class="input-group">
                         <span class="input-group-text"
@@ -105,7 +105,7 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
             <!-- Fila 2: Información empresarial -->
             <div class="row g-4 mb-4">
                 <div class="col-md-6">
-                    <label for="rut" class="form-label fw-medium">RUT empresa <span class="text-danger">*</span></label>
+                    <label for="rut" class="form-label fw-medium" style="color: #022873;">RUT empresa <span class="text-danger">*</span></label>
                     <div class="input-group">
                         <span class="input-group-text"
                             style="background-color: #f1f3f5; color: #80BF21; border-right: none;"><i
@@ -115,7 +115,7 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
                 </div>
 
                 <div class="col-md-6">
-                    <label for="empresa" class="form-label fw-medium">Nombre empresa <span
+                    <label for="empresa" class="form-label fw-medium" style="color: #022873;">Nombre empresa <span
                             class="text-danger">*</span></label>
                     <div class="input-group">
                         <span class="input-group-text"
@@ -126,7 +126,7 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
                 </div>
 
                 <div class="col-md-6">
-                    <label for="tipo_cliente" class="form-label fw-medium">Tipo de cliente <span
+                    <label for="tipo_cliente" class="form-label fw-medium" style="color: #022873;">Tipo de cliente <span
                             class="text-danger">*</span></label>
                     <div class="input-group">
                         <span class="input-group-text"
@@ -141,7 +141,7 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
                 </div>
 
                 <div class="col-md-6">
-                    <label for="distribuidora" class="form-label fw-medium">Distribuidora <span
+                    <label for="distribuidora" class="form-label fw-medium" style="color: #022873;">Distribuidora <span
                             class="text-danger">*</span></label>
                     <div class="input-group">
                         <span class="input-group-text"
@@ -160,7 +160,7 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
             <!-- Fila 3: Ubicación y consumo -->
             <div class="row g-4 mb-4">
                 <div class="col-md-6">
-                    <label for="comuna" class="form-label fw-medium">Comuna <span class="text-danger">*</span></label>
+                    <label for="comuna" class="form-label fw-medium" style="color: #022873;">Comuna <span class="text-danger">*</span></label>
                     <div class="input-group">
                         <span class="input-group-text"
                             style="background-color: #f1f3f5; color: #80BF21; border-right: none;"><i
@@ -175,7 +175,7 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
                 </div>
 
                 <div class="col-md-6">
-                    <label for="consumoMensual" class="form-label fw-medium">Consumo mensual (kWh) <span
+                    <label for="consumoMensual" class="form-label fw-medium" style="color: #022873;">Consumo mensual (kWh) <span
                             class="text-danger">*</span></label>
                     <div class="input-group">
                         <span class="input-group-text"
@@ -187,7 +187,7 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
                 </div>
 
                 <div class="col-12">
-                    <label for="direccion" class="form-label fw-medium">Dirección completa <span
+                    <label for="direccion" class="form-label fw-medium" style="color: #022873;">Dirección completa <span
                             class="text-danger">*</span></label>
                     <div class="input-group">
                         <span class="input-group-text align-items-start"
@@ -201,9 +201,9 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
 
             <!-- Botón de envío -->
             <div class="text-center mt-5">
-                <button type="submit" class="btn btn-primary btn-lg rounded-0 px-5 py-3 fw-bold"
-                    style="background-color: #022873;">
-                    <i class="bi bi-send-check me-2"></i> Solicitar cotización
+                <button type="submit" class="btn btn-subscribe btn-lg rounded-0 px-5 py-3 fw-bold">
+                    Solicitar cotización
+                    <i class="fa-solid fa-check"></i>
                 </button>
             </div>
         </form>

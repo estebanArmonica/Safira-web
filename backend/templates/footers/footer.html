@@ -34,16 +34,20 @@
                     <span>Empresa certificada en calidad energética</span>
                 </div>
                 <div class="social-links">
-                    <a class="btn btn-social linkedin" href="#" aria-label="LinkedIn">
+                    <a class="btn btn-social linkedin" href="https://cl.linkedin.com/company/safira-energia-cl"
+                        aria-label="LinkedIn">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a class="btn btn-social twitter" href="#" aria-label="Twitter">
-                        <i class="fab fa-twitter"></i>
+                    <a class="btn btn-social twitter" href="https://www.facebook.com/Safiraenergiacl/"
+                        aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
                     </a>
-                    <a class="btn btn-social instagram" href="#" aria-label="Instagram">
+                    <a class="btn btn-social instagram" href="https://www.instagram.com/safiraenergia_cl/"
+                        aria-label="Instagram">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a class="btn btn-social youtube" href="#" aria-label="YouTube">
+                    <a class="btn btn-social youtube" href="https://www.youtube.com/channel/UC6MAHXeBWLRDVAf7Qj_HqAg"
+                        aria-label="YouTube">
                         <i class="fab fa-youtube"></i>
                     </a>
                 </div>
@@ -114,7 +118,7 @@
                 <p class="newsletter-description">
                     Recibe las últimas noticias, ofertas especiales y actualizaciones directamente en tu correo.
                 </p>
-                <a class="btn btn-subscribe border-0">
+                <a href="{% url 'blog-safira-energia' %}" class="btn btn-subscribe border-0">
                     Ver Blog
                     <i class="fa-solid fa-message"></i>
                 </a>
@@ -147,3 +151,39 @@
 <button id="backToTop" class="back-to-top" aria-label="Volver arriba">
     <i class="fas fa-arrow-up"></i>
 </button>
+
+<!-- Botón flotante de WhatsApp con menú desplegable -->
+<div class="whatsapp-floating">
+  <input type="checkbox" id="whatsapp-toggle" class="whatsapp-toggle">
+  <label for="whatsapp-toggle" class="whatsapp-main-btn">
+    <i class="fab fa-whatsapp"></i>
+    <span class="notification-badge"></span>
+  </label>
+  
+  <div class="whatsapp-menu">
+    <div class="whatsapp-header">
+      <h4>Contacto WhatsApp</h4>
+      <p>Selecciona el área que necesitas</p>
+    </div>
+    
+    <a href="https://wa.me/56993715375" class="whatsapp-option" target="_blank" rel="noopener noreferrer">
+      <div class="option-icon">
+        <i class="fas fa-user-plus"></i>
+      </div>
+      <div class="option-info">
+        <span class="option-title">Nuevos Clientes</span>
+        <span class="option-number">+56 9 9371 5375</span>
+      </div>
+    </a>
+    
+    <a href="https://wa.me/56993715373" class="whatsapp-option" target="_blank" rel="noopener noreferrer">
+      <div class="option-icon">
+        <i class="fas fa-user-check"></i>
+      </div>
+      <div class="option-info">
+        <span class="option-title">Clientes Registrados</span>
+        <span class="option-number">+56 9 9371 5373</span>
+      </div>
+    </a>
+  </div>
+</div>

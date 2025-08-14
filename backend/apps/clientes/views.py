@@ -102,3 +102,7 @@ def mercado_libre(request):
 
 def preguntas_frecuentes(request):
     return render(request, 'preguntas-frecuentes.html')
+
+# sobre bolg de la empresa
+def blog_safira(request):
+    return render(request, 'blog/blog-safira.html')

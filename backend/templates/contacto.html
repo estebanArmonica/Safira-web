@@ -7,82 +7,96 @@ Safira Energía - Contactanos en Safira Chile
 {% block content %}
 <!-- Page Header Start -->
 <div class="container-fluid page-header py-5 mb-5">
-    <div class="container py-5">
-        <h1 class="display-3 text-white mb-3 animated slideInDown">Contacto</h1>
-        <nav aria-label="breadcrumb animated slideInDown">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a class="text-white" href="/home">Inicio</a></li>
-                <li class="breadcrumb-item text-white active" aria-current="page">Contactanos</li>
-            </ol>
-        </nav>
-    </div>
+  <div class="container py-5">
+    <h1 class="display-3 text-white mb-3 animated slideInDown">Contacto</h1>
+    <nav aria-label="breadcrumb animated slideInDown">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a class="text-white" href="/home">Inicio</a></li>
+        <li class="breadcrumb-item text-white active" aria-current="page">Contactanos</li>
+      </ol>
+    </nav>
+  </div>
 </div>
 <!-- Page Header End -->
 
 <!-- Contact Start -->
-<div class="container-fluid bg-light overflow-hidden px-lg-0" style="margin: 6rem 0;">
-    <div class="container contact px-lg-0">
-        <div class="row g-0 mx-lg-0">
-            <div class="col-lg-6 contact-text py-5 wow fadeIn" data-wow-delay="0.5s">
-                <div class="p-lg-5 ps-lg-0">
-                    <h6 class="text-blue" style="color: #022873;">Contactanos</h6>
-                    <h1 class="mb-4">No dudes en contactarnos</h1>
-                    <p class="mb-4">
-                        Escribenos a travéz de este formulario para saber de ti y de tu interes con nosotros 
-                        para dentro de unos días poder contactarte.
-                    </p>
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 450px">
 
-                    <form id="contactForm" method="post" action="{% url 'contactos' %}">
-                        {% csrf_token %}
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    {{ form.nombre }}
-                                    <label for="name"><strong class="text-danger">*</strong> Su Nombre</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    {{ form.email }}
-                                    <label for="email"><strong class="text-danger">*</strong> Su Correo Electrónico</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    {{ form.asunto }}
-                                    <label for="subject"><strong class="text-danger">*</strong> Asunto</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    {{ form.mensaje }}
-                                    <label for="message"><strong class="text-danger">*</strong> Mensaje</label>
-                                </div>
-                            </div>
-
-                            <div class="col-12">
-                                <strong class="text-danger">*</strong>
-                                <br>
-                                <div class="g-recaptcha" data-sitekey="{{ RECAPTCHA_SITE_KEY }}" data-callback="onRecaptchaSuccess"></div>
-                            </div>
-
-
-                            <div class="col-12">
-                                <input class="btn btn-blue rounded-pill py-3 px-5" style="background-color: #022873; color: white;" type="submit" id="submitButton" value="Enviar Mensaje" />
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="col-lg-6 pe-lg-0" style="min-height: 400px;">
-                <div class="position-relative h-100">
-                    <iframe class="position-absolute w-100 h-100" style="object-fit: cover;"
-                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d588.7483392194447!2d-70.57902653876143!3d-33.411157279390146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2scl!4v1751988651251!5m2!1ses!2scl"
-                        frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                </div>
-            </div>
+        <!-- mapa de la dirección -->
+        <div class="position-relative h-100">
+          <iframe class="position-relative w-100 h-100"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d826.1114405384404!2d-70.57974553039399!3d-33.41111879833781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf21940e702d%3A0xc5d8be6d3de3bd47!2sOrinoco%2090%2C%20piso%2021%2C%207560963%20Las%20Condes%2C%20Regi%C3%B3n%20Metropolitana!5e1!3m2!1spt-BR!2scl!4v1755179641465!5m2!1spt-BR!2scl"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
+      </div>
+      <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+        <div class="border-start border-5 border-primary ps-4 mb-5">
+          <h6 class="text-body text-uppercase mb-2">Contáctanos</h6>
+          <h1 class="display-6 mb-0 bold-text" style="color: #022873;">
+            No dudes en contactarnos
+          </h1>
+        </div>
+        <p class="mb-4">
+          Escribenos a travéz de este formulario para saber de ti y de tu interes con nosotros 
+          para dentro de unos días poder contactarte.
+        </p>
+
+        <!-- formulario de contacto -->
+        <form id="contactForm" method="post" action="{% url 'contactos' %}">
+          {% csrf_token %}
+          <div class="row g-3">
+            <!-- nombre -->
+            <div class="col-md-6">
+              <div class="form-floating">
+                {{ form.nombre }}
+                <label for="name" style="color: #022873;"><strong class="text-danger">*</strong> Nombre Completo</label>
+              </div>
+            </div>
+
+            <!-- correo -->
+            <div class="col-md-6">
+              <div class="form-floating">
+                {{ form.email }}
+                <label for="email" style="color: #022873;"><strong class="text-danger">*</strong> Correo Empresa</label>
+              </div>
+            </div>
+
+            <!-- asunto -->
+            <div class="col-12">
+              <div class="form-floating">
+                {{ form.asunto }}
+                <label for="subject" style="color: #022873;"><strong class="text-danger">*</strong> Asunto</label>
+              </div>
+            </div>
+
+            <!-- text area -->
+            <div class="col-12">
+              <div class="form-floating">
+                {{ form.mensaje }}
+                <label for="message" style="color: #022873;"><strong class="text-danger">*</strong> Mensaje</label>
+              </div>
+            </div>
+
+            <!-- reCaptcha -->
+            <div class="col-12">
+              <strong class="text-danger">*</strong>
+              <br>
+              <div class="g-recaptcha" data-sitekey="{{ RECAPTCHA_SITE_KEY }}" data-callback="onRecaptchaSuccess"></div>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-blue rounded-0 py-3 px-5" type="submit" id="submitButton">
+                Enviar mensaje <i class="fa-solid fa-check"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
 </div>
 <!-- Contact End -->
 {% endblock %}

@@ -1,0 +1,182 @@
+{% extends 'base/index.html' %}
+{% load static %}
+
+{% block title %}
+Safira Energía - Blog
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section del Blog -->
+<section class="blog-hero">
+    <div class="hero-overlay"></div>
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                Explora Nuestro<br> 
+                <span class="thin-text">Blog Energético</span>
+            </h1>
+            <p class="hero-subtitle">
+                Descubre las últimas tendencias, noticias y consejos sobre el mercado libre de
+                energía
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Blog Grid Section -->
+<section class="blog-grid-section">
+    <div class="container">
+        <!-- Filtros por categoría -->
+        <div class="category-filters">
+            <button class="category-filter active" data-category="all">Todos</button>
+            <button class="category-filter" data-category="mercado">Mercado Libre</button>
+            <button class="category-filter" data-category="renovable">Energía Renovable</button>
+            <button class="category-filter" data-category="ahorro">Ahorro Energético</button>
+            <button class="category-filter" data-category="legal">Asesoría Legal</button>
+        </div>
+
+        <!-- Grid de artículos -->
+        <div class="blog-grid">
+            <!-- Artículo 1 -->
+            <article class="blog-card" data-category="mercado">
+                <div class="card-image">
+                    <img src="{% static 'img/blog/mercado-libre.jpg' %}" alt="Mercado libre de energía">
+                    <div class="card-badge">Mercado Libre</div>
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="date">15 Mayo 2023</span>
+                        <span class="reading-time">5 min lectura</span>
+                    </div>
+                    <h3 class="card-title">Cómo migrar al mercado libre y ahorrar hasta un 30%</h3>
+                    <p class="card-excerpt">Descubre los pasos clave para realizar una transición exitosa al mercado
+                        libre de energía y comenzar a ver ahorros inmediatos en tu factura eléctrica.</p>
+                    <a href="#" class="read-more">
+                        Leer más
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="card-hover-effect"></div>
+            </article>
+
+            <!-- Artículo 2 -->
+            <article class="blog-card" data-category="renovable">
+                <div class="card-image">
+                    <img src="{% static 'img/blog/energia-renovable.jpg' %}" alt="Energía renovable">
+                    <div class="card-badge">Energía Renovable</div>
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="date">28 Abril 2023</span>
+                        <span class="reading-time">7 min lectura</span>
+                    </div>
+                    <h3 class="card-title">Energía solar: Mitos y realidades para empresas</h3>
+                    <p class="card-excerpt">Desmontamos los 5 mitos más comunes sobre la implementación de energía solar
+                        en el sector empresarial y cómo puede beneficiar a tu compañía.</p>
+                    <a href="#" class="read-more">
+                        Leer más
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="card-hover-effect"></div>
+            </article>
+
+            <!-- Artículo 3 -->
+            <article class="blog-card" data-category="ahorro">
+                <div class="card-image">
+                    <img src="{% static 'img/blog/ahorro-energetico.jpg' %}" alt="Ahorro energético">
+                    <div class="card-badge">Ahorro Energético</div>
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="date">10 Abril 2023</span>
+                        <span class="reading-time">4 min lectura</span>
+                    </div>
+                    <h3 class="card-title">10 estrategias comprobadas para reducir tu consumo energético</h3>
+                    <p class="card-excerpt">Implementa estas tácticas sencillas pero efectivas para optimizar el uso de
+                        energía en tus instalaciones y reducir costos operativos.</p>
+                    <a href="#" class="read-more">
+                        Leer más
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="card-hover-effect"></div>
+            </article>
+
+            <!-- Artículo 4 -->
+            <article class="blog-card" data-category="legal">
+                <div class="card-image">
+                    <img src="{% static 'img/blog/asesoria-legal.jpg' %}" alt="Asesoría legal energética">
+                    <div class="card-badge">Asesoría Legal</div>
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="date">22 Marzo 2023</span>
+                        <span class="reading-time">8 min lectura</span>
+                    </div>
+                    <h3 class="card-title">Nuevas regulaciones en el mercado eléctrico: Lo que debes saber</h3>
+                    <p class="card-excerpt">Un análisis detallado de los cambios recientes en la legislación energética
+                        y cómo afectan a consumidores libres y regulados.</p>
+                    <a href="#" class="read-more">
+                        Leer más
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="card-hover-effect"></div>
+            </article>
+
+            <!-- Artículo 5 -->
+            <article class="blog-card" data-category="mercado">
+                <div class="card-image">
+                    <img src="{% static 'img/blog/contratos-energia.jpg' %}" alt="Contratos de energía">
+                    <div class="card-badge">Mercado Libre</div>
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="date">5 Marzo 2023</span>
+                        <span class="reading-time">6 min lectura</span>
+                    </div>
+                    <h3 class="card-title">Cómo negociar el mejor contrato en el mercado libre</h3>
+                    <p class="card-excerpt">Guía práctica con las cláusulas que debes revisar y los puntos clave para
+                        negociar condiciones ventajosas con tu proveedor.</p>
+                    <a href="#" class="read-more">
+                        Leer más
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="card-hover-effect"></div>
+            </article>
+
+            <!-- Artículo 6 -->
+            <article class="blog-card" data-category="renovable">
+                <div class="card-image">
+                    <img src="{% static 'img/blog/tecnologia-verde.jpg' %}" alt="Tecnología verde">
+                    <div class="card-badge">Energía Renovable</div>
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="date">18 Febrero 2023</span>
+                        <span class="reading-time">9 min lectura</span>
+                    </div>
+                    <h3 class="card-title">Tendencias en tecnología verde para 2023</h3>
+                    <p class="card-excerpt">Las innovaciones más prometedoras en energías limpias que están
+                        transformando la industria y cómo pueden beneficiar a tu empresa.</p>
+                    <a href="#" class="read-more">
+                        Leer más
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="card-hover-effect"></div>
+            </article>
+        </div>
+
+        <!-- Botón de carga más artículos -->
+        <div class="load-more-container">
+            <button class="load-more-button">
+                Cargar más artículos
+                <i class="fas fa-sync-alt"></i>
+            </button>
+        </div>
+    </div>
+</section>
+{% endblock %}

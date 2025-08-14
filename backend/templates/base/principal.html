@@ -5,73 +5,36 @@ Safira Energía - Bienvenido a Safira Energía Chile
 {% endblock %}
 
 {% block content %}
-<!-- Carousel Start -->
-<div class="container-fluid p-0 pb-5 wow fadeIn" data-wow-delay="0.1s">
-    <div class="owl-carousel header-carousel position-relative">
-        <div class="owl-carousel-item position-relative" data-dot="<img src='../../static/img/carousel-1.jpg'>">
-            <img class="img-fluid" src="../../static/img/carousel-1.jpg" alt="">
-            <div class="owl-carousel-inner">
-                <div class="container">
-                    <div class="row justify-content-start">
-                        <div class="col-10 col-lg-8">
-                            <h1 class="display-2 text-white animated slideInDown">
-                                La Safira Energía
-                            </h1>
-                            <p class="fs-5 fw-medium text-white mb-4 pb-3">
-                                Safira Energía nace en 2008 en Brasil como empresa comercializadora de energía, en el
-                                Mercado Libre.
-                            </p>
-                            <a href="/nosotros" class="btn btn-blue rounded-0 py-3 px-5 animated slideInLeft">
-                                Conocer Más
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="owl-carousel-item position-relative" data-dot="<img src='../../static/img/carousel-2.jpg'>">
-            <img class="img-fluid" src="../../static/img/carousel-2.jpg" alt="">
-            <div class="owl-carousel-inner">
-                <div class="container">
-                    <div class="row justify-content-start">
-                        <div class="col-10 col-lg-8">
-                            <h1 class="display-2 text-white animated slideInDown">Migra con nosotros al Mercado Libre
-                            </h1>
-                            <p class="fs-5 fw-medium text-white mb-4 pb-3">
-                                Conoce un poco del mercado libre y los beneficios que puedes obtener al ser un
-                                consumidor libre con Safira Energía.
-                            </p>
-                            <a href="/mercado-libre-safira"
-                                class="btn btn-green rounded-0 py-3 px-5 animated slideInLeft">Leer Más</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="owl-carousel-item position-relative"
-            data-dot="<img src='https://www.safiraenergia.cl/assets/luce_desk%201.svg'>">
-            <img class="img-fluid" src="../../static/img/LUCE-carrusel.jpg" alt="Imagen de LUCE" width="10%"
-                height="10%">
-            <div class="owl-carousel-inner">
-                <div class="container">
-                    <div class="row justify-content-start">
-                        <div class="col-10 col-lg-8">
-                            <h1 class="display-2 text-white animated slideInDown">LUCE, La primera plataforma de
-                                clientes libres del mercado Chileno.
-                            </h1>
-                            <p class="fs-5 fw-medium text-white mb-4 pb-3">
-                                Ten acceso al análisis de ahorro de energía,información de consumo, facturas y detalles
-                                de costos
-                                a solo un click simple de distancia.
-                            </p>
-                        </div>
+<!-- Video Hero Section Start -->
+<div class="container-fluid p-0 wow fadeIn" data-wow-delay="0.1s">
+    <div class="video-hero-container position-relative">
+        <!-- Video local con autoplay -->
+        <video class="video-bg" autoplay muted loop playsinline>
+            <source src="../../static/video/principal-carrusel.mp4" type="video/mp4">
+            Tu navegador no soporta videos HTML5.
+        </video>
+        <div class="video-overlay"></div>
+        
+        <!-- Contenido superpuesto -->
+        <div class="video-content position-absolute">
+            <div class="container">
+                <div class="row justify-content-start">
+                    <div class="col-10 col-lg-8">
+                        <h1 class="display-2 text-white animated slideInDown bold-text">
+                            Safira Energía Chile<br>
+                            <span class="thin-text">la asociación ideal para impulsar su negocio</span>
+                        </h1>
+                        <p class="fs-5 fw-medium text-white mb-4 pb-3">
+                            Ofrecemos soluciones personalizadas para los consumidores 
+                            en el mercado libre de energía
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- Carousel End -->
+<!-- Video Hero Section End -->
 
 <!-- Fixed Cards Start -->
 <div class="fixed-cards-container">
@@ -81,7 +44,7 @@ Safira Energía - Bienvenido a Safira Energía Chile
                 <div class="card-icon-container">
                     <div class="card-icon"><i class="fa-solid fa-right-left text-white"></i></div>
                 </div>
-                <h3 class="card-title">Migración</h3>
+                <h3 class="card-title text-white">Migración</h3>
             </div>
             <p>
                 Te ayudamos sin dejarte solo, el paso a paso de como debes realizar el cambio para ser Cliente Libre con
@@ -94,7 +57,7 @@ Safira Energía - Bienvenido a Safira Energía Chile
                 <div class="card-icon-container">
                     <div class="card-icon"><i class="fa fa-users-cog text-white"></i></div>
                 </div>
-                <h3 class="card-title">Consultoría y Asesoría</h3>
+                <h3 class="card-title text-white">Consultoría y Asesoría</h3>
             </div>
             <p>
                 Podemos ayudarte y asesorarte en cada paso que necesites, aquí Safira Energía te ayudara en todo para
@@ -106,9 +69,11 @@ Safira Energía - Bienvenido a Safira Energía Chile
                 <div class="card-icon-container">
                     <div class="card-icon"><i class="fa fa-award text-white"></i></div>
                 </div>
-                <h3 class="card-title">Comercialización</h3>
+                <h3 class="card-title text-white">Comercialización</h3>
             </div>
-            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+            <p>
+                Energía de la forma más <span class="bold-text">inteligente</span>
+            </p>
         </div>
     </div>
 </div>
@@ -166,7 +131,7 @@ Safira Energía - Bienvenido a Safira Energía Chile
                     </div>
 
                     <div class="mt-4">
-                        <a href="{% url 'nosotros' %}" class="btn btn-green btn-lg rounded-0"
+                        <a href="{% url 'nosotros' %}" class="btn btn-blue btn-lg rounded-0"
                             style="background-color: #D95C14; border: none; padding: 12px 30px; font-weight: 600;">
                             Conoce más
                         </a>
@@ -406,6 +371,8 @@ Safira Energía - Bienvenido a Safira Energía Chile
                             cuentas, ahorros y cambios regulatorios, todo para que su gestión del consumo de energía
                             sea más eficiente.
                         </span>
+                        <p></p>
+                        <a class="btn btn-outline-primary rounded-0">Saber más</a>
                     </div>
                 </div>
             </div>

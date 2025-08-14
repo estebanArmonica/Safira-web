@@ -5,72 +5,98 @@
     --blue: #022873;
 }
 
-/*** Header ***/
-.owl-carousel-inner {
+/* Estilos para el video hero */
+.video-hero-container {
+    height: 100vh;
+    min-height: 600px;
+    overflow: hidden;
+    position: relative;
+}
+
+.video-bg {
     position: absolute;
-    width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
-    display: flex;
-    align-items: center;
-    background: rgba(0, 0, 0, .1);
-}
-
-@media (max-width: 768px) {
-    .header-carousel .owl-carousel-item {
-        position: relative;
-        min-height: 500px;
-    }
-
-    .header-carousel .owl-carousel-item img {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .header-carousel .owl-carousel-item p {
-        font-size: 16px !important;
-    }
-}
-
-.header-carousel .owl-dots {
-    position: absolute;
-    width: 60px;
-    height: 100%;
-    top: 0;
-    right: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.header-carousel .owl-dots .owl-dot {
-    position: relative;
-    width: 45px;
-    height: 45px;
-    margin: 5px 0;
-    background: #FFFFFF;
-    box-shadow: 0 0 30px rgba(255, 255, 255, .9);
-    border-radius: 45px;
-    transition: .5s;
-}
-
-.header-carousel .owl-dots .owl-dot.active {
-    width: 60px;
-    height: 60px;
-}
-
-.header-carousel .owl-dots .owl-dot img {
-    position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    padding: 2px;
-    border-radius: 45px;
-    transition: .5s;
+    z-index: 0;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.video-content {
+    position: relative;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+/* Botones más llamativos */
+.btn-blue {
+    background-color: var(--blue);
+    color: white;
+    border: 2px solid var(--blue);
+    transition: all 0.3s ease;
+}
+
+.btn-blue:hover {
+    background-color: transparent;
+    color: white;
+    border-color: white;
+}
+
+.btn-green {
+    background-color: var(--primary);
+    color: white;
+    border: 2px solid var(--primary);
+    transition: all 0.3s ease;
+}
+
+.btn-green:hover {
+    background-color: transparent;
+    color: white;
+    border-color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .video-hero-container {
+        height: auto;
+        min-height: 500px;
+    }
+    
+    .video-content {
+        padding: 20px 0;
+    }
+    
+    .video-content h1 {
+        font-size: 2.5rem !important;
+    }
+    
+    .video-content p {
+        font-size: 1rem !important;
+    }
+    
+    .video-content .btn {
+        padding: 10px 20px !important;
+        font-size: 0.9rem;
+    }
+    
+    .d-flex.gap-3 {
+        flex-direction: column;
+        gap: 15px !important;
+    }
 }
 
 .page-header {

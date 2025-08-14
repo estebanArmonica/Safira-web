@@ -7,4 +7,5 @@ urlsClientes =[
     path('contacto/', views.contacto, name='contactos'),
     path('mercado-libre-safira/', views.mercado_libre, name='mercado-libre-safira'),
     path('faq-frecuentes-safira/', views.preguntas_frecuentes, name='faq-frecuentes-safira'),
+    path('blog-safira/', views.blog_safira, name='blog-safira-energia'),
 ]

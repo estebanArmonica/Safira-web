@@ -199,3 +199,431 @@
   filter: grayscale(0%);
   opacity: 1;
 }
+
+/** mercado libre de energia **/
+/* Estilos base */
+.energy-market-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+/* Animación del título */
+.dynamic-title-container {
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+
+.dynamic-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #022873;
+}
+
+.title-line {
+  display: block;
+  transform: translateY(30px);
+  opacity: 0;
+  animation: titleReveal 1s forwards;
+  color: #D95C14;
+}
+
+.title-line:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.title-line:nth-child(2) {
+  animation-delay: 0.4s;
+  color: #D95C14;
+}
+
+.title-line:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes titleReveal {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Contenido de texto */
+.energy-content {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.text-block {
+  margin-bottom: 25px;
+  padding-left: 30px;
+  border-left: 3px solid #80BF21;
+  transform: translateX(-20px);
+  opacity: 0;
+  animation: textReveal 0.8s forwards;
+}
+
+.text-block:nth-child(1) {
+  animation-delay: 0.8s;
+}
+
+.text-block:nth-child(2) {
+  animation-delay: 1s;
+}
+
+@keyframes textReveal {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Bloque legal */
+.legal-block {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 25px;
+  margin-top: 30px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards 1.2s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.legal-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  color: #1A2A36;
+}
+
+.icon-scale {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-color: #80BF21;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12,3L10,5H14L12,3M7,6L5,8H19L17,6M12,9L10,11H14L12,9M7,12L5,14H19L17,12M12,15L10,17H14L12,15M7,18L5,20H19L17,18' fill='%2380BF21'/%3E%3C/svg%3E");
+}
+
+.legal-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.legal-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.legal-item {
+  padding: 12px 0;
+  border-bottom: 1px dashed #e0e0e0;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.legal-item:last-child {
+  border-bottom: none;
+}
+
+.kw-value {
+  background: #f2bd1d;
+  color: black;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  min-width: 100px;
+  text-align: center;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.kw-description {
+  color: #555;
+  flex: 1;
+}
+
+/* Efectos hover */
+.legal-item:hover .kw-value {
+  background: #D95C14;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dynamic-title {
+    font-size: 2rem;
+  }
+
+  .energy-content {
+    font-size: 1rem;
+  }
+
+  .text-block {
+    padding-left: 20px;
+  }
+
+  .legal-block {
+    padding: 20px;
+  }
+
+  .kw-value {
+    min-width: 80px;
+  }
+}
+
+
+/** cuadros **/
+.hover-scale {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.transition-all {
+  transition: all 0.3s ease;
+}
+
+.feature ul li span {
+  line-height: 1.4;
+}
+
+
+/** preguntas frecuentes **/
+/* Estilos generales para los acordeones */
+.dynamic-accordion-section {
+  padding: 80px 0;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+
+
+.center-accordion {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Estilos para el encabezado */
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #1A2A36;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+.title-decoration {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #D95C14, #80BF21);
+  margin: 0 auto;
+}
+
+/* Estilos para los acordeones */
+.dynamic-accordion {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.accordion-item:last-child {
+  border-bottom: none;
+}
+
+.accordion-header {
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.accordion-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #1A2A36;
+  font-weight: 600;
+  flex: 1;
+}
+
+.accordion-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(217, 92, 20, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+  position: relative;
+}
+
+.plus,
+.minus {
+  position: absolute;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #D95C14;
+  transition: all 0.3s ease;
+}
+
+.minus {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  padding: 0 25px;
+}
+
+.accordion-content p,
+.accordion-content ul {
+  color: #4A5568;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.benefits-list li {
+  padding: 10px 0;
+  position: relative;
+  padding-left: 30px;
+}
+
+.benefits-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #80BF21;
+  font-weight: bold;
+}
+
+/* Estado activo */
+.accordion-item.active .accordion-header {
+  background: rgba(26, 42, 54, 0.03);
+}
+
+.accordion-item.active .plus {
+  opacity: 0;
+  transform: rotate(90deg);
+}
+
+.accordion-item.active .minus {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 500px;
+  padding: 0 25px 25px;
+}
+
+/* Botón moderno */
+.modern-button {
+  display: inline-flex;
+  align-items: center;
+   background: linear-gradient(135deg, var(--secondary), var(--primary));
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+.modern-button svg {
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.modern-button:hover {
+  color: #022873;
+}
+
+.modern-button:hover svg {
+  transform: translateX(5px);
+}
+
+/* Efectos hover */
+.accordion-item:hover .accordion-header {
+  background: rgba(26, 42, 54, 0.03);
+}
+
+.accordion-item:hover .accordion-icon {
+  background: rgba(217, 92, 20, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .dynamic-accordion-section {
+    padding: 60px 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .accordion-header {
+    padding: 20px;
+  }
+
+  .accordion-header h3 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .accordion-content {
+    padding: 0 20px;
+  }
+
+  .accordion-item.active .accordion-content {
+    padding: 0 20px 20px;
+  }
+
+  .modern-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}

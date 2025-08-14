@@ -27,3 +27,22 @@ document.addEventListener('DOMContentLoaded', function() {
         return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
     }
 });
+
+
+// acordeones dinamicos
+document.querySelectorAll('.accordion-header').forEach(header => {
+  header.addEventListener('click', () => {
+    const accordionItem = header.parentElement;
+    const isActive = accordionItem.classList.contains('active');
+    
+    // Cerrar todos los acordeones primero
+    document.querySelectorAll('.accordion-item').forEach(item => {
+      item.classList.remove('active');
+    });
+    
+    // Abrir el actual si no estaba activo
+    if (!isActive) {
+      accordionItem.classList.add('active');
+    }
+  });
+});

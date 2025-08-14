@@ -5,25 +5,383 @@
     --blue: #022873;
 }
 
-/*** Contact ***/
-@media (min-width: 992px) {
-    .container.contact {
-        max-width: 100% !important;
-    }
-
-    .contact-text  {
-        padding-left: calc(((100% - 960px) / 2) + .75rem);
-    }
+/* Ultra Dynamic Contact Section */
+.ultra-contact-section {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4ebf3 100%);
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  overflow: hidden;
 }
 
-@media (min-width: 1200px) {
-    .contact-text  {
-        padding-left: calc(((100% - 1140px) / 2) + .75rem);
-    }
+.contact-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 600px;
+  position: relative;
 }
 
-@media (min-width: 1400px) {
-    .contact-text  {
-        padding-left: calc(((100% - 1320px) / 2) + .75rem);
-    }
+/* Dynamic Form Container */
+.dynamic-form-container {
+  flex: 1;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+}
+
+.form-header {
+  margin-bottom: 40px;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: fadeInUp 1s ease 0.3s forwards;
+}
+
+.form-title {
+  font-size: 2.8rem;
+  line-height: 1.3;
+  margin-bottom: 15px;
+}
+
+.title-line {
+  display: block;
+}
+
+.highlight {
+  color: #D95C14;
+  position: relative;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #80BF21;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+.dynamic-form-container:hover .highlight::after {
+  transform: scaleX(1);
+}
+
+.form-subtitle {
+  color: #64748B;
+  font-size: 1.1rem;
+}
+
+/* Ultra Contact Form */
+.ultra-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.floating-input input,
+.floating-input textarea {
+  width: 100%;
+  padding: 20px 15px 10px 45px;
+  border: none;
+  border-bottom: 2px solid #d1d5db;
+  font-size: 1rem;
+  background: transparent;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.floating-input textarea {
+  min-height: 120px;
+  resize: vertical;
+  padding-top: 25px;
+}
+
+.floating-input label {
+  position: absolute;
+  top: 18px;
+  left: 45px;
+  color: #64748B;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.floating-input label i {
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.floating-input input:focus,
+.floating-input textarea:focus {
+  outline: none;
+  border-color: #022873;
+  padding-left: 50px;
+}
+
+.floating-input input:focus + label,
+.floating-input textarea:focus + label,
+.floating-input input:not(:placeholder-shown) + label,
+.floating-input textarea:not(:placeholder-shown) + label {
+  top: 5px;
+  left: 50px;
+  font-size: 0.8rem;
+  color: #022873;
+}
+
+.floating-input input:focus + label i,
+.floating-input textarea:focus + label i,
+.floating-input input:not(:placeholder-shown) + label i,
+.floating-input textarea:not(:placeholder-shown) + label i {
+  color: #D95C14;
+  transform: scale(1.1);
+}
+
+.input-highlight {
+  position: absolute;
+  bottom: 0;
+  left: 45px;
+  width: 0;
+  height: 2px;
+  background: #D95C14;
+  transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.floating-input input:focus ~ .input-highlight,
+.floating-input textarea:focus ~ .input-highlight {
+  width: calc(100% - 45px);
+}
+
+/* Iconos usando Font Awesome */
+.icon-user:before { content: "\f007"; font-family: "Font Awesome 6 Free"; font-weight: 900; }
+.icon-email:before { content: "\f0e0"; font-family: "Font Awesome 6 Free"; font-weight: 900; }
+.icon-tag:before { content: "\f02b"; font-family: "Font Awesome 6 Free"; font-weight: 900; }
+.icon-message:before { content: "\f27a"; font-family: "Font Awesome 6 Free"; font-weight: 900; }
+
+/* reCAPTCHA Container */
+.recaptcha-container {
+  margin: 20px 0 10px;
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+
+.recaptcha-container:hover {
+  transform: scale(1);
+}
+
+/* Submit Button with Particles */
+.submit-btn {
+  position: relative;
+  background: linear-gradient(135deg, #022873 0%, #1A2A36 100%);
+  color: white;
+  border: none;
+  padding: 18px 30px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 5px 15px rgba(2, 40, 115, 0.3);
+  margin-top: 10px;
+}
+
+.submit-btn .btn-text {
+  position: relative;
+  z-index: 2;
+}
+
+.submit-btn .btn-icon {
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.submit-btn .btn-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.submit-btn .particle {
+  position: absolute;
+  background: rgba(255,255,255,0.6);
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.submit-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(2, 40, 115, 0.4);
+}
+
+.submit-btn:hover .btn-icon {
+  transform: translateX(5px);
+}
+
+.submit-btn:hover .particle {
+  animation: particles 1s ease infinite;
+}
+
+.submit-btn:hover .particle:nth-child(1) {
+  top: 20%;
+  left: 20%;
+  width: 8px;
+  height: 8px;
+  animation-delay: 0.1s;
+}
+
+.submit-btn:hover .particle:nth-child(2) {
+  top: 60%;
+  left: 30%;
+  width: 5px;
+  height: 5px;
+  animation-delay: 0.3s;
+}
+
+.submit-btn:hover .particle:nth-child(3) {
+  top: 30%;
+  left: 70%;
+  width: 6px;
+  height: 6px;
+  animation-delay: 0.2s;
+}
+
+.submit-btn:hover .particle:nth-child(4) {
+  top: 70%;
+  left: 80%;
+  width: 4px;
+  height: 4px;
+  animation-delay: 0.4s;
+}
+
+@keyframes particles {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--tx), var(--ty));
+    opacity: 0;
+  }
+}
+
+/* Interactive Map Container */
+.interactive-map-container {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px 0 0 20px;
+  box-shadow: -15px 0 30px rgba(0,0,0,0.1);
+}
+
+.google-map {
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
+  border: none;
+}
+
+.map-ripple-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, transparent 0%, rgba(26,42,54,0.1) 100%);
+  pointer-events: none;
+  animation: ripple 6s ease infinite;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .contact-container {
+    flex-direction: column;
+    min-height: auto;
+  }
+  
+  .dynamic-form-container {
+    padding: 40px;
+  }
+  
+  .interactive-map-container {
+    border-radius: 0 0 20px 20px;
+    min-height: 400px;
+  }
+  
+  .form-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .ultra-contact-section {
+    padding: 60px 0;
+  }
+  
+  .dynamic-form-container {
+    padding: 30px;
+  }
+  
+  .form-title {
+    font-size: 1.8rem;
+  }
+  
+  .floating-input input,
+  .floating-input textarea {
+    padding-left: 40px;
+  }
+  
+  .floating-input label {
+    left: 40px;
+  }
+  
+  .input-highlight {
+    left: 40px;
+  }
 }

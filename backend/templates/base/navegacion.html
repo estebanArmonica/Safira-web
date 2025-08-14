@@ -5,7 +5,7 @@
             <div class="d-flex align-items-center">
                 <div class="top-bar-item me-4">
                     <i class="fas fa-map-marker-alt me-2 text-primary"></i>
-                    <span>Pedro de Valdivia 1215, Oficina 309 Providencia, Chile</span>
+                    <span>Orinoco 90, piso 21, Las Condes, Santiago</span>
                 </div>
                 <div class="top-bar-item">
                     <i class="far fa-clock me-2 text-primary"></i>
@@ -54,6 +54,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="empresasDropdown">Empresas</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="https://gpsafira.com.br/home">Grupo Safira</a>
+                        <a class="dropdown-item" href="#">Que es Safira Luce</a>
                     </div>
                 </li>
                 <li class="nav-item">
@@ -62,10 +63,13 @@
                 <li class="nav-item">
                     <a class="nav-link {% if 'faq-frecuentes-safira' in request.path %}active{% endif %}" href="{% url 'faq-frecuentes-safira' %}">FAQs</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if 'blog-safira' in request.path %}active{% endif %}" href="{% url 'blog-safira-energia' %}">Blog</a>
+                </li>
             </ul>
 
             <div class="d-flex">
-                <a href="{% url 'cotizaciones' %}" class="btn btn-outline-primary rounded-0">
+                <a href="{% url 'cotizaciones' %}" class="btn btn-subscribe rounded-0">
                     Solicitar Cotización <i class="fas fa-arrow-right ms-2"></i>
                 </a>
             </div>
