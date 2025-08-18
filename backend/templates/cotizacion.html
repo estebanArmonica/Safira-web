@@ -36,7 +36,7 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
         </div>
 
         <!-- Formulario -->
-        <form class="needs-validation" novalidate>
+        <form class="needs-validation" enctype="multipart/form-data" novalidate>
             {% csrf_token %}
 
             <div class="col-md-12">
@@ -48,7 +48,7 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
                         <span>Seleccionar archivo</span>
                         <small class="text-muted d-block mt-2">Formatos: PDF (Max. 5MB)</small>
                     </label>
-                    <input type="file" id="archivo" class="file-input" required>
+                    <input type="file" accept=".pdf" id="archivo" class="file-input" required>
 
                     <!-- Este div aparecerá cuando se seleccione un archivo -->
                     <div id="file-preview" class="file-selected" style="display: none;">
@@ -72,10 +72,8 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
                     <label for="nombre" class="form-label fw-medium" style="color: #022873;">Nombre completo <span
                             class="text-danger">*</span></label>
                     <div class="input-group">
-                        <span class="input-group-text"
-                            style="background-color: #f1f3f5; color: #80BF21; border-right: none;"><i
-                                class="bi bi-person"></i></span>
-                        <input type="text" class="form-control" id="nombre" style="border-left: none;" required>
+                        <span class="input-group-text" style="background-color: #f1f3f5; color: #80BF21; border-right: none;"><i class="bi bi-person"></i></span>
+                        <input type="text" class="form-control" placeholder="ej: Esteban Canales" id="nombre" style="border-left: none;" required>
                     </div>
                 </div>
 
@@ -83,21 +81,17 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
                     <label for="email" class="form-label fw-medium" style="color: #022873;">Correo electrónico <span
                             class="text-danger">*</span></label>
                     <div class="input-group">
-                        <span class="input-group-text"
-                            style="background-color: #f1f3f5; color: #80BF21; border-right: none;"><i
-                                class="bi bi-envelope"></i></span>
-                        <input type="email" class="form-control" id="email" style="border-left: none;" required>
+                        <span class="input-group-text" style="background-color: #f1f3f5; color: #80BF21; border-right: none;"><i class="bi bi-envelope"></i></span>
+                        <input type="email" class="form-control" placeholder="tucorreo@empresa.cl" id="email" style="border-left: none;" required>
                     </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <label for="telefono" class="form-label fw-medium" style="color: #022873;">Teléfono <span
                             class="text-danger">*</span></label>
                     <div class="input-group">
-                        <span class="input-group-text"
-                            style="background-color: #f1f3f5; color: #80BF21; border-right: none;"><i
-                                class="bi bi-phone"></i></span>
-                        <input type="tel" class="form-control" id="telefono" style="border-left: none;" required>
+                        <span class="input-group-text" style="background-color: #f1f3f5; color: #80BF21; border-right: none;"><i class="bi bi-phone"></i></span>
+                        <input type="number" class="form-control" placeholder="9 333111222" id="telefono" style="border-left: none;" required>
                     </div>
                 </div>
             </div>
@@ -107,10 +101,8 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
                 <div class="col-md-6">
                     <label for="rut" class="form-label fw-medium" style="color: #022873;">RUT empresa <span class="text-danger">*</span></label>
                     <div class="input-group">
-                        <span class="input-group-text"
-                            style="background-color: #f1f3f5; color: #80BF21; border-right: none;"><i
-                                class="bi bi-building"></i></span>
-                        <input type="text" class="form-control" id="rut" style="border-left: none;" required>
+                        <span class="input-group-text" style="background-color: #f1f3f5; color: #80BF21; border-right: none;"><i class="bi bi-building"></i></span>
+                        <input type="text" class="form-control" placeholder="11.111.111-1 (con puntos y guión)" id="rut" style="border-left: none;" required>
                     </div>
                 </div>
 
@@ -118,10 +110,8 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
                     <label for="empresa" class="form-label fw-medium" style="color: #022873;">Nombre empresa <span
                             class="text-danger">*</span></label>
                     <div class="input-group">
-                        <span class="input-group-text"
-                            style="background-color: #f1f3f5; color: #80BF21; border-right: none;"><i
-                                class="bi bi-card-text"></i></span>
-                        <input type="text" class="form-control" id="empresa" style="border-left: none;" required>
+                        <span class="input-group-text" style="background-color: #f1f3f5; color: #80BF21; border-right: none;"><i class="bi bi-card-text"></i></span>
+                        <input type="text" class="form-control" placeholder="Safira Energía Chile" id="empresa" style="border-left: none;" required>
                     </div>
                 </div>
 
@@ -175,14 +165,35 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
                 </div>
 
                 <div class="col-md-6">
-                    <label for="consumoMensual" class="form-label fw-medium" style="color: #022873;">Consumo mensual (kWh) <span
+                    <label for="consumoMensual" class="form-label fw-medium" style="color: #022873;">Consumo de electricidad (kWh) <span
                             class="text-danger">*</span></label>
                     <div class="input-group">
                         <span class="input-group-text"
                             style="background-color: #f1f3f5; color: #80BF21; border-right: none;"><i
                                 class="bi bi-graph-up"></i></span>
-                        <input type="number" class="form-control" id="consumoMensual" style="border-left: none;"
-                            required>
+                        <input type="number" class="form-control" placeholder="Ingrese consumo (kWh)" id="consumoMensual" style="border-left: none;" required>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="consumoMensual" class="form-label fw-medium" style="color: #022873;">Demanda máxima (kWh) <span
+                            class="text-danger">*</span></label>
+                    <div class="input-group">
+                        <span class="input-group-text"
+                            style="background-color: #f1f3f5; color: #80BF21; border-right: none;"><i
+                                class="bi bi-graph-up"></i></span>
+                        <input type="number" class="form-control" placeholder="Ingrese la demanda (kWh)" id="demandaMaxima" style="border-left: none;" required>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="consumoMensual" class="form-label fw-medium" style="color: #022873;">Demanda máxima en hora punta (kWh) <span
+                            class="text-danger">*</span></label>
+                    <div class="input-group">
+                        <span class="input-group-text"
+                            style="background-color: #f1f3f5; color: #80BF21; border-right: none;"><i
+                                class="bi bi-graph-up"></i></span>
+                        <input type="number" class="form-control" placeholder="Ingrese la demanda (kWh)" id="demandaMaximaHp" style="border-left: none;" required>
                     </div>
                 </div>
 
@@ -190,18 +201,15 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
                     <label for="direccion" class="form-label fw-medium" style="color: #022873;">Dirección completa <span
                             class="text-danger">*</span></label>
                     <div class="input-group">
-                        <span class="input-group-text align-items-start"
-                            style="background-color: #f1f3f5; color: #80BF21; border-right: none; padding-top: 0.8rem;"><i
-                                class="bi bi-house-door"></i></span>
-                        <textarea class="form-control" id="direccion" rows="2" style="border-left: none;"
-                            required></textarea>
+                        <span class="input-group-text align-items-start" style="background-color: #f1f3f5; color: #80BF21; border-right: none; padding-top: 0.8rem;"><i class="bi bi-house-door"></i></span>
+                        <textarea class="form-control" placeholder="ej: Las Rosas 852" id="direccion" rows="2" style="border-left: none;" required></textarea>
                     </div>
                 </div>
             </div>
 
             <!-- Botón de envío -->
             <div class="text-center mt-5">
-                <button type="submit" class="btn btn-subscribe btn-lg rounded-0 px-5 py-3 fw-bold">
+                <button type="submit" id="btnSolicitarCotizacion" class="btn btn-subscribe btn-lg rounded-0 px-5 py-3 fw-bold">
                     Solicitar cotización
                     <i class="fa-solid fa-check"></i>
                 </button>

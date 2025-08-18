@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.clientes.apps.ClientesConfig',
     'apps.oferta.apps.OfertaConfig',
+    'apps.blogs.apps.BlogsConfig',
     'sweetify',
     'mapbox_location_field'
 ]
@@ -159,3 +160,7 @@ EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+# LocationQ
+LOCATIONIQ_API_KEY = config('LOCATIONIQ_API_KEY')
+LOCATIONIQ_URL = config('LOCATIONIQ_URL')

@@ -1,0 +1,35 @@
+{% extends 'base/index.html' %}
+{% load static %}
+
+{% load static %}
+
+{% block content %}
+<article class="blog-single">
+    <div class="container">
+        <div class="blog-header">
+            <div class="category-badge">{{ post.get_category_display }}</div>
+            <h1 class="blog-title">{{ post.title }}</h1>
+            <div class="blog-meta">
+                <span class="publication-date">{{ post.publication_date|date:"d F Y" }}</span>
+                {% if post.reading_time %}
+                <span class="reading-time">{{ post.reading_time }} min lectura</span>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="blog-featured-image">
+            <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
+        </div>
+
+        <div class="blog-content">
+            {{ post.content|safe }}
+        </div>
+
+        <div class="blog-footer">
+            <a href="{% url 'blog_home' %}" class="back-to-blog">
+                <i class="fas fa-arrow-left"></i> Volver al blog
+            </a>
+        </div>
+    </div>
+</article>
+{% endblock %}
