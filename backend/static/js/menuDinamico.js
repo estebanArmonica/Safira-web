@@ -46,3 +46,15 @@ if (document.readyState === 'loading') {
 } else {
     initMobileMenu();
 }
+
+// Detectar si es Chrome y mostrar advertencia
+const isChrome = '/Chrome/'.test(navigator.userAgent) && !'/Edge/'.test(navigator.userAgent);
+
+if(isChrome) {
+    document.getElementById('chrome-warning').style.display = 'block';
+
+    // Ocultar después de 10 segundos
+    setTimeout(() => {
+        document.getElementById('chrome-warning').style.display = 'none';
+    }, 10000)
+}

@@ -5,19 +5,28 @@ Safira Energía - Contactanos en Safira Chile
 {% endblock %}
 
 {% block content %}
-<!-- Page Header Start -->
-<div class="container-fluid page-header py-5 mb-5">
-  <div class="container py-5">
-    <h1 class="display-3 text-white mb-3 animated slideInDown">Contacto</h1>
-    <nav aria-label="breadcrumb animated slideInDown">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a class="text-white" href="/home">Inicio</a></li>
-        <li class="breadcrumb-item text-white active" aria-current="page">Contactanos</li>
-      </ol>
-    </nav>
-  </div>
-</div>
-<!-- Page Header End -->
+<!-- Dynamic Header Start -->
+<header class="dynamic-header" id="dynamicHeader">
+    <div class="header-content">
+        <h1 class="main-title">Contactanos</h1>
+        <p class="subtitle">Contactanos para poder ayduarte en cualquier tipo de inquietud o dudas</p>
+
+        <nav class="modern-breadcrumb" aria-label="breadcrumb">
+            <div class="breadcrumb-item">
+                <a href="{% url 'home' %}" class="breadcrumb-link">
+                    <i class="fas fa-home"></i> Inicio
+                </a>
+            </div>
+            <span class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></span>
+            <div class="breadcrumb-item">
+                <span class="breadcrumb-active">
+                  <i class="fas fa-headset"></i> Contacto
+                </span>
+            </div>
+        </nav>
+    </div>
+</header>
+<!-- Dynamic Header End -->
 
 <!-- Contact Start -->
 <div class="container-xxl py-5">

@@ -5,19 +5,28 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
 {% endblock %}
 
 {% block content %}
-<!-- Page Header Start -->
-<div class="container-fluid page-header py-5 mb-5">
-    <div class="container py-5">
-        <h1 class="display-3 text-white mb-3 animated slideInDown">Cotiza con nosotros</h1>
-        <nav aria-label="breadcrumb animated slideInDown">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a class="text-white" href="/home">Inicio</a></li>
-                <li class="breadcrumb-item text-white active" aria-current="page">Cotización</li>
-            </ol>
+<!-- Dynamic Header Start -->
+<header class="dynamic-header" id="dynamicHeader">
+    <div class="header-content">
+        <h1 class="main-title">Solicita tu cotización</h1>
+        <p class="subtitle">Con Safira Energía Chile impulsaras tu empresa</p>
+
+        <nav class="modern-breadcrumb" aria-label="breadcrumb">
+            <div class="breadcrumb-item">
+                <a href="{% url 'home' %}" class="breadcrumb-link">
+                    <i class="fas fa-home"></i> Inicio
+                </a>
+            </div>
+            <span class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></span>
+            <div class="breadcrumb-item">
+                <span class="breadcrumb-active">
+                    <i class="fas fa-bolt"></i> Solicitud
+                </span>
+            </div>
         </nav>
     </div>
-</div>
-<!-- Page Header End -->
+</header>
+<!-- Dynamic Header End -->
 
 <div class="container-fluid py-5">
     <div class="container">
@@ -36,19 +45,19 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
         </div>
 
         <!-- Formulario -->
-        <form class="needs-validation" enctype="multipart/form-data" novalidate>
+        <form method="post" action="{% url 'cotizaciones' %}" id="cotizacionForm" class="needs-validation" enctype="multipart/form-data" novalidate>
             {% csrf_token %}
 
             <div class="col-md-12">
                 <label class="form-label fw-medium" style="color: #022873;">Adjuntar archivo <span class="text-danger">*</span></label>
 
                 <div class="file-input-container">
-                    <label for="archivo" class="file-input-label">
+                    <label for="id_archivo" class="file-input-label">
                         <i class="bi bi-cloud-arrow-up"></i>
                         <span>Seleccionar archivo</span>
                         <small class="text-muted d-block mt-2">Formatos: PDF (Max. 5MB)</small>
                     </label>
-                    <input type="file" accept=".pdf" id="archivo" class="file-input" required>
+                    {{ form.archivo }}
 
                     <!-- Este div aparecerá cuando se seleccione un archivo -->
                     <div id="file-preview" class="file-selected" style="display: none;">
@@ -63,105 +72,100 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
                             <i class="bi bi-trash"></i>
                         </button>
                     </div>
+                    <span class="text-danger">{{ form.erros.archivo }}</span>
                 </div>
             </div>
 
             <!-- Fila 1: Información personal -->
             <div class="row g-4 mb-4">
                 <div class="col-md-6">
-                    <label for="nombre" class="form-label fw-medium" style="color: #022873;">Nombre completo <span
+                    <label for="nombrePersona" class="form-label fw-medium" style="color: #022873;">Nombre completo <span
                             class="text-danger">*</span></label>
                     <div class="input-group">
                         <span class="input-group-text" style="background-color: #f1f3f5; color: #80BF21; border-right: none;"><i class="bi bi-person"></i></span>
-                        <input type="text" class="form-control" placeholder="ej: Esteban Canales" id="nombre" style="border-left: none;" required>
+                        {{ form.nom_person }}
                     </div>
+                    <span class="text-danger">{{ form.erros.nom_person }}</span>
                 </div>
 
                 <div class="col-md-6">
-                    <label for="email" class="form-label fw-medium" style="color: #022873;">Correo electrónico <span
+                    <label for="correoElectronico" class="form-label fw-medium" style="color: #022873;">Correo electrónico <span
                             class="text-danger">*</span></label>
                     <div class="input-group">
                         <span class="input-group-text" style="background-color: #f1f3f5; color: #80BF21; border-right: none;"><i class="bi bi-envelope"></i></span>
-                        <input type="email" class="form-control" placeholder="tucorreo@empresa.cl" id="email" style="border-left: none;" required>
+                        {{ form.correo }}
                     </div>
+                    <span class="text-danger">{{ form.erros.correo }}</span>
                 </div>
 
                 <div class="col-md-12">
-                    <label for="telefono" class="form-label fw-medium" style="color: #022873;">Teléfono <span
+                    <label for="numTelefono" class="form-label fw-medium" style="color: #022873;">Teléfono <span
                             class="text-danger">*</span></label>
                     <div class="input-group">
                         <span class="input-group-text" style="background-color: #f1f3f5; color: #80BF21; border-right: none;"><i class="bi bi-phone"></i></span>
-                        <input type="number" class="form-control" placeholder="9 333111222" id="telefono" style="border-left: none;" required>
+                        {{ form.telefono }}
                     </div>
+                    <span class="text-danger">{{ form.erros.telefono }}</span>
                 </div>
             </div>
 
             <!-- Fila 2: Información empresarial -->
             <div class="row g-4 mb-4">
                 <div class="col-md-6">
-                    <label for="rut" class="form-label fw-medium" style="color: #022873;">RUT empresa <span class="text-danger">*</span></label>
+                    <label for="rutEmpresa" class="form-label fw-medium" style="color: #022873;">RUT empresa <span class="text-danger">*</span></label>
                     <div class="input-group">
                         <span class="input-group-text" style="background-color: #f1f3f5; color: #80BF21; border-right: none;"><i class="bi bi-building"></i></span>
-                        <input type="text" class="form-control" placeholder="11.111.111-1 (con puntos y guión)" id="rut" style="border-left: none;" required>
+                        {{ form.rut_emp }}
                     </div>
+                    <span class="text-danger">{{ form.erros.rut_emp }}</span>
                 </div>
 
                 <div class="col-md-6">
-                    <label for="empresa" class="form-label fw-medium" style="color: #022873;">Nombre empresa <span
+                    <label for="nombreEmpresa" class="form-label fw-medium" style="color: #022873;">Nombre empresa <span
                             class="text-danger">*</span></label>
                     <div class="input-group">
                         <span class="input-group-text" style="background-color: #f1f3f5; color: #80BF21; border-right: none;"><i class="bi bi-card-text"></i></span>
-                        <input type="text" class="form-control" placeholder="Safira Energía Chile" id="empresa" style="border-left: none;" required>
+                        {{ form.nom_emp }}
                     </div>
+                    <span class="text-danger">{{ form.erros.nom_emp }}</span>
                 </div>
 
                 <div class="col-md-6">
-                    <label for="tipo_cliente" class="form-label fw-medium" style="color: #022873;">Tipo de cliente <span
+                    <label for="id_tip_cli" class="form-label fw-medium" style="color: #022873;">Tipo de cliente <span
                             class="text-danger">*</span></label>
                     <div class="input-group">
                         <span class="input-group-text"
                             style="background-color: #f1f3f5; color: #80BF21; border-right: none;"><i
                                 class="bi bi-diagram-3"></i></span>
-                        <select class="form-select" id="tipo_cliente" style="border-left: none;" required>
-                            <option value="" selected disabled>Seleccionar...</option>
-                            <option value="REGULADO">Regulado</option>
-                            <option value="LIBRE">Libre</option>
-                        </select>
+                        {{ form.tipo_cliente }}
                     </div>
+                    <span class="text-danger">{{ form.erros.tipo_cliente }}</span>
                 </div>
 
                 <div class="col-md-6">
-                    <label for="distribuidora" class="form-label fw-medium" style="color: #022873;">Distribuidora <span
+                    <label for="id_distrib" class="form-label fw-medium" style="color: #022873;">Distribuidora <span
                             class="text-danger">*</span></label>
                     <div class="input-group">
                         <span class="input-group-text"
                             style="background-color: #f1f3f5; color: #80BF21; border-right: none;"><i
                                 class="bi bi-lightning-charge"></i></span>
-                        <select class="form-select" id="distribuidora" style="border-left: none;" required>
-                            <option value="" selected disabled>Seleccionar...</option>
-                            <option value="ENEL">Enel</option>
-                            <option value="CHILQUINTA">Chilquinta</option>
-                            <option value="LIGHT">Light</option>
-                        </select>
+                        {{ form.distribuidora }}
                     </div>
+                    <span class="text-danger">{{ form.erros.distribuidora }}</span>
                 </div>
             </div>
 
             <!-- Fila 3: Ubicación y consumo -->
             <div class="row g-4 mb-4">
                 <div class="col-md-6">
-                    <label for="comuna" class="form-label fw-medium" style="color: #022873;">Comuna <span class="text-danger">*</span></label>
+                    <label for="id_comuna" class="form-label fw-medium" style="color: #022873;">Comuna <span class="text-danger">*</span></label>
                     <div class="input-group">
                         <span class="input-group-text"
                             style="background-color: #f1f3f5; color: #80BF21; border-right: none;"><i
                                 class="bi bi-geo-alt"></i></span>
-                        <select class="form-select" id="comuna" style="border-left: none;" required>
-                            <option value="" selected disabled>Seleccionar...</option>
-                            <option value="Santiago">Santiago</option>
-                            <option value="Providencia">Providencia</option>
-                            <option value="Las Condes">Las Condes</option>
-                        </select>
+                        {{ form.comuna }}
                     </div>
+                    <span class="text-danger">{{ form.erros.comuna }}</span>
                 </div>
 
                 <div class="col-md-6">
@@ -171,48 +175,49 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
                         <span class="input-group-text"
                             style="background-color: #f1f3f5; color: #80BF21; border-right: none;"><i
                                 class="bi bi-graph-up"></i></span>
-                        <input type="number" class="form-control" placeholder="Ingrese consumo (kWh)" id="consumoMensual" style="border-left: none;" required>
+                        {{ form.consum_elect }}
                     </div>
+                    <span class="text-danger">{{ form.erros.consum_elect }}</span>
                 </div>
 
                 <div class="col-md-6">
-                    <label for="consumoMensual" class="form-label fw-medium" style="color: #022873;">Demanda máxima (kWh) <span
+                    <label for="demandaMaxima" class="form-label fw-medium" style="color: #022873;">Demanda máxima (kWh) <span
                             class="text-danger">*</span></label>
                     <div class="input-group">
                         <span class="input-group-text"
                             style="background-color: #f1f3f5; color: #80BF21; border-right: none;"><i
                                 class="bi bi-graph-up"></i></span>
-                        <input type="number" class="form-control" placeholder="Ingrese la demanda (kWh)" id="demandaMaxima" style="border-left: none;" required>
+                        {{ form.demanda_max }}
                     </div>
+                    <span class="text-danger">{{ form.erros.demanda_max }}</span>
                 </div>
 
                 <div class="col-md-6">
-                    <label for="consumoMensual" class="form-label fw-medium" style="color: #022873;">Demanda máxima en hora punta (kWh) <span
+                    <label for="demandaMaximaHp" class="form-label fw-medium" style="color: #022873;">Demanda máxima en hora punta (kWh) <span
                             class="text-danger">*</span></label>
                     <div class="input-group">
                         <span class="input-group-text"
                             style="background-color: #f1f3f5; color: #80BF21; border-right: none;"><i
                                 class="bi bi-graph-up"></i></span>
-                        <input type="number" class="form-control" placeholder="Ingrese la demanda (kWh)" id="demandaMaximaHp" style="border-left: none;" required>
+                        {{ form.demanda_max_hp }}
                     </div>
+                    <span class="text-danger">{{ form.erros.demanda_max_hp }}</span>
                 </div>
 
                 <div class="col-12">
-                    <label for="direccion" class="form-label fw-medium" style="color: #022873;">Dirección completa <span
+                    <label for="direcciones" class="form-label fw-medium" style="color: #022873;">Dirección completa <span
                             class="text-danger">*</span></label>
                     <div class="input-group">
                         <span class="input-group-text align-items-start" style="background-color: #f1f3f5; color: #80BF21; border-right: none; padding-top: 0.8rem;"><i class="bi bi-house-door"></i></span>
-                        <textarea class="form-control" placeholder="ej: Las Rosas 852" id="direccion" rows="2" style="border-left: none;" required></textarea>
+                        {{ form.direccion }}
                     </div>
+                    <span class="text-danger">{{ form.erros.direccion }}</span>
                 </div>
             </div>
 
             <!-- Botón de envío -->
             <div class="text-center mt-5">
-                <button type="submit" id="btnSolicitarCotizacion" class="btn btn-subscribe btn-lg rounded-0 px-5 py-3 fw-bold">
-                    Solicitar cotización
-                    <i class="fa-solid fa-check"></i>
-                </button>
+                <input type="submit" class="btn btn-subscribe btn-lg rounded-0 px-5 py-3 fw-bold" value="Solicitar cotización">
             </div>
         </form>
     </div>

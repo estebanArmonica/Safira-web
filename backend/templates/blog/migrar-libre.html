@@ -1,0 +1,418 @@
+{% extends 'base/index.html' %}
+{% load static %}
+
+{% block title %}
+Migrar de Cliente Regulado a Libre - Safira Energía Chile
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section with Gradient -->
+<section class="hero-blog" style="padding: 80px 0 60px; color: white; position: relative; overflow: hidden;">
+    <div class="container position-relative">
+        <div class="row justify-content-center">
+            <div class="col-lg-9 text-center">
+                <div class="hero-content">
+                    <h1 class="display-4 fw-bold mb-4 text-white">Cómo migrar de cliente regulado a cliente libre</h1>
+                    <p class="lead mb-4">Descubre el proceso estratégico en 3 pasos para una transición exitosa al mercado energético liberalizado</p>
+                    <div class="d-flex justify-content-center flex-wrap">
+                        <span class="badge bg-white text-dark me-2 mb-2 px-3 py-2 rounded-pill">Mercado Libre</span>
+                        <span class="badge bg-light-green text-white me-2 mb-2 px-3 py-2 rounded-pill">Energía Verde</span>
+                        <span class="badge bg-light-blue text-white mb-2 px-3 py-2 rounded-pill">Ahorro Garantizado</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-shape" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100px; background: white; clip-path: polygon(0 100%, 100% 100%, 100% 0);"></div>
+</section>
+
+<!-- Content Section -->
+<section class="py-5" style="background: white;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <!-- Intro Section -->
+                <div class="intro-section mb-5 text-center">
+                    <p class="lead text-dark mb-4">La transición de tarifa regulada a cliente libre es un proceso estratégico que requiere aproximadamente <span class="fw-bold text-gradient">12 meses de planificación</span>. En Safira Energía Chile, te acompañamos en cada etapa para garantizar una migración exitosa hacia un modelo energético más eficiente y sostenible.</p>
+                    
+                    <div class="requirements-card p-4 p-md-5 mt-4 rounded-4 shadow-sm" style="background: linear-gradient(to right, #f8f9fa, #e8f4f8); border-left: 5px solid #D95C14;">
+                        <h3 class="mb-4 text-center">📋 Requisitos Previos</h3>
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="d-flex align-items-start">
+                                    <div class="icon-box me-4">
+                                        <i class="fas fa-clock fa-2x text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="mb-2 text-blue">Antigüedad en el Sistema</h5>
+                                        <p class="mb-0 text-blue">Mínimo 4 años en régimen regulado (excepto empresas nuevas)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="d-flex align-items-start">
+                                    <div class="icon-box me-4">
+                                        <i class="fas fa-bolt fa-2x text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="mb-2 text-blue">Potencia Mínima</h5>
+                                        <p class="mb-0 text-blue">Superior a 300 kW de potencia conectada</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Steps Section -->
+                <div class="steps-section mb-5">
+                    <h2 class="text-center mb-5 text-blue">Proceso de Migración en <span class="text-gradient">3 Pasos Claros</span></h2>
+                    
+                    <!-- Step 1 -->
+                    <div class="step-card mb-5">
+                        <div class="row g-0 rounded-4 overflow-hidden shadow-lg">
+                            <div class="col-md-4 step-number-col" style="background: linear-gradient(135deg, #80BF21, #F2BD1D);">
+                                <div class="step-number-content h-100 d-flex align-items-center justify-content-center text-white p-4">
+                                    <div class="text-center">
+                                        <div class="step-icon mb-3">
+                                            <i class="fas fa-envelope-open-text fa-3x"></i>
+                                        </div>
+                                        <h2 class="step-num">01</h2>
+                                        <h3 class="h4">Comunicación Formal</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div>
+                                    <h4 class="mb-3">Notificación a tu Distribuidor Actual</h4>
+                                    <p class="mb-4">El primer paso consiste en enviar una carta de intención a tu suministrador actual, manifestando formalmente tu decisión de cambiar al mercado libre.</p>
+                                    
+                                    <div class="step-details">
+                                        <h5 class="mb-3 border-bottom pb-2">Elementos Clave de la Carta de Intención:</h5>
+                                        <div class="row">
+                                            <div class="mb-3">
+                                                <div class="d-flex align-items-start">
+                                                    <i class="fas fa-calendar-check text-primary me-3 mt-1"></i>
+                                                    <div>
+                                                        <h6 class="mb-1">Periodo de Transición</h6>
+                                                        <p class="small mb-0">Especifica la fecha planificada para iniciar como cliente libre</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <div class="d-flex align-items-start">
+                                                    <i class="fas fa-file-signature text-primary me-3 mt-1"></i>
+                                                    <div>
+                                                        <h6 class="mb-1">Detalles del Contrato</h6>
+                                                        <p class="small mb-0">Incluye la fecha estimada de finalización o firma del nuevo contrato</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="info-box p-3 mt-3 rounded-3" style="background-color: #e8f4f8;">
+                                            <h6 class="mb-2"><i class="fas fa-info-circle me-2"></i>Información Técnica Requerida:</h6>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <ul class="mb-0">
+                                                        <li>Número de identificación del cliente</li>
+                                                        <li>Dirección completa del suministro</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <ul class="mb-0">
+                                                        <li>Potencia contratada (expresada en kWh)</li>
+                                                        <li>Tarifa actualmente vigente</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="step-card mb-5">
+                        <div class="row g-0 rounded-4 overflow-hidden shadow-lg flex-row-reverse">
+                            <div class="col-md-4 step-number-col" style="background: linear-gradient(135deg, #80BF21, #F2BD1D);">
+                                <div class="step-number-content h-100 d-flex align-items-center justify-content-center text-white p-4">
+                                    <div class="text-center">
+                                        <div class="step-icon mb-3">
+                                            <i class="fas fa-search-dollar fa-3x"></i>
+                                        </div>
+                                        <h2 class="step-num">02</h2>
+                                        <h3 class="h4">Selección de Proveedor</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div>
+                                    <h4 class="mb-3">Búsqueda del Proveedor Ideal</h4>
+                                    <p class="mb-4">Este proceso de búsqueda y selección se desarrolla durante el periodo de 12 meses posteriores a la notificación a tu proveedor actual.</p>
+                                    
+                                    <div class="step-details">
+                                        <h5 class="mb-3 border-bottom pb-2">Oportunidades al Cambiar de Proveedor:</h5>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-4">
+                                                <div class="text-center p-3 rounded-3 h-100" style="background-color: #f8f9fa;">
+                                                    <i class="fas fa-leaf fa-2x text-primary mb-3"></i>
+                                                    <h6 class="mb-2">Energía Verde</h6>
+                                                    <p class="small mb-0">Selecciona energía 100% renovable para tus operaciones</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <div class="text-center p-3 rounded-3 h-100" style="background-color: #f8f9fa;">
+                                                    <i class="fas fa-digital-tachograph fa-2x text-info mb-3"></i>
+                                                    <h6 class="mb-2">Digitalización</h6>
+                                                    <p class="small mb-0">Accede a servicios tecnológicos avanzados para gestión inteligente</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="alert alert-warning mt-3 rounded-3">
+                                            <i class="fas fa-exclamation-circle me-2"></i>
+                                            <strong>Importante:</strong> Este es el momento crucial para elegir las condiciones que regirán tu suministro durante los próximos cuatro años.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="step-card mb-5">
+                        <div class="row g-0 rounded-4 overflow-hidden shadow-lg">
+                            <div class="col-md-4 step-number-col" style="background: linear-gradient(135deg, #80BF21, #F2BD1D);">
+                                <div class="step-number-content h-100 d-flex align-items-center justify-content-center text-white p-4">
+                                    <div class="text-center">
+                                        <div class="step-icon mb-3">
+                                            <i class="fas fa-handshake fa-3x"></i>
+                                        </div>
+                                        <h2 class="step-num">03</h2>
+                                        <h3 class="h4">Confirmación Final</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8 d-flex">
+                                <div>
+                                    <h4 class="mb-3">Confirmación del Nuevo Suministrador</h4>
+                                    <p>Una vez seleccionado tu nuevo proveedor, deberás formalizar esta elección mediante el envío de una carta de confirmación a tu distribuidora actual.</p>
+                                    
+                                    <div class="step-details mt-4">
+                                        <p>Este documento oficializa tu cambio de régimen y establece las bases para una transición ordenada hacia el mercado libre, garantizando la continuidad del suministro eléctrico sin interrupciones.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Safira Benefits -->
+                <div class="safira-section mb-5 rounded-4 overflow-hidden shadow-lg">
+                    <div class="row g-0">
+                        <div class="col-lg-8">
+                            <div class="p-4 p-md-5 h-100" style="background: linear-gradient(135deg, #80BF21, #F2BD1D); color: white;">
+                                <h2 class="h3 mb-4 text-white">
+                                    Safira Energía Chile: <span class="thin-text text-white">Tu Aliado en la Transición Energética</span>
+                                </h2>
+                                <p class="mb-4">Especializamos nuestra asesoría para pymes y medianas empresas que desean realizar el cambio de régimen regulado a libre.</p>
+                                
+                                <div class="row">
+                                    <div class="col-sm-6 mb-3">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <i class="fas fa-check-circle me-3 text-light-blue"></i>
+                                            <span>Operación con energía 100% renovable</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 mb-3">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <i class="fas fa-check-circle me-3 text-light-blue"></i>
+                                            <span>Flexibilidad contractual personalizada</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 mb-3">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <i class="fas fa-check-circle me-3 text-light-blue"></i>
+                                            <span>Compromiso con la sostenibilidad ambiental</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 mb-3">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <i class="fas fa-check-circle me-3 text-light-blue"></i>
+                                            <span>Plataforma digital de monitoreo de consumos</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="p-4 p-md-5 h-100 d-flex align-items-center" style="color: dakr;">
+                                <div class="text-center">
+                                    <i class="fas fa-headset fa-3x mb-3"></i>
+                                    <h4 class="mb-3 text-dark">¿Necesitas asesoría personalizada?</h4>
+                                    <p class="mb-4">Nuestros expertos te ayudarán a elegir la tarifa más conveniente para tu empresa</p>
+                                    <a href="{% url 'contactos' %}" class="btn btn-subscribe btn-lg rounded-0 px-4">Contactar ahora</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Benefits Grid -->
+                <div class="benefits-grid mb-5">
+                    <h2 class="text-center mb-5 text-blue">Ventajas de Convertirte en <span class="text-gradient">Cliente Libre</span></h2>
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100 border-0 shadow-lg rounded-4">
+                                <div class="card-body p-4 text-center">
+                                    <div class="icon-wrapper mb-4 mx-auto">
+                                        <i class="fas fa-file-contract fa-3x text-primary"></i>
+                                    </div>
+                                    <h4 class="card-title mb-3">Flexibilidad Contractual</h4>
+                                    <p class="card-text">Negocia contratos a medida que se adapten a tus necesidades específicas, incluyendo duración, tarifas flexibles y condiciones personalizadas.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100 border-0 shadow-lg rounded-4">
+                                <div class="card-body p-4 text-center">
+                                    <div class="icon-wrapper mb-4 mx-auto">
+                                        <i class="fas fa-chart-line fa-3x text-primary"></i>
+                                    </div>
+                                    <h4 class="card-title mb-3">Administración Inteligente</h4>
+                                    <p class="card-text">Monitorea tus consumos en tiempo real con nuestra plataforma digital, facilitando una gestión energética eficiente basada en datos precisos.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Final CTA -->
+                <div class="final-cta text-center p-5 rounded-4 shadow-lg mb-5" style="background: linear-gradient(135deg, #80BF21, #F2BD1D); color: white;">
+                    <h3 class="h2 mb-3 text-white">¿Listo para dar el paso hacia el mercado libre?</h3>
+                    <p class="mb-4 lead">Únete a las empresas que ya están disfrutando de los beneficios de una gestión energética moderna y eficiente</p>
+                    <a href="{% url 'cotizaciones' %}" class="btn btn-light btn-lg rounded-0 px-4 me-3">Solicitar Cotización</a>
+                    <a href="#" class="btn btn-outline-light btn-lg rounded-0 px-4">Ver guia</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .text-gradient {
+        background: linear-gradient(135deg, #80BF21 0%, #F2BD1D 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    .bg-light-green {
+        background-color: #D95C14 !important;
+        color: white;
+    }
+    
+    .bg-light-blue {
+        background-color: #022873 !important;
+    }
+    
+    .text-light-green {
+        color: #80BF21 !important;
+    }
+    
+    .hero-blog {
+        background: linear-gradient(135deg, #80BF21, #F2BD1D);
+        padding: 80px 0 60px;
+        color: white;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .hero-shape {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: white;
+        clip-path: polygon(0 100%, 100% 100%, 100% 0);
+    }
+    
+    .step-card {
+        transition: transform 0.3s ease;
+    }
+    
+    .step-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .step-number-col {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .step-num {
+        font-size: 3.5rem;
+        font-weight: 800;
+        line-height: 1;
+        margin-bottom: 0.5rem;
+        color: #022873;
+    }
+    
+    .step-icon {
+        width: 80px;
+        height: 80px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .h4 {
+        color: #022873;
+    }
+    
+    .icon-wrapper {
+        width: 100px;
+        height: 100px;
+        background: rgba(26, 95, 122, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .icon-box {
+        width: 60px;
+        height: 60px;
+        background: rgba(26, 95, 122, 0.1);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    @media (max-width: 768px) {
+        .step-number-col {
+            padding: 2rem 1rem !important;
+        }
+        
+        .step-num {
+            font-size: 2.5rem;
+        }
+        
+        .hero-blog h1 {
+            font-size: 2.2rem;
+        }
+    }
+</style>
+
+<!-- Font Awesome for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+{% endblock %}

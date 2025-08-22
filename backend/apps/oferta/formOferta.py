@@ -6,8 +6,7 @@ class FormularioCotizacion(forms.Form):
                                  min_length=4, max_length=50,
                                  widget=forms.TextInput(attrs={
                                      'class': 'form-control',
-                                     'placeholder': '* Su Nombre',
-                                     'style': 'height: 55px;',
+                                     'placeholder': 'ej: Esteban Canales',
                                      'id': 'nombrePersona'}),
                                  required=True)
     
@@ -15,8 +14,7 @@ class FormularioCotizacion(forms.Form):
                               min_length=7, max_length=100,
                               widget=forms.TextInput(attrs={
                                   'class': 'form-control',
-                                  'placeholder': '* Empresa',
-                                  'style': 'height: 55px;',
+                                  'placeholder': 'Safira Energía Chile',
                                   'id': 'nombreEmpresa'}),
                               required=True)
     
@@ -24,8 +22,7 @@ class FormularioCotizacion(forms.Form):
                               min_length=7, max_length=100,
                               widget=forms.TextInput(attrs={
                                   'class': 'form-control',
-                                  'placeholder': '* RUT',
-                                  'style': 'height: 55px;',
+                                  'placeholder': '11.111.111-1 (con puntos y guión)',
                                   'id': 'rutEmpresa'}),
                               required=True)
     
@@ -33,8 +30,7 @@ class FormularioCotizacion(forms.Form):
                              min_length=12, max_length=100,
                              widget=forms.EmailInput(attrs={
                                  'class': 'form-control',
-                                 'placeholder': '* Su Correo Electrónico',
-                                 'style': 'height: 55px;',
+                                 'placeholder': 'tucorreo@empresa.cl',
                                  'type': 'email',
                                  'id': 'correoElectronico'}),
                              required=True)
@@ -42,39 +38,65 @@ class FormularioCotizacion(forms.Form):
     telefono = forms.CharField(label='numTelefono',
                                widget=forms.TextInput(attrs={
                                    'class': 'form-control',
-                                   'style': 'height: 55px;',
-                                   'placeholder': '* Su Telefono',
+                                   'placeholder': '9 333111222',
                                    'type': 'number',
                                    'id': 'numTelefono'}),
                                required=True)
     
+    consum_elect = forms.CharField(label='consumElect',
+                                   widget=forms.TextInput(attrs={
+                                       'class': 'form-control',
+                                       'style': 'border-left: none;',
+                                       'placeholder': 'Ingrese consumo (kWh)',
+                                       'type': 'number',
+                                       'id': 'consumoMensual'}),
+                                   required=True)
+    
+    demanda_max = forms.CharField(label='demandaMax',
+                                   widget=forms.TextInput(attrs={
+                                       'class': 'form-control',
+                                       'style': 'border-left: none;',
+                                       'placeholder': 'Ingrese la demanda (kWh)',
+                                       'type': 'number',
+                                       'id': 'demandaMaxima'}),
+                                   required=True)
+    
+    demanda_max_hp = forms.CharField(label='demandaMaxHp',
+                                   widget=forms.TextInput(attrs={
+                                       'class': 'form-control',
+                                       'style': 'border-left: none;',
+                                       'placeholder': 'Ingrese la demanda (kWh)',
+                                       'type': 'number',
+                                       'id': 'demandaMaximaHp'}),
+                                   required=True)
+    
     comuna = forms.ModelChoiceField(label='comunas',
                                     queryset=Comuna.objects.filter(id_region=7).order_by('nom_comuna'),
-                                    empty_label='* Comuna',
+                                    empty_label='Seleccionar...',
                                     widget=forms.Select(attrs={
-                                        'class': 'form-select border-0',
-                                        'style': 'height: 55px;',
+                                        'class': 'form-select',
+                                        'style': 'border-left: none;',
                                         'id': 'id_comuna',
                                         'required': 'required'}),
                                     required=True)
     
     tipo_cliente = forms.ModelChoiceField(label='tip_cliente',
                                      queryset=TipoCliente.objects.all(),
-                                     empty_label="* Tipo de Cliente",
+                                     empty_label="Seleccionar...",
                                      widget=forms.Select(attrs={
-                                        'class': 'form-select border-0',
-                                        'style': 'height: 55px;',
+                                        'class': 'form-select',
+                                        'style': 'border-left: none;',
                                         'aria-placeholder': 'Tipo Cliente',
                                         'required': 'required',
                                         'id': 'id_tip_cli'}),
                                      required=True)
     
     distribuidora = forms.ModelChoiceField(label='dx',
-                                           queryset=Distribuidora.objects.filter(id_distrib=1).order_by('nombre_fantasia'),
-                                           empty_label='Distribuidora',
+                                           queryset=Distribuidora.objects.filter(id_distrib__in=[1,3]).order_by('nombre_fantasia'),
+                                           empty_label='Seleccionar...',
                                            widget=forms.Select(attrs={
-                                                'class': 'form-select border-0',
-                                                'style': 'height: 55px;',
+                                                'class': 'form-select',
+                                                'style': 'border-left: none;',
                                                 'id': 'id_distrib'}),
                                             required=False)
     
@@ -82,15 +104,14 @@ class FormularioCotizacion(forms.Form):
                                 min_length=4, max_length=255,
                                 widget=forms.Textarea(attrs={
                                     'class': 'form-control',
-                                    'placeholder': '* Dirección Completa: (Calle 1234, mi comuna)',
-                                    'style': 'height: 55px;',
+                                    'placeholder': 'ej: Las Rosas 852',
                                     'id': 'direcciones',
                                     'rows': 3}),
                                 required=True)
 
     archivo = forms.FileField(label="Documento (Factura / Boleta)",
                               widget=forms.FileInput(attrs={
-                                'class': 'form-control',
+                                'class': 'file-input',
                                 'accept':'.pdf',
                                 'id':'id_archivo'    
                               }),

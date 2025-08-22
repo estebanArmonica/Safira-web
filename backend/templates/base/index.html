@@ -38,6 +38,9 @@
     <link href="{% static 'css/blog.css' %}" rel="stylesheet">
     <link href="{% static 'css/carruselTestionsContact.css' %}" rel="stylesheet">
     <link href="{% static 'css/footer.css' %}" rel="stylesheet">
+    <link href="{% static 'css/mercado-libre.css' %}" rel="stylesheet">
+    <link href="{% static 'css/nosotros.css' %}" rel="stylesheet">
+    <link href="{% static 'css/header-page-bred.css' %}" rel="stylesheet">
     <link href="https://media4.giphy.com/media/PjmdkiE5U3AIlZ2AYl/source.gif" rel="icon">
 
     {% block css %}
@@ -65,11 +68,13 @@
     {% include 'footers/footer.html' %}
     <!-- end footer-->
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    
+
     <script src="{% static 'lib/wow/wow.min.js' %}"></script>
     <script src="{% static 'lib/easing/easing.min.js' %}"></script>
     <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
@@ -79,10 +84,12 @@
     <script src="{% static 'lib/lightbox/js/lightbox.min.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
     <script src="{% static 'js/dinamicNavbar.js' %}"></script>
-    <script src="{% static 'js/menuDinamico.js' %}"></script>
     <script src="{% static 'js/cardNumericos.js' %}"></script>
     <script src="{% static 'js/fileDinamico.js' %}"></script>
     <script src="{% static 'js/blog.js' %}"></script>
+    <script src="{% static 'js/mercado-libre.js' %}"></script>
+    <script src="{% static 'js/header-page-bred.js' %}"></script>
+    <script src="{% static 'js/pdf-reader-info.js' %}"></script>
     <!-- <script src="{% static 'js/bloquearPantallas.js' %}"></script> -->
     {% block js %}
     {% endblock %}

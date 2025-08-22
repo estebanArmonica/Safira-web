@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const fileInput = document.getElementById('archivo');
+    const fileInput = document.getElementById('id_archivo');
     const filePreview = document.getElementById('file-preview');
     const fileName = document.getElementById('selected-file-name');
     const fileSize = document.getElementById('selected-file-size');

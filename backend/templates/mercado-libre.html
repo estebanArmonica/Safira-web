@@ -5,20 +5,28 @@ Safira Energía - Conoce un poco del Mercado Libre de energía
 {% endblock %}
 
 {% block content %}
-<!-- Page Header Start -->
-<div class="container-fluid page-header py-5 mb-5">
-    <div class="container py-5">
-        <h1 class="display-3 text-white mb-3 animated slideInDown">Nuestro Mercado Libre</h1>
-        <nav aria-label="breadcrumb animated slideInDown">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a class="text-white" href="/home">Inicio</a></li>
-                <li class="breadcrumb-item"><a class="text-white">Personas</a></li>
-                <li class="breadcrumb-item text-white active" aria-current="page">Mercado Libre</li>
-            </ol>
+<!-- Dynamic Header Start -->
+<header class="dynamic-header" id="dynamicHeader">
+    <div class="header-content">
+        <h1 class="main-title">Mercado Libre Eléctrico</h1>
+        <p class="subtitle">Potenciando tu autonomía energética con soluciones inteligentes</p>
+
+        <nav class="modern-breadcrumb" aria-label="breadcrumb">
+            <div class="breadcrumb-item">
+                <a href="{% url 'home' %}" class="breadcrumb-link">
+                    <i class="fas fa-home"></i> Inicio
+                </a>
+            </div>
+            <span class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></span>
+            <div class="breadcrumb-item">
+                <span class="breadcrumb-active">
+                    <i class="fas fa-bolt"></i> Mercado Libre
+                </span>
+            </div>
         </nav>
     </div>
-</div>
-<!-- Page Header End -->
+</header>
+<!-- Dynamic Header End -->
 
 <div class="energy-market-section">
     <!-- Título dinámico -->
@@ -356,254 +364,56 @@ Safira Energía - Conoce un poco del Mercado Libre de energía
 
 <!-- FAQ Dynamic Section -->
 <div class="faq-dynamic-section">
-  <div class="center-accordion">
-    <div class="faq-header">
-      <h2 class="faq-main-title">Preguntas Frecuentes</h2>
-      <p class="faq-subtitle">Encuentra respuestas a las dudas más comunes</p>
-    </div>
+    <div class="center-accordion">
+        <div class="faq-header">
+            <h2 class="faq-main-title">Preguntas Frecuentes</h2>
+            <p class="faq-subtitle">Encuentra respuestas a las dudas más comunes</p>
+        </div>
 
-    <div class="faq-accordion">
-      <!-- Item 1 -->
-      <div class="faq-item">
-        <div class="faq-question">
-          <h3>¿Cómo se basa el mercado libre de energía?</h3>
-          <div class="faq-toggle">
-            <span class="plus-icon">+</span>
-            <span class="minus-icon">−</span>
-          </div>
-        </div>
-        <div class="faq-answer">
-          <p>Empresas con demandas superiores a 300 kW, el mercado libre ofrece autonomía energética real. Aquí, usted negocia directamente precios competitivos y diseña contratos a medida con cláusulas adaptadas a sus patrones de consumo. Podrá seleccionar libremente su comercializador y optar por energía 100% renovable, híbrida o convencional, con certificados que garantizan su origen.</p>
-        </div>
-      </div>
+        <div class="faq-accordion">
+            <!-- Item 1 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>¿Cómo se basa el mercado libre de energía?</h3>
+                    <div class="faq-toggle">
+                        <span class="plus-icon">+</span>
+                        <span class="minus-icon">−</span>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <p>Empresas con demandas superiores a 300 kW, el mercado libre ofrece autonomía energética real.
+                        Aquí, usted negocia directamente precios competitivos y diseña contratos a medida con cláusulas
+                        adaptadas a sus patrones de consumo. Podrá seleccionar libremente su comercializador y optar por
+                        energía 100% renovable, híbrida o convencional, con certificados que garantizan su origen.</p>
+                </div>
+            </div>
 
-      <!-- Item 2 (puedes duplicar este bloque para más preguntas) -->
-      <div class="faq-item">
-        <div class="faq-question">
-          <h3>¿Qué ventajas ofrece el mercado libre?</h3>
-          <div class="faq-toggle">
-            <span class="plus-icon">+</span>
-            <span class="minus-icon">−</span>
-          </div>
+            <!-- Item 2 (puedes duplicar este bloque para más preguntas) -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>¿Qué ventajas ofrece el mercado libre?</h3>
+                    <div class="faq-toggle">
+                        <span class="plus-icon">+</span>
+                        <span class="minus-icon">−</span>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <p>Las ventajas incluyen ahorros significativos en costos energéticos, flexibilidad contractual,
+                        posibilidad de elegir fuentes renovables y acceso a precios competitivos mediante negociación
+                        directa.</p>
+                </div>
+            </div>
         </div>
-        <div class="faq-answer">
-          <p>Las ventajas incluyen ahorros significativos en costos energéticos, flexibilidad contractual, posibilidad de elegir fuentes renovables y acceso a precios competitivos mediante negociación directa.</p>
-        </div>
-      </div>
-    </div>
 
-    <div class="faq-footer">
-      <a href="{% url 'faq-frecuentes-safira' %}" class="faq-button btn-subscribe rounded-0">
-        Ver más FAQs
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </a>
+        <div class="faq-footer">
+            <a href="{% url 'faq-frecuentes-safira' %}" class="faq-button btn-subscribe rounded-0">
+                Ver más FAQs
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </a>
+        </div>
     </div>
-  </div>
 </div>
-
-<style>
-:root{
-    --primary: #80BF21;
-    --secondary: #F2BD1D;
-}
-
-
-.faq-dynamic-section {
-  padding: 80px 0;
-  background: linear-gradient(135deg, #f8fafc 0%, #e6f0f9 100%);
-  font-family: 'Segoe UI', Roboto, sans-serif;
-}
-
-.center-accordion {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.faq-header {
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.faq-main-title {
-  font-size: 2.5rem;
-  color: #1A2A36;
-  margin-bottom: 15px;
-  position: relative;
-  display: inline-block;
-}
-
-.faq-main-title::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(90deg, var(--secondary), var(--primary));
-}
-
-.faq-subtitle {
-  color: #64748B;
-  font-size: 1.1rem;
-}
-
-.faq-accordion {
-  margin-bottom: 40px;
-}
-
-.faq-item {
-  background: white;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-.faq-item:hover {
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-}
-
-.faq-question {
-  padding: 25px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.faq-question h3 {
-  margin: 0;
-  font-size: 1.2rem;
-  color: #1A2A36;
-  font-weight: 600;
-  flex: 1;
-}
-
-.faq-toggle {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: rgba(30, 217, 20, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 20px;
-  position: relative;
-}
-
-.plus-icon, .minus-icon {
-  color: #4CAF50;
-  font-size: 1.3rem;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  position: absolute;
-}
-
-.minus-icon {
-  opacity: 0;
-}
-
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease;
-  padding: 0 25px;
-}
-
-.faq-answer p {
-  color: #4A5568;
-  line-height: 1.7;
-  margin: 0;
-  padding-bottom: 25px;
-}
-
-/* Estado activo */
-.faq-item.active .faq-question {
-  background: rgba(26,42,54,0.03);
-}
-
-.faq-item.active .plus-icon {
-  opacity: 0;
-  transform: rotate(90deg);
-}
-
-.faq-item.active .minus-icon {
-  opacity: 1;
-  transform: rotate(0deg);
-}
-
-.faq-item.active .faq-answer {
-  max-height: 500px;
-}
-
-.faq-footer {
-  text-align: center;
-  margin-top: 40px;
-}
-
-.faq-button {
-  display: inline-flex;
-  align-items: center;
-  padding: 15px 30px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.faq-button svg {
-  margin-left: 10px;
-  transition: transform 0.3s ease;
-}
-
-
-.faq-button:hover svg {
-  transform: translateX(5px);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .faq-dynamic-section {
-    padding: 60px 0;
-  }
-  
-  .faq-main-title {
-    font-size: 2rem;
-  }
-  
-  .faq-question {
-    padding: 20px;
-  }
-  
-  .faq-question h3 {
-    font-size: 1.1rem;
-  }
-  
-  .faq-button {
-    padding: 12px 25px;
-  }
-}
-</style>
-
-<script>
-    document.querySelectorAll('.faq-question').forEach(question => {
-  question.addEventListener('click', () => {
-    const item = question.parentElement;
-    item.classList.toggle('active');
-    
-    // Cerrar otros items abiertos
-    document.querySelectorAll('.faq-item').forEach(otherItem => {
-      if (otherItem !== item && otherItem.classList.contains('active')) {
-        otherItem.classList.remove('active');
-      }
-    });
-  });
-});
-</script>
 {% endblock %}

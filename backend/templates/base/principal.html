@@ -1,4 +1,5 @@
 {% extends 'base/index.html' %}
+{% load static %}
 
 {% block title %}
 Safira Energía - Bienvenido a Safira Energía Chile
@@ -10,7 +11,7 @@ Safira Energía - Bienvenido a Safira Energía Chile
     <div class="video-hero-container position-relative">
         <!-- Video local con autoplay -->
         <video class="video-bg" autoplay muted loop playsinline>
-            <source src="../../static/video/principal-carrusel.mp4" type="video/mp4">
+            <source src="{% static 'video/principal-carrusel.mp4' %}" type="video/mp4">
             Tu navegador no soporta videos HTML5.
         </video>
         <div class="video-overlay"></div>
@@ -87,7 +88,7 @@ Safira Energía - Bienvenido a Safira Energía Chile
             <!-- Columna de la imagen (izquierda) -->
             <div class="col-lg-6 ps-0 wow fadeInLeft" data-wow-delay="0.2s">
                 <div class="image-container" style="height: 100%; min-height: 500px;">
-                    <img class="img-fluid h-100" src="../static/img/historia-safira.PNG"
+                    <img class="img-fluid h-100" src="{% static 'img/historia-safira.PNG' %}"
                         style="object-fit: cover; object-position: center;" alt="Historia Safira">
                     <div class="image-overlay"></div>
                 </div>
@@ -153,12 +154,13 @@ Safira Energía - Bienvenido a Safira Energía Chile
             </h1>
         </div>
         <div class="row justify-content-center wow fadeInUp" data-wow-delay="0.3s">
-            <div class="col-lg-10">
+            <div id="chrome-warning" class="col-lg-10">
                 <div class="ratio ratio-16x9">
                     <iframe src="https://www.youtube.com/embed/von82dWPZds" title="Bienvenida a Safira Energía Chile"
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
+                        allowfullscreen>
+                    </iframe>
                 </div>
             </div>
         </div>
@@ -284,21 +286,21 @@ Safira Energía - Bienvenido a Safira Energía Chile
                             <li class="d-flex align-items-start mb-2">
                                 <div class="bg-white rounded-circle d-flex align-items-center justify-content-center me-2 flex-shrink-0"
                                     style="width: 20px; height: 20px;">
-                                    <i class="fas fa-check text-success fs-6"></i>
+                                    <i class="fas fa-check text-primary fs-6"></i>
                                 </div>
                                 <span class="text-white">Compraventa de corto y largo plazo</span>
                             </li>
                             <li class="d-flex align-items-start mb-2">
                                 <div class="bg-white rounded-circle d-flex align-items-center justify-content-center me-2 flex-shrink-0"
                                     style="width: 20px; height: 20px;">
-                                    <i class="fas fa-check text-success fs-6"></i>
+                                    <i class="fas fa-check text-primary fs-6"></i>
                                 </div>
                                 <span class="text-white">Intercambios de energía</span>
                             </li>
                             <li class="d-flex align-items-start">
                                 <div class="bg-white rounded-circle d-flex align-items-center justify-content-center me-2 flex-shrink-0"
                                     style="width: 20px; height: 20px;">
-                                    <i class="fas fa-check text-success fs-6"></i>
+                                    <i class="fas fa-check text-primary fs-6"></i>
                                 </div>
                                 <span class="text-white">Contratos con Estacionalidad</span>
                             </li>
@@ -324,7 +326,7 @@ Safira Energía - Bienvenido a Safira Energía Chile
                             <li class="d-flex align-items-start mb-2">
                                 <div class="bg-white rounded-circle d-flex align-items-center justify-content-center me-2 flex-shrink-0"
                                     style="width: 20px; height: 20px;">
-                                    <i class="fas fa-check text-success fs-6"></i>
+                                    <i class="fas fa-check text-primary fs-6"></i>
                                 </div>
                                 <span class="text-white">Elimina las emisiones de CO₂ asociadas al consumo de
                                     energía</span>
@@ -332,7 +334,7 @@ Safira Energía - Bienvenido a Safira Energía Chile
                             <li class="d-flex align-items-start mb-2">
                                 <div class="bg-white rounded-circle d-flex align-items-center justify-content-center me-2 flex-shrink-0"
                                     style="width: 20px; height: 20px;">
-                                    <i class="fas fa-check text-success fs-6"></i>
+                                    <i class="fas fa-check text-primary fs-6"></i>
                                 </div>
                                 <span class="text-white">Certificación con reconocimiento global, auditada y
                                     segura</span>
@@ -340,14 +342,14 @@ Safira Energía - Bienvenido a Safira Energía Chile
                             <li class="d-flex align-items-start mb-2">
                                 <div class="bg-white rounded-circle d-flex align-items-center justify-content-center me-2 flex-shrink-0"
                                     style="width: 20px; height: 20px;">
-                                    <i class="fas fa-check text-success fs-6"></i>
+                                    <i class="fas fa-check text-primary fs-6"></i>
                                 </div>
                                 <span class="text-white">Permite el rastreo de la energía adquirida</span>
                             </li>
                             <li class="d-flex align-items-start">
                                 <div class="bg-white rounded-circle d-flex align-items-center justify-content-center me-2 flex-shrink-0"
                                     style="width: 20px; height: 20px;">
-                                    <i class="fas fa-check text-success fs-6"></i>
+                                    <i class="fas fa-check text-primary fs-6"></i>
                                 </div>
                                 <span class="text-white">Incentivo a una matriz energética más limpia</span>
                             </li>
@@ -384,7 +386,7 @@ Safira Energía - Bienvenido a Safira Energía Chile
 <!-- imagen con movimiento Start -->
 <div class="container-fluid p-0">
     <div class="h-90 w-90 position-relative overflow-hidden">
-        <img src="../../static/img/mensajes.PNG" class="hover-zoom-img w-90 h-90 object-fit-cover"
+        <img src="{% static 'img/mensajes.PNG' %}" class="hover-zoom-img w-90 h-90 object-fit-cover"
             alt="Experiencia Safira: 16 años en Brasil, 6 años en Chile">
     </div>
 </div>
