@@ -43,6 +43,15 @@ class FormularioCotizacion(forms.Form):
                                    'id': 'numTelefono'}),
                                required=True)
     
+    direccion = forms.CharField(label='direccion',
+                                min_length=4, max_length=255,
+                                widget=forms.Textarea(attrs={
+                                    'class': 'form-control',
+                                    'placeholder': 'ej: Las Rosas 852',
+                                    'id': 'direcciones',
+                                    'rows': 3}),
+                                required=True)
+    
     consum_elect = forms.CharField(label='consumElect',
                                    widget=forms.TextInput(attrs={
                                        'class': 'form-control',
@@ -99,15 +108,6 @@ class FormularioCotizacion(forms.Form):
                                                 'style': 'border-left: none;',
                                                 'id': 'id_distrib'}),
                                             required=False)
-    
-    direccion = forms.CharField(label='direccion',
-                                min_length=4, max_length=255,
-                                widget=forms.Textarea(attrs={
-                                    'class': 'form-control',
-                                    'placeholder': 'ej: Las Rosas 852',
-                                    'id': 'direcciones',
-                                    'rows': 3}),
-                                required=True)
 
     archivo = forms.FileField(label="Documento (Factura / Boleta)",
                               widget=forms.FileInput(attrs={

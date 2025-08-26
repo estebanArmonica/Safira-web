@@ -47,6 +47,24 @@ document.addEventListener('DOMContentLoaded', function () {
                     const clienteField = document.getElementById('numero_cliente');
                     if (clienteField) clienteField.value = data.numero_cliente;
                 }
+                if (data.consumo_mensual) {
+                    const consumoInput = document.getElementById('consumoMensual');
+                    if (consumoInput) consumoInput.value = data.consumo_mensual;
+                }
+                if (data.demanda_maxima) {
+                    const demandaMaximaInput = document.getElementById('demandaMaxima');
+                    if(demandaMaximaInput) demandaMaximaInput.value = data.demanda_maxima;
+                }
+                if (data.demanda_maxima_hp) {
+                    const demandaMaximaHpInput = document.getElementById('demandaMaximaHp');
+                    if(demandaMaximaHpInput) demandaMaximaHpInput.value = data.demanda_maxima_hp;
+                }
+                if (data.tarifa_contratada) {
+                    document.getElementById('tarifaContratada').value = data.tarifa_contratada
+                }
+                if (data.subestacion) {
+                    document.getElementById('subestacion').value = data.subestacion
+                }
             }).catch(function (error) {
                 console.error('Error al procesar PDF: ', error);
                 alert('Error al procesar el PDF. Por favor verifica que el archivo no esté dañado');
@@ -58,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     async function extractTextFromPDF(pdf) {
-        let fullText = '';
+        let fullText = ''; // constante -> varia 
 
         // realizamos una busqueda por el for del numero de paginas a través de un contador
         for (let i = 1; i <= pdf.numPages; i++) {
@@ -90,6 +108,7 @@ document.addEventListener('DOMContentLoaded', function () {
          * 3. Extraemos el numero del cliente 
          * 4. Extraemos el tipo de documento (Factura Electronica o Boleta Electronica)
          * 5. Extraemos el Rut de la empresa
+         * 6. Extraemos los consumos mensuales, demanda maxima y por hora
         */
 
         /**
@@ -138,14 +157,14 @@ document.addEventListener('DOMContentLoaded', function () {
         // Busca el RUT y luego la dirección
         const direccionRegex = /\d{2}\.\d{3}\.\d{3}-\d\s+([A-ZÁÉÍÓÚÑ0-9\s\.,\-°º#]+?)(?=\s+Administración|Electricidad|Cargo|$)/i;
         const direccionRegex1 = /Direcci[óo]n\s+suministro\s*[:\-]?\s*([^\n]+?)(?=\s*Ruta:|\n|$)/i;
-        
+
         const direccionMatch = text.match(direccionRegex); // para facturas 
         const direccionMatch1 = text.match(direccionRegex1); // para boletas 
 
         if (direccionMatch && direccionMatch[1]) {
             result.direccion_suministro = direccionMatch[1].trim();
             console.log(`Dirección suministro: ${result.direccion_suministro}`);
-        } else if (direccionMatch1 && direccionMatch1[1]){
+        } else if (direccionMatch1 && direccionMatch1[1]) {
             result.direccion_suministro = direccionMatch1[1].trim();
             console.log(`Dirección suministro: ${result.direccion_suministro}`);
         } else {
@@ -155,6 +174,8 @@ document.addEventListener('DOMContentLoaded', function () {
         /**
          * 3. Numero del cliente
          * este tambien tiene un apartado por defecto en ambos documentos
+         * n° -0  -
+         * número de cliente, PAC
         */
         const clienteRegex1 = /^(\d{7,8}-\d)/; // Al inicio del documento (7 u 8 dígitos)
         const clienteRegex2 = /N[º°]?[\s-]*Cliente[\s:]*(\d{7,8}-\d)/i; // Con "N° Cliente"
@@ -213,6 +234,68 @@ document.addEventListener('DOMContentLoaded', function () {
         if (rutMatch && rutMatch[1]) {
             result.rut_empresa = rutMatch[1].replace(/[^\d\-kK]/g, '');
             console.log(`RUT empresa encontrado: ${result.rut_empresa}`);
+        }
+
+        /**
+         * 6. Consumos mensuales, demanda maxima y maxima por hora punta
+        */
+
+        // ...existing code...
+
+        // Para Factura
+        const consumoFactura = text.match(/Electricidad Consumida\s*\(([\d.,]+)kW[h]?\)/i);
+        const demandaMaxFactura = text.match(/Dem\.?\s*Max\.?\s*\(([\d.,]+)kW\)/i);
+        const demandaPuntaFactura = text.match(/Dem\.?\s*Horas\s*punta\s*\(([\d.,]+)kW\)/i);
+
+        // Para Boleta
+        const consumoBoletaAlt = text.match(/Consumo\s*total\s*del\s*mes\s*[:=]?\s*([\d.,]+)\s*kWh?/i);
+
+        const demandaMaxBoletaAlt = text.match(/Demanda\s*Sum[ií]nistrada\s*[:=]?\s*([\d.,]+)\s*kW/i)
+            || text.match(/Demanda\s*Suminsitrada[^0-9]*([\d.,]+)\s*kW/i);
+
+        const demandaPuntaBoletaAlt = text.match(/Demanda\s*Horas\s*Punta\s*[:=]?\s*([\d.,]+)\s*kW/i);
+
+        // Asignación priorizando Factura, luego Boleta
+        result.consumo_mensual = consumoFactura?.[1]?.replace(/[,\.]/g, '') ||
+            consumoBoletaAlt?.[1]?.replace(/[,\.]/g, '') || null;
+        result.demanda_maxima = demandaMaxFactura?.[1]?.replace(/[,\.]/g, '') ||
+            demandaMaxBoletaAlt?.[1]?.replace(/[,\.]/g, '') || null;
+        result.demanda_maxima_hp = demandaPuntaFactura?.[1]?.replace(/[,\.]/g, '') ||
+            demandaPuntaBoletaAlt?.[1]?.replace(/[,\.]/g, '') || null;
+
+        if (result.consumo_mensual) {
+            document.getElementById('consumoMensual').value = result.consumo_mensual;
+        }
+        if (result.demanda_maxima) {
+            document.getElementById('demandaMaxima').value = result.demanda_maxima;
+        }
+        if (result.demanda_maxima_hp) {
+            document.getElementById('demandaMaximaHp').value = result.demanda_maxima_hp;
+        }
+
+
+        console.log(`Consumo mensual: ${result.consumo_mensual}`);
+        console.log(`Demanda máxima: ${result.demanda_maxima}`);
+        console.log(`Demanda hora punta: ${result.demanda_maxima_hp}`);
+
+        /**
+         * 7. Subestacion a la que pertenece
+        */
+        // Extraer tipo de tarifa contratada
+        const tarifaRegex = /Tipo de tarifa contratada\s*:\s*([A-Z0-9\-]+)/i;
+        const tarifaMatch = text.match(tarifaRegex);
+        if (tarifaMatch && tarifaMatch[1]) {
+            result.tarifa_contratada = tarifaMatch[1].trim();
+            console.log(`Tarifa contratada: ${result.tarifa_contratada}`);
+        }
+
+        // Extraer subestación
+        const subestacionRegex = /Subestaci[óo]n\s*:\s*([A-ZÁÉÍÓÚÑ0-9\s\-]+)/i;
+        const subestacionMatch = text.match(subestacionRegex);
+
+        if (subestacionMatch && subestacionMatch[1]) {
+            result.subestacion = subestacionMatch[1].replace(/Fecha límite para cambio de tarifa.*/i, '').trim();
+            console.log(`Subestación: ${result.subestacion}`);
         }
 
         // retornamos el resultado
