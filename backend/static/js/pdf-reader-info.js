@@ -19,60 +19,143 @@ document.addEventListener('DOMContentLoaded', function () {
         const file = event.target.files[0] // creamos un evento de una constante para buscar por lista de matriz
         if (!file) return;
 
+        mostrarAlertaCarga(); // mostramos la alerta de carga
+
         const reader = new FileReader(); // creamos la instancia para los files reader
 
         // abrimos el reader 
         reader.onload = function (e) {
             const typeArray = new Uint8Array(e.target.result); // CORRECCIÓN: usar e.target.result
 
-            // CORRECCIÓN: Usar pdfjsLib en lugar de pdfjsScript
-            pdfjsLib.getDocument(typeArray).promise.then(function (pdf) {
+            // simulamos un pequeño retardo para que se vea la alerta de carga
+            setTimeout(() => {
+                pdfjsLib.getDocument(typeArray).promise.then(function (pdf) {
                 console.log('PDF cargado correctamente. Páginas: ', pdf.numPages);
                 return extractTextFromPDF(pdf);
-            }).then(function (data) {
-                console.log('Datos extraídos: ', JSON.stringify(data, null, 2)); // transformamos los datos extraidos en formato Json
+                }).then(function (data) {
+                    console.log('Datos extraídos: ', JSON.stringify(data, null, 2)); // transformamos los datos extraidos en formato Json
 
-                // Autocompletar campos del formulario
-                if (data.nombre_empresa) {
-                    document.getElementById('nombreEmpresa').value = data.nombre_empresa;
-                }
-                if (data.rut_empresa) {
-                    document.getElementById('rutEmpresa').value = data.rut_empresa;
-                }
-                if (data.direccion_suministro) {
-                    document.getElementById('direcciones').value = data.direccion_suministro;
-                }
-                if (data.numero_cliente) {
-                    // Si tienes un campo para el número de cliente
-                    const clienteField = document.getElementById('numero_cliente');
-                    if (clienteField) clienteField.value = data.numero_cliente;
-                }
-                if (data.consumo_mensual) {
-                    const consumoInput = document.getElementById('consumoMensual');
-                    if (consumoInput) consumoInput.value = data.consumo_mensual;
-                }
-                if (data.demanda_maxima) {
-                    const demandaMaximaInput = document.getElementById('demandaMaxima');
-                    if(demandaMaximaInput) demandaMaximaInput.value = data.demanda_maxima;
-                }
-                if (data.demanda_maxima_hp) {
-                    const demandaMaximaHpInput = document.getElementById('demandaMaximaHp');
-                    if(demandaMaximaHpInput) demandaMaximaHpInput.value = data.demanda_maxima_hp;
-                }
-                if (data.tarifa_contratada) {
-                    document.getElementById('tarifaContratada').value = data.tarifa_contratada
-                }
-                if (data.subestacion) {
-                    document.getElementById('subestacion').value = data.subestacion
-                }
-            }).catch(function (error) {
-                console.error('Error al procesar PDF: ', error);
-                alert('Error al procesar el PDF. Por favor verifica que el archivo no esté dañado');
-            });
+                    // Autocompletar campos del formulario
+                    if (data.nombre_empresa) {
+                        document.getElementById('nombreEmpresa').value = data.nombre_empresa;
+                    }
+                    if (data.rut_empresa) {
+                        document.getElementById('rutEmpresa').value = data.rut_empresa;
+                    }
+                    if (data.direccion_suministro) {
+                        document.getElementById('direcciones').value = data.direccion_suministro;
+                    }
+                    if (data.numero_cliente) {
+                        // Si tienes un campo para el número de cliente
+                        const clienteField = document.getElementById('numero_cliente');
+                        if (clienteField) clienteField.value = data.numero_cliente;
+                    }
+                    if (data.consumo_mensual) {
+                        const consumoInput = document.getElementById('consumoMensual');
+                        if (consumoInput) consumoInput.value = data.consumo_mensual;
+                    }
+                    if (data.demanda_maxima) {
+                        const demandaMaximaInput = document.getElementById('demandaMaxima');
+                        if (demandaMaximaInput) demandaMaximaInput.value = data.demanda_maxima;
+                    }
+                    if (data.demanda_maxima_hp) {
+                        const demandaMaximaHpInput = document.getElementById('demandaMaximaHp');
+                        if (demandaMaximaHpInput) demandaMaximaHpInput.value = data.demanda_maxima_hp;
+                    }
+                    if (data.tarifa_contratada) {
+                        document.getElementById('tarifaContratada').value = data.tarifa_contratada
+                    }
+                    if (data.subestacion) {
+                        document.getElementById('subestacion').value = data.subestacion
+                    }
+
+                    Swal.close();
+                    // mostramos la alerta después de completar la extracción
+                    showAlertMessage();
+
+                }).catch(function (error) {
+                    console.error('Error al procesar PDF: ', error);
+                    Swal.close();
+                    mostrarAlertaError('Error al procesar el PDF. Por favor verifica que el archivo no esté dañado');
+                });
+            }, 1500); // 1.5 segundos de retardo para que se vea la alerta de carga
         };
 
         // Leemos el ArrayList de los datos rescatados del PDF en formato Json
         reader.readAsArrayBuffer(file);
+    }
+
+    /* funcion al momento de subir el  archivo (alerta)
+    function mostrarAlertaCarga() {
+        const alertContainer = document.getElementById('pdf-alert-container');
+
+        alertContainer.innerHTML = `
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                <h4 class="alert-heading">
+                    <div class="spinner-border spinner-border-sm me-2" role="status">
+                        <span class="visually-hidden">Cargando...</span>
+                    </div>
+                    Procesando archivo PDF...
+                </h4>
+                <p class="mb-0">Estamos extrayendo la información de tu factura. Esto puede tomar unos segundos.</p>
+            </div>
+        `;
+
+        alertContainer.style.display = 'block';
+    }*/
+
+    function mostrarAlertaCarga() {
+        Swal.fire({
+            title: 'Procesando archivo PDF...',
+            html: 'Estamos extrayendo la información de tu factura.<br>Esto puede tomar unos segundos',
+            icon: 'info',
+            showConfirmButton: false,
+            allowOutsideClick: false,
+            allowEscapeKey: false,
+            didOpen: () => {
+                Swal.showLoading();
+            }
+        });
+    }
+
+    function mostrarAlertaError(mensaje) {
+        Swal.fire({
+            title: 'Error',
+            text: mensaje,
+            icon: 'error',
+            confirmButtonText: 'Entendido',
+            confirmButtonColor: '#dc3545'
+        });
+    }
+
+
+    // funcion de la alerta al momento del termino de la subida del archivo
+    function showAlertMessage() {
+        Swal.fire({
+            title: '¡Datos extraídos!',
+            html: `
+                <div class="text-start">
+                    <p>Hemos extraído automáticamente los datos de tu factura.</p>
+                    <p><strong>Por favor verifica que toda la información sea correcta</strong> antes de enviar tu solicitud.</p>
+                    <hr>
+                    <p class="mb-0">Si algún dato no es correcto, <strong>modifícalo manualmente antes de continuar.</strong></p>
+                </div>
+            `,
+            icon: 'warning',
+            confirmButtonText: 'Entendido',
+            confirmButtonColor: '#80BF21',
+            showCancelButton: false,
+            allowOutsideClick: false,
+            timer: 8000, // Se cierra automáticamente después de 8 segundos
+            timerProgressBar: true,
+            willClose: () => {
+                // Hacer scroll suave hasta el formulario
+                document.getElementById('cotizacionForm').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            }
+        });
     }
 
     async function extractTextFromPDF(pdf) {
@@ -83,10 +166,38 @@ document.addEventListener('DOMContentLoaded', function () {
             try {
                 const page = await pdf.getPage(i);
                 const textContent = await page.getTextContent();
-                const pageText = textContent.items.map(item => item.str).join(' ');
-                fullText += pageText + '\n';
 
-                console.log(`Texto página ${i}: `, pageText.substring(0, 100) + '...'); // Muestra solo el inicio
+                const textItems = textContent.items;
+                let pageText = '';
+
+                //const pageText = textContent.items.map(item => item.str).join(' ');
+                //fullText += pageText + '\n';
+
+                // Ordenamos por posición Y (de arriba a abajo) y X (de ixquierda a derecha)
+                textItems.sort((a, b) => {
+                    if (a.transform[5] !== b.transform[5]) {
+                        return b.transform[5] - a.transform[5]; // orden de forma descendente en Y 
+                    }
+                    return a.transform[4] - b.transform[4]; // orden de forma ascendente en X
+                });
+
+                let lastY = null;
+                for (const item of textItems) {
+                    // Filtrar caracteres no deseados
+                    const cleanText = item.str.replace(/[^\x20-\x7EáéíóúÁÉÍÓÚñÑüÜ¿¡°ºª\.,;\-\d]/g, '');
+
+                    if (cleanText.trim()) {
+                        // Agregar salto de línea cuando cambia la posición Y
+                        if (lastY !== null && Math.abs(lastY - item.transform[5]) > 5) {
+                            pageText += '\n';
+                        }
+                        pageText += cleanText + ' ';
+                        lastY = item.transform[5];
+                    }
+                }
+
+                fullText += pageText + '\n\n';
+                console.log(`Texto página ${i} (limpio):`, pageText.substring(0, 200) + '...');
             } catch (error) {
                 console.error(`Error en página ${i}: `, error);
             }
@@ -97,7 +208,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function processPdfText(text) {
-        console.log(`Texto completo para análisis: ${text.substring(0, 500) + '...'}`); // nuevamente mostramos solo el inicio
+        // mostramos el texto completo para analisis
+        console.log('=== TEXTO COMPLETO PARA ANÁLISIS ===\n');
+        console.log(text);
+        console.log('\n=== FIN DEL TEXTO ===');
 
         const result = {}; // creamos una constante de un array vacio
 
@@ -109,6 +223,7 @@ document.addEventListener('DOMContentLoaded', function () {
          * 4. Extraemos el tipo de documento (Factura Electronica o Boleta Electronica)
          * 5. Extraemos el Rut de la empresa
          * 6. Extraemos los consumos mensuales, demanda maxima y por hora
+         * 7. subestación a la que pertenece y el tipo de tarifa que tiene
         */
 
         /**
@@ -279,23 +394,45 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log(`Demanda hora punta: ${result.demanda_maxima_hp}`);
 
         /**
-         * 7. Subestacion a la que pertenece
+         * 7. Subestacion a la que pertenece y el tipo de tarifa contratada
         */
         // Extraer tipo de tarifa contratada
         const tarifaRegex = /Tipo de tarifa contratada\s*:\s*([A-Z0-9\-]+)/i;
+        const tarifaFacturaMatch = text.match(/Tarifa\s+([A-Z0-9\s\(\)\-]+)/i);
+
         const tarifaMatch = text.match(tarifaRegex);
+
         if (tarifaMatch && tarifaMatch[1]) {
             result.tarifa_contratada = tarifaMatch[1].trim();
             console.log(`Tarifa contratada: ${result.tarifa_contratada}`);
+        } else {
+            const tarifaAltMatch = text.match(/(?:AT|BT|MT)\d+/);
+            if (tarifaAltMatch) {
+                result.tarifa_contratada = tarifaAltMatch[0];
+                console.log(`Tarifa encontrada: ${result.tarifa_contratada}`);
+            }
         }
 
         // Extraer subestación
         const subestacionRegex = /Subestaci[óo]n\s*:\s*([A-ZÁÉÍÓÚÑ0-9\s\-]+)/i;
         const subestacionMatch = text.match(subestacionRegex);
 
+        const subestacionFacturaMatch = text.match(/Asociado a (?:subestaci[óo]n|subsistencia)[\s:]*([A-ZÁÉÍÓÚÑ0-9\s\-]+)/i);
+
+        // formato para boleta
         if (subestacionMatch && subestacionMatch[1]) {
             result.subestacion = subestacionMatch[1].replace(/Fecha límite para cambio de tarifa.*/i, '').trim();
             console.log(`Subestación: ${result.subestacion}`);
+        }
+        if (subestacionMatch && subestacionMatch[1]) {
+            result.subestacion = subestacionMatch[1].replace(/ ggsgzmuhslmilmmirmgglugspygilsgmkinomqgggusgm ggsgtunhsojgtmjnmognighzuismzhymzngygtzssgm ggshh*/i, '').trim();
+            console.log(`Subestación: ${result.subestacion}`);
+        }
+
+        // formato para factura
+        if (subestacionFacturaMatch && subestacionFacturaMatch[1]) {
+            result.subestacion = subestacionFacturaMatch[1].trim();
+            console.log(`Subestación (factura): ${result.subestacion}`);
         }
 
         // retornamos el resultado
