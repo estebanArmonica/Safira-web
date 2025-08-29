@@ -6,3 +6,6 @@ def blog_safira(request):
 
 def blog_migrar_libre(request):
     return render(request, 'blog/migrar-libre.html')
+
+def blog_transformacion_digital(request):
+    return render(request, 'blog/transformacion-digital.html')

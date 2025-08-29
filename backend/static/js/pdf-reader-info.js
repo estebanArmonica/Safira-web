@@ -30,8 +30,8 @@ document.addEventListener('DOMContentLoaded', function () {
             // simulamos un pequeño retardo para que se vea la alerta de carga
             setTimeout(() => {
                 pdfjsLib.getDocument(typeArray).promise.then(function (pdf) {
-                console.log('PDF cargado correctamente. Páginas: ', pdf.numPages);
-                return extractTextFromPDF(pdf);
+                    console.log('PDF cargado correctamente. Páginas: ', pdf.numPages);
+                    return extractTextFromPDF(pdf);
                 }).then(function (data) {
                     console.log('Datos extraídos: ', JSON.stringify(data, null, 2)); // transformamos los datos extraidos en formato Json
 
@@ -68,6 +68,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (data.subestacion) {
                         document.getElementById('subestacion').value = data.subestacion
                     }
+                    if (data.distribuidora) {
+                        document.getElementById('id_distrib').value = data.distribuidora
+                    }
 
                     Swal.close();
                     // mostramos la alerta después de completar la extracción
@@ -84,25 +87,6 @@ document.addEventListener('DOMContentLoaded', function () {
         // Leemos el ArrayList de los datos rescatados del PDF en formato Json
         reader.readAsArrayBuffer(file);
     }
-
-    /* funcion al momento de subir el  archivo (alerta)
-    function mostrarAlertaCarga() {
-        const alertContainer = document.getElementById('pdf-alert-container');
-
-        alertContainer.innerHTML = `
-            <div class="alert alert-info alert-dismissible fade show" role="alert">
-                <h4 class="alert-heading">
-                    <div class="spinner-border spinner-border-sm me-2" role="status">
-                        <span class="visually-hidden">Cargando...</span>
-                    </div>
-                    Procesando archivo PDF...
-                </h4>
-                <p class="mb-0">Estamos extrayendo la información de tu factura. Esto puede tomar unos segundos.</p>
-            </div>
-        `;
-
-        alertContainer.style.display = 'block';
-    }*/
 
     function mostrarAlertaCarga() {
         Swal.fire({
@@ -224,6 +208,7 @@ document.addEventListener('DOMContentLoaded', function () {
          * 5. Extraemos el Rut de la empresa
          * 6. Extraemos los consumos mensuales, demanda maxima y por hora
          * 7. subestación a la que pertenece y el tipo de tarifa que tiene
+         * 8. identificación de nombres (de distribuidoras)
         */
 
         /**
@@ -423,7 +408,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (subestacionMatch && subestacionMatch[1]) {
             result.subestacion = subestacionMatch[1].replace(/Fecha límite para cambio de tarifa.*/i, '').trim();
             console.log(`Subestación: ${result.subestacion}`);
-        }
+        }  
         if (subestacionMatch && subestacionMatch[1]) {
             result.subestacion = subestacionMatch[1].replace(/ ggsgzmuhslmilmmirmgglugspygilsgmkinomqgggusgm ggsgtunhsojgtmjnmognighzuismzhymzngygtzssgm ggshh*/i, '').trim();
             console.log(`Subestación: ${result.subestacion}`);
@@ -435,6 +420,17 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log(`Subestación (factura): ${result.subestacion}`);
         }
 
+        /**
+         * encontramos los nombres de las distribuidoras
+        */
+        // Identificar distribuidora ENEL (cualquier variante de mayúsculas/minúsculas)
+        const distribuidoraRegex = /\b(enel)\b/i;
+        const distribuidoraMatch = text.match(distribuidoraRegex);
+
+        if (distribuidoraMatch) {
+            result.distribuidora = 'ENEL';
+            console.log(`Distribuidora encontrada: ${result.distribuidora}`);
+        }
         // retornamos el resultado
         return result;
 
