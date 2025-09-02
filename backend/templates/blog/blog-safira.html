@@ -88,18 +88,20 @@ Safira Energía - Blog
             <!-- Artículo 3 -->
             <article class="blog-card" data-category="ahorro">
                 <div class="card-image">
-                    <img src="{% static 'img/blog/ahorro-energetico.jpg' %}" alt="Ahorro energético">
+                    <img src="https://endolla.barcelona/sites/default/files/2022-07/not%C3%ADcia%207%20maneres%20d%27estalviar%20energia.jpeg" alt="Ahorro energético">
                     <div class="card-badge">Ahorro Energético</div>
                 </div>
                 <div class="card-content">
                     <div class="card-meta">
                         <span class="date">10 Abril 2023</span>
-                        <span class="reading-time">4 min lectura</span>
                     </div>
                     <h3 class="card-title">10 estrategias comprobadas para reducir tu consumo energético</h3>
-                    <p class="card-excerpt">Implementa estas tácticas sencillas pero efectivas para optimizar el uso de
-                        energía en tus instalaciones y reducir costos operativos.</p>
-                    <a href="#" class="read-more">
+                    <p class="card-excerpt">
+                        Quieres tener una reducción de ahora en tu consumo energético, 
+                        implementa estas tácticas sencillas pero efectivas por expertos
+                        para optimizar el uso de energía en tus instalaciones y reducir costos operativos.
+                    </p>
+                    <a href="{% url 'estrategias-comprobadas' %}" class="read-more">
                         Leer más
                         <i class="fas fa-arrow-right"></i>
                     </a>
@@ -132,18 +134,17 @@ Safira Energía - Blog
             <!-- Artículo 5 -->
             <article class="blog-card" data-category="mercado">
                 <div class="card-image">
-                    <img src="{% static 'img/blog/contratos-energia.jpg' %}" alt="Contratos de energía">
+                    <img src="https://amif.mx/wp-content/uploads/manos-firmando-un-contrato-de-servicios.jpg" alt="Contratos de energía">
                     <div class="card-badge">Mercado Libre</div>
                 </div>
                 <div class="card-content">
                     <div class="card-meta">
                         <span class="date">5 Marzo 2023</span>
-                        <span class="reading-time">6 min lectura</span>
                     </div>
                     <h3 class="card-title">Cómo negociar el mejor contrato en el mercado libre</h3>
                     <p class="card-excerpt">Guía práctica con las cláusulas que debes revisar y los puntos clave para
                         negociar condiciones ventajosas con tu proveedor.</p>
-                    <a href="#" class="read-more">
+                    <a href="{% url 'negociar-contrato' %}" class="read-more">
                         Leer más
                         <i class="fas fa-arrow-right"></i>
                     </a>

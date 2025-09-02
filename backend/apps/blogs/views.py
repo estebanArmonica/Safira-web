@@ -9,3 +9,9 @@ def blog_migrar_libre(request):
 
 def blog_transformacion_digital(request):
     return render(request, 'blog/transformacion-digital.html')
+
+def blog_estrategia(request):
+    return render(request, 'blog/estrategias.html')
+
+def blog_negociar_contrato_safira(request):
+    return render(request, 'blog/negociar-contrato.html')

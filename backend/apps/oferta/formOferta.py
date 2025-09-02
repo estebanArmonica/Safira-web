@@ -117,6 +117,31 @@ class FormularioCotizacion(forms.Form):
                               }),
                               required=True,
                               help_text="Suba su Factura o Boleta en formato PDF para autocompletar los datos")
+    
+    subestacion = forms.CharField(label='subestacion',
+                              min_length=7, max_length=100,
+                              widget=forms.TextInput(attrs={
+                                  'class': 'form-control',
+                                  'placeholder': 'Nombre subestacion',
+                                  'id': 'subestacion'}),
+                              required=True)
+    
+    tarif_contratada = forms.CharField(label='tarifaContratada',
+                              min_length=7, max_length=100,
+                              widget=forms.TextInput(attrs={
+                                  'class': 'form-control',
+                                  'placeholder': 'BT1, BT1, AT1, AT4, etc',
+                                  'id': 'tarifaContratada'}),
+                              required=True)
+    
+    direccion_cli = forms.CharField(label='direccion_cli',
+                                min_length=4, max_length=255,
+                                widget=forms.Textarea(attrs={
+                                    'class': 'form-control',
+                                    'placeholder': 'ej: Las Rosas 852',
+                                    'id': 'direccion_cli',
+                                    'rows': 3}),
+                                required=True)
 
     def clean(self):
         cleaned_data = super().clean()

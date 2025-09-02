@@ -49,6 +49,8 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
             enctype="multipart/form-data" novalidate>
             {% csrf_token %}
 
+            {{ form.errors }}
+
             <!-- start mensaje de alerta para clientes-->
             <div id="pdf-alert-container" class="mt-4" style="display: none;"></div>
             <!-- end mensaje de alerta para clientes -->
@@ -78,7 +80,7 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
                             <i class="bi bi-trash"></i>
                         </button>
                     </div>
-                    <span class="text-danger">{{ form.erros.archivo }}</span>
+                    <span class="text-danger">{{ form.errors.archivo }}</span>
                 </div>
             </div>
 
@@ -93,7 +95,7 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
                                 class="bi bi-person"></i></span>
                         {{ form.nom_person }}
                     </div>
-                    <span class="text-danger">{{ form.erros.nom_person }}</span>
+                    <span class="text-danger">{{ form.errors.nom_person }}</span>
                 </div>
 
                 <div class="col-md-6">
@@ -105,7 +107,7 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
                                 class="bi bi-envelope"></i></span>
                         {{ form.correo }}
                     </div>
-                    <span class="text-danger">{{ form.erros.correo }}</span>
+                    <span class="text-danger">{{ form.errors.correo }}</span>
                 </div>
 
                 <div class="col-md-12">
@@ -117,7 +119,7 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
                                 class="bi bi-phone"></i></span>
                         {{ form.telefono }}
                     </div>
-                    <span class="text-danger">{{ form.erros.telefono }}</span>
+                    <span class="text-danger">{{ form.errors.telefono }}</span>
                 </div>
             </div>
 
@@ -132,7 +134,7 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
                                 class="bi bi-building"></i></span>
                         {{ form.rut_emp }}
                     </div>
-                    <span class="text-danger">{{ form.erros.rut_emp }}</span>
+                    <span class="text-danger">{{ form.errors.rut_emp }}</span>
                 </div>
 
                 <div class="col-md-6">
@@ -144,7 +146,7 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
                                 class="bi bi-card-text"></i></span>
                         {{ form.nom_emp }}
                     </div>
-                    <span class="text-danger">{{ form.erros.nom_emp }}</span>
+                    <span class="text-danger">{{ form.errors.nom_emp }}</span>
                 </div>
 
                 <div class="col-md-6">
@@ -156,7 +158,7 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
                                 class="bi bi-diagram-3"></i></span>
                         {{ form.tipo_cliente }}
                     </div>
-                    <span class="text-danger">{{ form.erros.tipo_cliente }}</span>
+                    <span class="text-danger">{{ form.errors.tipo_cliente }}</span>
                 </div>
 
                 <div class="col-md-6">
@@ -168,7 +170,7 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
                                 class="bi bi-lightning-charge"></i></span>
                         {{ form.distribuidora }}
                     </div>
-                    <span class="text-danger">{{ form.erros.distribuidora }}</span>
+                    <span class="text-danger">{{ form.errors.distribuidora }}</span>
                 </div>
             </div>
 
@@ -183,7 +185,7 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
                                 class="bi bi-geo-alt"></i></span>
                         {{ form.comuna }}
                     </div>
-                    <span class="text-danger">{{ form.erros.comuna }}</span>
+                    <span class="text-danger">{{ form.errors.comuna }}</span>
                 </div>
 
                 <div class="col-md-6">
@@ -195,7 +197,7 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
                                 class="bi bi-graph-up"></i></span>
                         {{ form.consum_elect }}
                     </div>
-                    <span class="text-danger">{{ form.erros.consum_elect }}</span>
+                    <span class="text-danger">{{ form.errors.consum_elect }}</span>
                 </div>
 
                 <div class="col-md-6">
@@ -207,7 +209,7 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
                                 class="bi bi-graph-up"></i></span>
                         {{ form.demanda_max }}
                     </div>
-                    <span class="text-danger">{{ form.erros.demanda_max }}</span>
+                    <span class="text-danger">{{ form.errors.demanda_max }}</span>
                 </div>
 
                 <div class="col-md-6">
@@ -219,7 +221,7 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
                                 class="bi bi-graph-up"></i></span>
                         {{ form.demanda_max_hp }}
                     </div>
-                    <span class="text-danger">{{ form.erros.demanda_max_hp }}</span>
+                    <span class="text-danger">{{ form.errors.demanda_max_hp }}</span>
                 </div>
 
                 <!-- datos escondidos -->
@@ -232,11 +234,11 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
                                 class="bi bi-graph-up"></i></span>
                         <input type="text" class="form-control" id="numero_cliente" />
                     </div>
-                    <span class="text-danger">{{ form.erros.consum_elect }}</span>
+                    <span class="text-danger">{{ form.errors.consum_elect }}</span>
                 </div>
 
                 <div class="col-12">
-                    <label for="direcciones" class="form-label fw-medium" style="color: #022873;">Dirección completa
+                    <label for="direcciones" class="form-label fw-medium" style="color: #022873;">Dirección Suministro
                         <span class="text-danger">*</span></label>
                     <div class="input-group">
                         <span class="input-group-text align-items-start"
@@ -244,11 +246,44 @@ Safira Energía - Estamos para ayduar cotiza con nosotros en Safira Energía Chi
                                 class="bi bi-house-door"></i></span>
                         {{ form.direccion }}
                     </div>
-                    <span class="text-danger">{{ form.erros.direccion }}</span>
+                    <span class="text-danger">{{ form.errors.direccion }}</span>
                 </div>
 
-                <input type="hidden" id="tarifaContratada"/>
-                <input type="hidden" id="subestacion"/>
+                <!-- datos escondidos -->
+                <div class="col-md-6">
+                    <label for="subestacion" class="form-label fw-medium" style="color: #022873;">Nombre subestacion
+                        <span class="text-danger">*</span></label>
+                    <div class="input-group">
+                        <span class="input-group-text"
+                            style="background-color: #f1f3f5; color: #80BF21; border-right: none;"><i
+                                class="bi bi-graph-up"></i></span>
+                        {{ form.subestacion }}
+                    </div>
+                    <span class="text-danger">{{ form.errors.subestacion }}</span>
+                </div>
+                <div class="col-md-6">
+                    <label for="tarifaContratada" class="form-label fw-medium" style="color: #022873;">Nombre subestacion
+                        <span class="text-danger">*</span></label>
+                    <div class="input-group">
+                        <span class="input-group-text"
+                            style="background-color: #f1f3f5; color: #80BF21; border-right: none;"><i
+                                class="bi bi-graph-up"></i></span>
+                        {{ form.tarif_contratada }}
+                    </div>
+                    <span class="text-danger">{{ form.errors.tarif_contratada }}</span>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="direccion_cli" class="form-label fw-medium" style="color: #022873;">Dirección Completa
+                        <span class="text-danger">*</span></label>
+                    <div class="input-group">
+                        <span class="input-group-text"
+                            style="background-color: #f1f3f5; color: #80BF21; border-right: none;"><i
+                                class="bi bi-graph-up"></i></span>
+                        {{ form.direccion_cli }}
+                    </div>
+                    <span class="text-danger">{{ form.errors.direccion_cli }}</span>
+                </div>
             </div>
 
             <!-- Botón de envío -->

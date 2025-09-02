@@ -62,11 +62,13 @@ document.addEventListener('DOMContentLoaded', function () {
                         const demandaMaximaHpInput = document.getElementById('demandaMaximaHp');
                         if (demandaMaximaHpInput) demandaMaximaHpInput.value = data.demanda_maxima_hp;
                     }
-                    if (data.tarifa_contratada) {
-                        document.getElementById('tarifaContratada').value = data.tarifa_contratada
-                    }
                     if (data.subestacion) {
-                        document.getElementById('subestacion').value = data.subestacion
+                        const subestacionInput = document.getElementById('id_subestacion'); // ID probable
+                        if (subestacionInput) subestacionInput.value = data.subestacion;
+                    }
+                    if (data.tarifa_contratada) {
+                        const tarifaInput = document.getElementById('id_tarif_contratada'); // ID probable
+                        if (tarifaInput) tarifaInput.value = data.tarifa_contratada;
                     }
                     if (data.distribuidora) {
                         document.getElementById('id_distrib').value = data.distribuidora
@@ -408,7 +410,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (subestacionMatch && subestacionMatch[1]) {
             result.subestacion = subestacionMatch[1].replace(/Fecha límite para cambio de tarifa.*/i, '').trim();
             console.log(`Subestación: ${result.subestacion}`);
-        }  
+        }
         if (subestacionMatch && subestacionMatch[1]) {
             result.subestacion = subestacionMatch[1].replace(/ ggsgzmuhslmilmmirmgglugspygilsgmkinomqgggusgm ggsgtunhsojgtmjnmognighzuismzhymzngygtzssgm ggshh*/i, '').trim();
             console.log(`Subestación: ${result.subestacion}`);

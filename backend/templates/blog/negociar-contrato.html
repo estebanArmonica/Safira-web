@@ -1,0 +1,458 @@
+{% extends 'base/index.html' %}
+{% load static %}
+
+{% block title %}
+Cómo negociar el mejor contrato en el mercado libre - Safira Energía Chile
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section with Gradient -->
+<section class="hero-blog"
+    style="padding: 80px 0 60px; color: white; position: relative; overflow: hidden; background: linear-gradient(135deg, #80BF21 0%, #1E72B7 100%);">
+    <div class="container position-relative">
+        <div class="row justify-content-center">
+            <div class="col-lg-9 text-center">
+                <div class="hero-content">
+                    <h1 class="display-4 fw-bold mb-4 text-white">Cómo negociar el mejor contrato en el mercado libre</h1>
+                    <p class="lead mb-4">Descubre las estrategias clave para obtener las mejores condiciones en tu contrato de energía eléctrica</p>
+                    <div class="d-flex justify-content-center flex-wrap">
+                        <span class="badge bg-white text-dark me-2 mb-2 px-3 py-2 rounded-pill">Negociación</span>
+                        <span class="badge bg-light-green text-white me-2 mb-2 px-3 py-2 rounded-pill">Mercado Libre</span>
+                        <span class="badge bg-light-blue text-white mb-2 px-3 py-2 rounded-pill">Ahorro Contractual</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-shape"
+        style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100px; background: white; clip-path: polygon(0 100%, 100% 100%, 100% 0);">
+    </div>
+</section>
+
+<!-- Content Section -->
+<section class="py-5" style="background: white;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <!-- Intro Section -->
+                <div class="intro-section mb-5 text-center">
+                    <p class="lead text-dark mb-4">En Safira Energía Chile, sabemos que negociar un contrato de suministro eléctrico puede ser complejo. Te guiamos paso a paso para que <span class="fw-bold text-gradient">obtengas las mejores condiciones</span> en el mercado liberalizado.</p>
+
+                    <div class="requirements-card p-4 p-md-5 mt-4 rounded-4 shadow-sm"
+                        style="background: linear-gradient(to right, #f8f9fa, #e8f4f8); border-left: 5px solid #1E72B7;">
+                        <h3 class="mb-4 text-center">💼 ¿Por qué es importante una buena negociación?</h3>
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <div class="text-center">
+                                    <i class="fas fa-money-bill-wave fa-2x text-primary mb-3"></i>
+                                    <h5 class="mb-2 text-blue">Ahorro Garantizado</h5>
+                                    <p class="mb-0 small">Hasta 40% de reducción en tu factura eléctrica</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="text-center">
+                                    <i class="fas fa-shield-alt fa-2x text-success mb-3"></i>
+                                    <h5 class="mb-2 text-blue">Seguridad Contractual</h5>
+                                    <p class="mb-0 small">Condiciones claras y protección ante variaciones</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="text-center">
+                                    <i class="fas fa-handshake fa-2x text-info mb-3"></i>
+                                    <h5 class="mb-2 text-blue">Flexibilidad</h5>
+                                    <p class="mb-0 small">Adaptación a tus necesidades específicas</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preparation Section -->
+                <div class="preparation-section mb-5">
+                    <h2 class="text-center mb-5 text-blue">Preparación: La Clave para una <span class="text-gradient">Negociación Exitosa</span></h2>
+
+                    <!-- Step 1 -->
+                    <div class="step-card mb-5">
+                        <div class="row g-0 rounded-4 overflow-hidden shadow-lg">
+                            <div class="col-md-4 step-number-col" style="background: linear-gradient(135deg, #1E72B7, #80BF21);">
+                                <div class="step-number-content h-100 d-flex align-items-center justify-content-center text-white p-4">
+                                    <div class="text-center">
+                                        <div class="step-icon mb-3">
+                                            <i class="fas fa-chart-line fa-3x"></i>
+                                        </div>
+                                        <h2 class="step-num">01</h2>
+                                        <h3 class="h4">Conoce tu Consumo</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="p-4">
+                                    <h4 class="mb-3">Analiza tus patrones de consumo</h4>
+                                    <p class="mb-4">Antes de negociar, es fundamental entender cómo, cuándo y cuánta energía consumes. Esto te dará ventaja en la negociación.</p>
+
+                                    <div class="step-details">
+                                        <h5 class="mb-3 border-bottom pb-2">Datos clave que debes conocer:</h5>
+                                        <div class="row">
+                                            <div class="mb-3">
+                                                <div class="d-flex align-items-start">
+                                                    <i class="fas fa-bolt text-primary me-3 mt-1"></i>
+                                                    <div>
+                                                        <h6 class="mb-1">Consumo mensual y anual</h6>
+                                                        <p class="small mb-0">Promedio de kWh consumidos por período</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <div class="d-flex align-items-start">
+                                                    <i class="fas fa-clock text-primary me-3 mt-1"></i>
+                                                    <div>
+                                                        <h6 class="mb-1">Horarios de mayor consumo</h6>
+                                                        <p class="small mb-0">Identifica picos y valle de consumo</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <div class="d-flex align-items-start">
+                                                    <i class="fas fa-calendar-alt text-primary me-3 mt-1"></i>
+                                                    <div>
+                                                        <h6 class="mb-1">Estacionalidad</h6>
+                                                        <p class="small mb-0">Variaciones entre temporadas</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="info-box p-3 mt-3 rounded-3" style="background-color: #e8f4f8;">
+                                            <h6 class="mb-2"><i class="fas fa-lightbulb me-2"></i>Consejo Safira:</h6>
+                                            <p class="mb-0">Solicita un historial de consumo detallado a tu actual comercializadora. Es tu derecho como consumidor.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="step-card mb-5">
+                        <div class="row g-0 rounded-4 overflow-hidden shadow-lg flex-row-reverse">
+                            <div class="col-md-4 step-number-col" style="background: linear-gradient(135deg, #1E72B7, #80BF21);">
+                                <div class="step-number-content h-100 d-flex align-items-center justify-content-center text-white p-4">
+                                    <div class="text-center">
+                                        <div class="step-icon mb-3">
+                                            <i class="fas fa-search-dollar fa-3x"></i>
+                                        </div>
+                                        <h2 class="step-num">02</h2>
+                                        <h3 class="h4">Investiga el Mercado</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="p-4">
+                                    <h4 class="mb-3">Compara ofertas y condiciones</h4>
+                                    <p class="mb-4">El mercado libre ofrece múltiples opciones. Conocer la competencia te permitirá negociar desde una posición de fuerza.</p>
+
+                                    <div class="step-details">
+                                        <h5 class="mb-3 border-bottom pb-2">Elementos a comparar:</h5>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-4">
+                                                <div class="text-center p-3 rounded-3 h-100" style="background-color: #f8f9fa;">
+                                                    <i class="fas fa-money-bill-wave fa-2x text-primary mb-3"></i>
+                                                    <h6 class="mb-2">Precio por kWh</h6>
+                                                    <p class="small mb-0">Diferenciar entre potencia y energía consumida</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <div class="text-center p-3 rounded-3 h-100" style="background-color: #f8f9fa;">
+                                                    <i class="fas fa-receipt fa-2x text-info mb-3"></i>
+                                                    <h6 class="mb-2">Términos contractuales</h6>
+                                                    <p class="small mb-0">Duración, permanencia y penalizaciones</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="alert alert-info mt-3 rounded-3">
+                                            <i class="fas fa-info-circle me-2"></i>
+                                            <strong>Dato importante:</strong> Las ofertas más baratas no siempre son las más convenientes. Considera el servicio, garantías y flexibilidad.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Negotiation Strategies -->
+                <div class="strategies-section mb-5">
+                    <h2 class="text-center mb-5 text-blue">Estrategias de Negociación <span class="text-gradient">Comprobadas</span></h2>
+
+                    <div class="row">
+                        <!-- Strategy 1 -->
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100 border-0 shadow-lg rounded-4">
+                                <div class="card-body p-4">
+                                    <div class="icon-wrapper mb-4">
+                                        <i class="fas fa-volume-up fa-3x text-primary"></i>
+                                    </div>
+                                    <h4 class="card-title mb-3">Comunica tu valor como cliente</h4>
+                                    <p class="card-text">Destaca tu historial de pagos, consumo estable y potencial de crecimiento. Las comercializadoras valoran a los clientes confiables.</p>
+                                    <ul class="small mt-3">
+                                        <li>Menciona tu antigüedad como consumidor</li>
+                                        <li>Destaca tu solvencia económica</li>
+                                        <li>Señala tu potencial de consumo futuro</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Strategy 2 -->
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100 border-0 shadow-lg rounded-4">
+                                <div class="card-body p-4">
+                                    <div class="icon-wrapper mb-4">
+                                        <i class="fas fa-balance-scale fa-3x text-primary"></i>
+                                    </div>
+                                    <h4 class="card-title mb-3">Negocia todos los componentes</h4>
+                                    <p class="card-text">No te centres solo en el precio de la energía. Potencia contratada, servicios adicionales y condiciones de facturación también son negociables.</p>
+                                    <ul class="small mt-3">
+                                        <li>Precio por kWh en punta y valle</li>
+                                        <li>Potencia contratada por períodos</li>
+                                        <li>Servicios de mantenimiento incluidos</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Strategy 3 -->
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100 border-0 shadow-lg rounded-4">
+                                <div class="card-body p-4">
+                                    <div class="icon-wrapper mb-4">
+                                        <i class="fas fa-user-clock fa-3x text-primary"></i>
+                                    </div>
+                                    <h4 class="card-title mb-3">Juega con el timing</h4>
+                                    <p class="card-text">El momento de la negociación influye. Los mejores periodos son al final de trimestre o año, cuando las comercializadoras buscan cumplir objetivos.</p>
+                                    <ul class="small mt-3">
+                                        <li>Negocia cerca de fechas de cierre</li>
+                                        <li>Aprovecha promociones estacionales</li>
+                                        <li>Evita periodos de alta demanda</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Strategy 4 -->
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100 border-0 shadow-lg rounded-4">
+                                <div class="card-body p-4">
+                                    <div class="icon-wrapper mb-4">
+                                        <i class="fas fa-file-contract fa-3x text-primary"></i>
+                                    </div>
+                                    <h4 class="card-title mb-3">Lee la letra pequeña</h4>
+                                    <p class="card-text">Las cláusulas contractuales pueden esconder costes adicionales. Presta especial atención a penalizaciones, revisiones de precio y condiciones de cancelación.</p>
+                                    <ul class="small mt-3">
+                                        <li>Cláusulas de permanencia</li>
+                                        <li>Penalizaciones por cancelación</li>
+                                        <li>Revisiones de precio automáticas</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contract Types Comparison -->
+                <div class="comparison-section mb-5">
+                    <h2 class="text-center mb-5 text-blue">Tipos de Contrato: <span class="text-gradient">¿Cuál te Conviene?</span></h2>
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover shadow-sm">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Tipo de Contrato</th>
+                                    <th>Ventajas</th>
+                                    <th>Desventajas</th>
+                                    <th>Recomendado para</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Precio Fijo</strong></td>
+                                    <td>Estabilidad, facilidad, protección ante subidas</td>
+                                    <td>No te beneficias de bajadas de precio</td>
+                                    <td>Clientes que prefieren predictibilidad</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Precio Indexado</strong></td>
+                                    <td>Precios más bajos en momentos de baja demanda</td>
+                                    <td>Volatilidad, exposición al mercado spot</td>
+                                    <td>Grandes consumidores con flexibilidad</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Mixto</strong></td>
+                                    <td>Equilibrio entre estabilidad y aprovechamiento de bajadas</td>
+                                    <td>Complejidad en la comprensión</td>
+                                    <td>Clientes con cierto conocimiento del mercado</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Por Tramos</strong></td>
+                                    <td>Optimización según horarios de consumo</td>
+                                    <td>Requiere adaptación de hábitos</td>
+                                    <td>Quienes pueden desplazar consumo a horas valle</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Red Flags Section -->
+                <div class="warnings-section mb-5">
+                    <h2 class="text-center mb-5 text-blue">Señales de Alerta: <span class="text-gradient">¿Qué Evitar?</span></h2>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="alert alert-warning rounded-4 shadow-sm p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-exclamation-triangle fa-2x me-3"></i>
+                                    <h4 class="mb-0">Ofertas demasiado buenas</h4>
+                                </div>
+                                <p class="mb-0">Si una oferta es significativamente mejor que todas las demás, revisa cuidadosamente las condiciones. Puede haber costes ocultos o cláusulas abusivas.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="alert alert-warning rounded-4 shadow-sm p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-file-signature fa-2x me-3"></i>
+                                    <h4 class="mb-0">Contratos con permanencia excesiva</h4>
+                                </div>
+                                <p class="mb-0">Evita contratos con permanencia superior a 12 meses. El mercado es volátil y necesitas flexibilidad para adaptarte a cambios.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="alert alert-warning rounded-4 shadow-sm p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-hand-holding-usd fa-2x me-3"></i>
+                                    <h4 class="mb-0">Penalizaciones desproporcionadas</h4>
+                                </div>
+                                <p class="mb-0">Rechaza contratos con penalizaciones por cancelación que superen el 2-3% del consumo anual estimado.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="alert alert-warning rounded-4 shadow-sm p-4">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-search-dollar fa-2x me-3"></i>
+                                    <h4 class="mb-0">Falta de transparencia</h4>
+                                </div>
+                                <p class="mb-0">Desconfía de comercializadoras que no proporcionan desgloses detallados de todos los costes o evitan responder preguntas específicas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Safira Negotiation Services -->
+                <div class="safira-section mb-5 rounded-4 overflow-hidden shadow-lg">
+                    <div class="row g-0">
+                        <div class="col-lg-8">
+                            <div class="p-4 p-md-5 h-100" style="background: linear-gradient(135deg, #1E72B7, #80BF21); color: white;">
+                                <h2 class="h3 mb-4 text-white">Safira Energía Chile: <span class="thin-text text-white">Tu Negociador Experto</span></h2>
+                                <p class="mb-4">Como aliado independiente, negociamos por ti con las principales comercializadoras para obtener las mejores condiciones del mercado.</p>
+
+                                <div class="row">
+                                    <div class="col-sm-6 mb-3">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <i class="fas fa-check-circle me-3 text-light-blue"></i>
+                                            <span>Análisis personalizado de tu perfil de consumo</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 mb-3">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <i class="fas fa-check-circle me-3 text-light-blue"></i>
+                                            <span>Comparativa de más de 15 comercializadoras</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 mb-3">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <i class="fas fa-check-circle me-3 text-light-blue"></i>
+                                            <span>Negociación experta de condiciones</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 mb-3">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <i class="fas fa-check-circle me-3 text-light-blue"></i>
+                                            <span>Asesoramiento en gestión de contratos</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="p-4 p-md-5 h-100 d-flex align-items-center bg-light">
+                                <div class="text-center">
+                                    <i class="fas fa-handshake fa-3x mb-3 text-primary"></i>
+                                    <h4 class="mb-3">¿Necesitas ayuda con tu negociación?</h4>
+                                    <p class="mb-4">Nuestros expertos te consiguen las mejores condiciones sin coste adicional</p>
+                                    <a href="{% url 'contactos' %}" class="btn btn-subscribe btn-lg rounded-0 px-4">Contactar ahora</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Checklist Section -->
+                <div class="checklist-section mb-5">
+                    <h2 class="text-center mb-4 text-blue">Checklist: Antes de Firmar</h2>
+                    <div class="card border-0 shadow-lg rounded-4">
+                        <div class="card-body p-4 p-md-5">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="checkbox" id="check1">
+                                        <label class="form-check-label" for="check1">Precio de energía por kWh claramente especificado</label>
+                                    </div>
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="checkbox" id="check2">
+                                        <label class="form-check-label" for="check2">Términos de permanencia y penalizaciones entendibles</label>
+                                    </div>
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="checkbox" id="check3">
+                                        <label class="form-check-label" for="check3">Condiciones de revisión de precios explícitas</label>
+                                    </div>
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="checkbox" id="check4">
+                                        <label class="form-check-label" for="check4">Servicios adicionales incluidos y su coste</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="checkbox" id="check5">
+                                        <label class="form-check-label" for="check5">Flexibilidad para cambios de potencia</label>
+                                    </div>
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="checkbox" id="check6">
+                                        <label class="form-check-label" for="check6">Cláusulas de salida claras y justas</label>
+                                    </div>
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="checkbox" id="check7">
+                                        <label class="form-check-label" for="check7">Soporte al cliente y vías de reclamación</label>
+                                    </div>
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="checkbox" id="check8">
+                                        <label class="form-check-label" for="check8">Facturación clara y desglosada</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Final CTA -->
+                <div class="final-cta text-center p-5 rounded-4 shadow-lg mb-5" style="background: linear-gradient(135deg, #1E72B7, #80BF21); color: white;">
+                    <h3 class="h2 mb-3 text-white">¿Listo para obtener el mejor contrato eléctrico?</h3>
+                    <p class="mb-4 lead">Deja que nuestros expertos negocien por ti y consigue ahorros de hasta el 40% en tu factura</p>
+                    <a href="{% url 'cotizaciones' %}" class="btn btn-light btn-lg rounded-0 px-4 me-3">Solicitar Análisis Gratuito</a>
+                    <a href="{% url 'contactos' %}" class="btn btn-outline-light btn-lg rounded-0 px-4">Hablar con Experto</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

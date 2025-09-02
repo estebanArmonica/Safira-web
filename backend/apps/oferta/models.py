@@ -62,14 +62,17 @@ class Formulario(models.Model):
     telefono = models.DecimalField(max_digits=65535, decimal_places=65535)
     direccion = models.TextField()
     ubicacion = models.TextField(blank=True, null=True)
-    consum_elect = models.DecimalField(max_digits=65535, decimal_places=65535)
-    demanda_max = models.DecimalField(max_digits=65535, decimal_places=65535)
-    demanda_max_hp = models.DecimalField(max_digits=65535, decimal_places=65535)
+    consum_elect = models.DecimalField(max_digits=15, decimal_places=2)
+    demanda_max = models.DecimalField(max_digits=15, decimal_places=2)
+    demanda_max_hp = models.DecimalField(max_digits=15, decimal_places=2)
     fecha_solicitud = models.DateTimeField(auto_now_add=True)
     numero_cliente = models.CharField(max_length=20, blank=True, null=True)
     id_distrib = models.ForeignKey(Distribuidora, models.DO_NOTHING, db_column='id_distrib', blank=True, null=True)
     id_comuna = models.ForeignKey(Comuna, models.DO_NOTHING, db_column='id_comuna')
     id_tip_cliente = models.ForeignKey(TipoCliente, models.DO_NOTHING, db_column='id_tip_cliente')
+    subestacion = models.CharField(max_length=30)
+    tarif_contratada = models.CharField(max_length=35)
+    direccion_cli = models.TextField()
 
     def __str__(self):
         return f'{self.id_form} - {self.nom_person} - {self.nom_emp} - {self.correo} - {self.telefono} - {self.direccion} - {self.id_distrib} - {self.id_comuna} - {self.id_tip_cliente} - {self.ubicacion}'
