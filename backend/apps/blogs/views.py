@@ -15,3 +15,6 @@ def blog_estrategia(request):
 
 def blog_negociar_contrato_safira(request):
     return render(request, 'blog/negociar-contrato.html')
+
+def blog_tendencia_tecnologica_safira(request):
+    return render(request, 'blog/tendencia-tecnologica.html')

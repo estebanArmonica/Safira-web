@@ -1,0 +1,709 @@
+{% extends 'base/index.html' %}
+{% load static %}
+
+{% block title %}
+Tendencias en Tecnología Verde que Transformarán el 2025 - Safira Energía Chile
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section with Gradient -->
+<section class="hero-blog"
+    style="padding: 80px 0 60px; color: white; position: relative; overflow: hidden; background: linear-gradient(135deg, #80BF21 0%, #1E72B7 100%);">
+    <div class="container position-relative">
+        <div class="row justify-content-center">
+            <div class="col-lg-9 text-center">
+                <div class="hero-content">
+                    <h1 class="display-4 fw-bold mb-4 text-white">Tendencias en Tecnología Verde que Transformarán el 2025</h1>
+                    <p class="lead mb-4">Descubre las innovaciones sostenibles que están redefiniendo el futuro empresarial y ambiental</p>
+                    <div class="d-flex justify-content-center flex-wrap">
+                        <span class="badge bg-white text-dark me-2 mb-2 px-3 py-2 rounded-pill">Sostenibilidad</span>
+                        <span class="badge bg-light-green text-white me-2 mb-2 px-3 py-2 rounded-pill">Tecnología Verde</span>
+                        <span class="badge bg-light-blue text-white mb-2 px-3 py-2 rounded-pill">Innovación 2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-shape"
+        style="position: absolute; bottom: 0; left: 0; width: 100%; height: 100px; background: white; clip-path: polygon(0 100%, 100% 100%, 100% 0);">
+    </div>
+</section>
+
+<!-- Content Section -->
+<section class="py-5" style="background: white;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <!-- Intro Section -->
+                <div class="intro-section mb-5 text-center">
+                    <p class="lead text-dark mb-4">El panorama global evoluciona hacia modelos empresariales donde la sostenibilidad deja de ser una opción para convertirse en un imperativo estratégico. Según análisis recientes, el 70% de los inversionistas globales priorizarán criterios de sostenibilidad en sus decisiones para 2025.</p>
+
+                    <div class="requirements-card p-4 p-md-5 mt-4 rounded-4 shadow-sm"
+                        style="background: linear-gradient(to right, #f8f9fa, #e8f4f8); border-left: 5px solid #1E72B7;">
+                        <h3 class="mb-4 text-center">🌍 ¿Por qué la tecnología verde marca la diferencia?</h3>
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <div class="text-center">
+                                    <i class="fas fa-chart-line fa-2x text-primary mb-3"></i>
+                                    <h5 class="mb-2 text-blue">Rentabilidad</h5>
+                                    <p class="mb-0 small">Inversiones que superarán los USD 1.5 billones en energías renovables</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="text-center">
+                                    <i class="fas fa-shield-alt fa-2x text-success mb-3"></i>
+                                    <h5 class="mb-2 text-blue">Resiliencia</h5>
+                                    <p class="mb-0 small">Adaptación proactiva ante nuevos escenarios climáticos</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="text-center">
+                                    <i class="fas fa-certificate fa-2x text-info mb-3"></i>
+                                    <h5 class="mb-2 text-blue">Competitividad</h5>
+                                    <p class="mb-0 small">Posicionamiento estratégico en mercados conscientes</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trends Section -->
+                <div class="strategies-section mb-5">
+                    <h2 class="text-center mb-5 text-blue">10 Tendencias en Tecnología Verde para <span class="text-gradient">2025</span></h2>
+
+                    <!-- Trend 1 -->
+                    <div class="strategy-card mb-5">
+                        <div class="row g-0 rounded-4 overflow-hidden shadow-lg">
+                            <div class="col-md-4 strategy-number-col" style="background: linear-gradient(135deg, #1E72B7, #80BF21);">
+                                <div class="strategy-number-content h-100 d-flex align-items-center justify-content-center text-white p-4">
+                                    <div class="text-center">
+                                        <div class="strategy-icon mb-3">
+                                            <i class="fas fa-solar-panel fa-3x"></i>
+                                        </div>
+                                        <h2 class="strategy-num">01</h2>
+                                        <h3 class="h4">Energías Renovables Avanzadas</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="p-4">
+                                    <h4 class="mb-3">Más allá de la solar y eólica convencional</h4>
+                                    <p class="mb-4">La próxima generación de tecnologías renovables integra sistemas híbridos y soluciones de almacenamiento de alta capacidad que garantizan estabilidad incluso en condiciones variables.</p>
+
+                                    <div class="strategy-details">
+                                        <h5 class="mb-3 border-bottom pb-2">Innovaciones clave:</h5>
+                                        <div class="row">
+                                            <div class="mb-3">
+                                                <div class="d-flex align-items-start">
+                                                    <i class="fas fa-bolt text-primary me-3 mt-1"></i>
+                                                    <div>
+                                                        <h6 class="mb-1">Almacenamiento de larga duración</h6>
+                                                        <p class="small mb-0">Baterías de flujo y soluciones térmicas que superan las 10+ horas de autonomía</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <div class="d-flex align-items-start">
+                                                    <i class="fas fa-wind text-primary me-3 mt-1"></i>
+                                                    <div>
+                                                        <h6 class="mb-1">Energía eólica offshore</h6>
+                                                        <p class="small mb-0">Parques eólicos marinos con turbinas de mayor capacidad y menor impacto visual</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="info-box p-3 mt-3 rounded-3" style="background-color: #e8f4f8;">
+                                            <h6 class="mb-2"><i class="fas fa-chart-line me-2"></i>Perspectiva de mercado:</h6>
+                                            <p class="mb-0">Se espera que las inversiones en renovables superen los USD 1.5 billones anuales para 2025</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trend 2 -->
+                    <div class="strategy-card mb-5">
+                        <div class="row g-0 rounded-4 overflow-hidden shadow-lg flex-row-reverse">
+                            <div class="col-md-4 strategy-number-col" style="background: linear-gradient(135deg, #1E72B7, #80BF21);">
+                                <div class="strategy-number-content h-100 d-flex align-items-center justify-content-center text-white p-4">
+                                    <div class="text-center">
+                                        <div class="strategy-icon mb-3">
+                                            <i class="fas fa-charging-station fa-3x"></i>
+                                        </div>
+                                        <h2 class="strategy-num">02</h2>
+                                        <h3 class="h4">Movilidad Eléctrica Integral</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="p-4">
+                                    <h4 class="mb-3">Infraestructura de carga inteligente y vehículo-red</h4>
+                                    <p class="mb-4">La electrificación del transporte evoluciona hacia sistemas bidireccionales donde los vehículos no solo consumen energía, sino que también pueden devolverla a la red cuando sea necesario.</p>
+
+                                    <div class="strategy-details">
+                                        <h5 class="mb-3 border-bottom pb-2">Desarrollos emergentes:</h5>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-4">
+                                                <div class="text-center p-3 rounded-3 h-100" style="background-color: #f8f9fa;">
+                                                    <i class="fas fa-car-battery fa-2x text-primary mb-3"></i>
+                                                    <h6 class="mb-2">Tecnología V2G</h6>
+                                                    <p class="small mb-0">Vehículo-a-Red: los automóviles como fuentes de energía distribuida</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <div class="text-center p-3 rounded-3 h-100" style="background-color: #f8f9fa;">
+                                                    <i class="fas fa-microchip fa-2x text-info mb-3"></i>
+                                                    <h6 class="mb-2">Carga ultra rápida</h6>
+                                                    <p class="small mb-0">Estaciones que permiten cargas completas en menos de 15 minutos</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="alert alert-info mt-3 rounded-3">
+                                            <i class="fas fa-info-circle me-2"></i>
+                                            <strong>Dato clave:</strong> Se proyecta que los vehículos eléctricos representarán el 30% de las ventas globales para 2025.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trend 3 -->
+                    <div class="strategy-card mb-5">
+                        <div class="row g-0 rounded-4 overflow-hidden shadow-lg">
+                            <div class="col-md-4 strategy-number-col" style="background: linear-gradient(135deg, #1E72B7, #80BF21);">
+                                <div class="strategy-number-content h-100 d-flex align-items-center justify-content-center text-white p-4">
+                                    <div class="text-center">
+                                        <div class="strategy-icon mb-3">
+                                            <i class="fas fa-brain fa-3x"></i>
+                                        </div>
+                                        <h2 class="strategy-num">03</h2>
+                                        <h3 class="h4">Digitalización Energética</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8 d-flex">
+                                <div class="p-4">
+                                    <h4 class="mb-3">Gestión inteligente mediante IA y analítica predictiva</h4>
+                                    <p>La convergencia entre tecnologías digitales y gestión energética está creando sistemas autónomos capaces de optimizar el consumo en tiempo real, anticipando demandas y ajustando automáticamente los recursos.</p>
+
+                                    <div class="strategy-details mt-4">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h6>Aplicaciones transformadoras:</h6>
+                                                <ul class="small">
+                                                    <li>Redes eléctricas inteligentes con autorreparación</li>
+                                                    <li>Sistemas de gestión energética basados en IoT</li>
+                                                    <li>Plataformas de análisis predictivo para mantenimiento</li>
+                                                    <li>Optimización automatizada de recursos en tiempo real</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="solution-box p-3 rounded-3" style="background-color: #e8f5e8;">
+                                                    <h6><i class="fas fa-lightbulb me-2"></i>Impacto esperado:</h6>
+                                                    <p class="small mb-0">Hasta 40% de mejora en eficiencia operativa mediante sistemas inteligentes</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trend 4 -->
+                    <div class="strategy-card mb-5">
+                        <div class="row g-0 rounded-4 overflow-hidden shadow-lg flex-row-reverse">
+                            <div class="col-md-4 strategy-number-col" style="background: linear-gradient(135deg, #1E72B7, #80BF21);">
+                                <div class="strategy-number-content h-100 d-flex align-items-center justify-content-center text-white p-4">
+                                    <div class="text-center">
+                                        <div class="strategy-icon mb-3">
+                                            <i class="fas fa-recycle fa-3x"></i>
+                                        </div>
+                                        <h2 class="strategy-num">04</h2>
+                                        <h3 class="h4">Economía Circular Avanzada</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="p-4">
+                                    <h4 class="mb-3">De la reducción de residuos a la regeneración de recursos</h4>
+                                    <p class="mb-4">Los modelos circulares evolucionan hacia sistemas donde los residuos se convierten en recursos valiosos, creando ciclos cerrados que minimizan la extracción de nuevas materias primas.</p>
+
+                                    <div class="strategy-details">
+                                        <h5 class="mb-3 border-bottom pb-2">Innovaciones en circularidad:</h5>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <div class="d-flex align-items-start">
+                                                    <i class="fas fa-industry text-primary me-3 mt-1"></i>
+                                                    <div>
+                                                        <h6 class="mb-1">Simbiosis industrial</h6>
+                                                        <p class="small mb-0">Residuos de una industria como insumos para otra</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <div class="d-flex align-items-start">
+                                                    <i class="fas fa-dna text-primary me-3 mt-1"></i>
+                                                    <div>
+                                                        <h6 class="mb-1">Biofabricación</h6>
+                                                        <p class="small mb-0">Materiales cultivados a partir de microorganismos</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <div class="d-flex align-items-start">
+                                                    <i class="fas fa-boxes text-primary me-3 mt-1"></i>
+                                                    <div>
+                                                        <h6 class="mb-1">Envases reprogramables</h6>
+                                                        <p class="small mb-0">Materiales que pueden ser reutilizados múltiples veces</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <div class="d-flex align-items-start">
+                                                    <i class="fas fa-code-branch text-primary me-3 mt-1"></i>
+                                                    <div>
+                                                        <h6 class="mb-1">Blockchain para trazabilidad</h6>
+                                                        <p class="small mb-0">Seguimiento preciso de materiales en circuitos cerrados</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trend 5 -->
+                    <div class="strategy-card mb-5">
+                        <div class="row g-0 rounded-4 overflow-hidden shadow-lg">
+                            <div class="col-md-4 strategy-number-col" style="background: linear-gradient(135deg, #1E72B7, #80BF21);">
+                                <div class="strategy-number-content h-100 d-flex align-items-center justify-content-center text-white p-4">
+                                    <div class="text-center">
+                                        <div class="strategy-icon mb-3">
+                                            <i class="fas fa-shield-alt fa-3x"></i>
+                                        </div>
+                                        <h2 class="strategy-num">05</h2>
+                                        <h3 class="h4">Adaptación Climática Resiliente</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="p-4">
+                                    <h4 class="mb-3">Tecnologías para un mundo en transformación climática</h4>
+                                    <p class="mb-4">Más allá de la mitigación, las soluciones de adaptación cobran protagonismo con sistemas diseñados para operar en condiciones climáticas extremas y eventos meteorológicos intensificados.</p>
+
+                                    <div class="strategy-details">
+                                        <div class="row">
+                                            <div class="col-md-6 mb-4">
+                                                <div class="text-center p-3 rounded-3 h-100" style="background-color: #f8f9fa;">
+                                                    <i class="fas fa-water fa-2x text-primary mb-3"></i>
+                                                    <h6 class="mb-2">Gestión hídrica inteligente</h6>
+                                                    <p class="small mb-0">Sistemas de captación, purificación y reutilización de agua</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <div class="text-center p-3 rounded-3 h-100" style="background-color: #f8f9fa;">
+                                                    <i class="fas fa-city fa-2x text-info mb-3"></i>
+                                                    <h6 class="mb-2">Infraestructura adaptable</h6>
+                                                    <p class="small mb-0">Edificios y ciudades preparadas para condiciones extremas</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="info-box p-3 mt-3 rounded-3" style="background-color: #e8f4f8;">
+                                            <h6 class="mb-2"><i class="fas fa-exclamation-triangle me-2"></i>Perspectiva necesaria:</h6>
+                                            <p class="mb-0">Para 2025, el 60% de las empresas habrán integrado evaluaciones de riesgo climático en sus estrategias</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trend 6 -->
+                    <div class="strategy-card mb-5">
+                        <div class="row g-0 rounded-4 overflow-hidden shadow-lg flex-row-reverse">
+                            <div class="col-md-4 strategy-number-col" style="background: linear-gradient(135deg, #1E72B7, #80BF21);">
+                                <div class="strategy-number-content h-100 d-flex align-items-center justify-content-center text-white p-4">
+                                    <div class="text-center">
+                                        <div class="strategy-icon mb-3">
+                                            <i class="fas fa-truck-loading fa-3x"></i>
+                                        </div>
+                                        <h2 class="strategy-num">06</h2>
+                                        <h3 class="h4">Cadena de Suministro Verde</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="p-4">
+                                    <h4 class="mb-3">Trazabilidad y transparencia desde el origen</h4>
+                                    <p class="mb-4">La sostenibilidad se extiende más allá de las operaciones directas hacia toda la cadena de valor, con tecnologías que permiten verificar y certificar el desempeño ambiental de proveedores y distribuidores.</p>
+
+                                    <div class="strategy-details">
+                                        <h5 class="mb-3 border-bottom pb-2">Tecnologías habilitadoras:</h5>
+                                        <div class="consumption-chart mb-4">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div style="width: 120px;">Blockchain:</div>
+                                                <div class="progress flex-grow-1 mx-3" style="height: 20px;">
+                                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">Trazabilidad</div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div style="width: 120px;">IoT:</div>
+                                                <div class="progress flex-grow-1 mx-3" style="height: 20px;">
+                                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100">Monitorización</div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div style="width: 120px;">AI:</div>
+                                                <div class="progress flex-grow-1 mx-3" style="height: 20px;">
+                                                    <div class="progress-bar bg-info" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">Optimización</div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div style="width: 120px;">Biomarcadores:</div>
+                                                <div class="progress flex-grow-1 mx-3" style="height: 20px;">
+                                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">Autenticación</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trend 7 -->
+                    <div class="strategy-card mb-5">
+                        <div class="row g-0 rounded-4 overflow-hidden shadow-lg">
+                            <div class="col-md-4 strategy-number-col" style="background: linear-gradient(135deg, #1E72B7, #80BF21);">
+                                <div class="strategy-number-content h-100 d-flex align-items-center justify-content-center text-white p-4">
+                                    <div class="text-center">
+                                        <div class="strategy-icon mb-3">
+                                            <i class="fas fa-graduation-cap fa-3x"></i>
+                                        </div>
+                                        <h2 class="strategy-num">07</h2>
+                                        <h3 class="h4">Educación Tecnológica Verde</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="p-4">
+                                    <h4 class="mb-3">Formando a la próxima generación de profesionales sostenibles</h4>
+                                    <p class="mb-4">La transición verde requiere capacidades técnicas específicas, impulsando programas educativos especializados que combinen conocimientos ambientales con competencias digitales avanzadas.</p>
+
+                                    <div class="strategy-details">
+                                        <h5 class="mb-3 border-bottom pb-2">Enfoques educativos innovadores:</h5>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <div class="d-flex align-items-start">
+                                                    <i class="fas fa-vr-cardboard text-primary me-3 mt-1"></i>
+                                                    <div>
+                                                        <h6 class="mb-1">Realidad virtual aplicada</h6>
+                                                        <p class="small mb-0">Simulaciones inmersivas de sistemas sostenibles</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <div class="d-flex align-items-start">
+                                                    <i class="fas fa-network-wired text-primary me-3 mt-1"></i>
+                                                    <div>
+                                                        <h6 class="mb-1">Plataformas colaborativas</h6>
+                                                        <p class="small mb-0">Comunidades globales de innovación sostenible</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="info-box p-3 mt-3 rounded-3" style="background-color: #e8f4f8;">
+                                            <h6 class="mb-2"><i class="fas fa-user-graduate me-2"></i>Proyección:</h6>
+                                            <p class="mb-0">Para 2025, se crearán más de 20 millones de empleos en economías verdes a nivel global</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trend 8 -->
+                    <div class="strategy-card mb-5">
+                        <div class="row g-0 rounded-4 overflow-hidden shadow-lg flex-row-reverse">
+                            <div class="col-md-4 strategy-number-col" style="background: linear-gradient(135deg, #1E72B7, #80BF21);">
+                                <div class="strategy-number-content h-100 d-flex align-items-center justify-content-center text-white p-4">
+                                    <div class="text-center">
+                                        <div class="strategy-icon mb-3">
+                                            <i class="fas fa-balance-scale fa-3x"></i>
+                                        </div>
+                                        <h2 class="strategy-num">08</h2>
+                                        <h3 class="h4">Regulación Sostenible Inteligente</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="p-4">
+                                    <h4 class="mb-3">Marcos normativos adaptativos basados en datos</h4>
+                                    <p class="mb-4">La regulación ambiental evoluciona hacia sistemas dinámicos que utilizan datos en tiempo real para ajustar incentivos y requisitos, creando ciclos virtuosos de mejora continua.</p>
+
+                                    <div class="strategy-details">
+                                        <div class="row">
+                                            <div class="col-md-6 mb-4">
+                                                <div class="text-center p-3 rounded-3 h-100" style="background-color: #f8f9fa;">
+                                                    <i class="fas fa-database fa-2x text-warning mb-3"></i>
+                                                    <h6 class="mb-2">Regulación basada en datos</h6>
+                                                    <p class="small mb-0">Normativas ajustadas automáticamente según indicadores ambientales</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-4">
+                                                <div class="text-center p-3 rounded-3 h-100" style="background-color: #f8f9fa;">
+                                                    <i class="fas fa-robot fa-2x text-info mb-3"></i>
+                                                    <h6 class="mb-2">Automatización regulatoria</h6>
+                                                    <p class="small mb-0">Sistemas que simplifican el cumplimiento normativo</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="alert alert-warning mt-3 rounded-3">
+                                            <i class="fas fa-info-circle me-2"></i>
+                                            <strong>Tendencia global:</strong> 85% de los países habrán implementado mecanismos de precio al carbono para 2025.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trend 9 -->
+                    <div class="strategy-card mb-5">
+                        <div class="row g-0 rounded-4 overflow-hidden shadow-lg">
+                            <div class="col-md-4 strategy-number-col" style="background: linear-gradient(135deg, #1E72B7, #80BF21);">
+                                <div class="strategy-number-content h-100 d-flex align-items-center justify-content-center text-white p-4">
+                                    <div class="text-center">
+                                        <div class="strategy-icon mb-3">
+                                            <i class="fas fa-flask fa-3x"></i>
+                                        </div>
+                                        <h2 class="strategy-num">09</h2>
+                                        <h3 class="h4">Bioinnovación y Materiales Avanzados</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="p-4">
+                                    <h4 class="mb-3">Materiales que curan instead de contaminar</h4>
+                                    <p class="mb-4">La próxima generación de materiales se inspira en la naturaleza, con desarrollos que no solo reducen el impacto ambiental sino que regeneran ecosistemas.</p>
+
+                                    <div class="strategy-details">
+                                        <h5 class="mb-3 border-bottom pb-2">Avances prometedores:</h5>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <div class="d-flex align-items-start">
+                                                    <i class="fas fa-seedling text-primary me-3 mt-1"></i>
+                                                    <div>
+                                                        <h6 class="mb-1">Materiales biofabricados</h6>
+                                                        <p class="small mb-0">Cultivados mediante microorganismos con propiedades avanzadas</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <div class="d-flex align-items-start">
+                                                    <i class="fas fa-cubes text-primary me-3 mt-1"></i>
+                                                    <div>
+                                                        <h6 class="mb-1">Nanomateriales inteligentes</h6>
+                                                        <p class="small mb-0">Capaces de auto-repararse o cambiar propiedades según condiciones</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <div class="d-flex align-items-start">
+                                                    <i class="fas fa-recycle text-primary me-3 mt-1"></i>
+                                                    <div>
+                                                        <h6 class="mb-1">Polímeros circulares</h6>
+                                                        <p class="small mb-0">Plásticos infinitamente reciclables sin pérdida de calidad</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <div class="d-flex align-items-start">
+                                                    <i class="fas fa-leaf text-primary me-3 mt-1"></i>
+                                                    <div>
+                                                        <h6 class="mb-1">Materiales con carbono negativo</h6>
+                                                        <p class="small mb-0">Que capturan más CO2 del que emiten durante su ciclo de vida</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trend 10 -->
+                    <div class="strategy-card mb-5">
+                        <div class="row g-0 rounded-4 overflow-hidden shadow-lg flex-row-reverse">
+                            <div class="col-md-4 strategy-number-col" style="background: linear-gradient(135deg, #1E72B7, #80BF21);">
+                                <div class="strategy-number-content h-100 d-flex align-items-center justify-content-center text-white p-4">
+                                    <div class="text-center">
+                                        <div class="strategy-icon mb-3">
+                                            <i class="fas fa-hands-helping fa-3x"></i>
+                                        </div>
+                                        <h2 class="strategy-num">10</h2>
+                                        <h3 class="h4">Alianzas Multiactor Sostenibles</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="p-4">
+                                    <h4 class="mb-3">Colaboración radical para impactos sistémicos</h4>
+                                    <p class="mb-4">Los desafíos ambientales requieren soluciones que trascienden organizaciones individuales, impulsando modelos de cooperación donde competidores colaboran para acelerar la transición verde.</p>
+
+                                    <div class="strategy-details">
+                                        <h5 class="mb-3 border-bottom pb-2">Modelos colaborativos emergentes:</h5>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <div class="d-flex align-items-start">
+                                                    <i class="fas fa-handshake text-primary me-3 mt-1"></i>
+                                                    <div>
+                                                        <h6 class="mb-1">Consorcios de innovación abierta</h6>
+                                                        <p class="small mb-0">Compartiendo riesgos y beneficios en I+D sostenible</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <div class="d-flex align-items-start">
+                                                    <i class="fas fa-globe-americas text-primary me-3 mt-1"></i>
+                                                    <div>
+                                                        <h6 class="mb-1">Plataformas de impacto colectivo</h6>
+                                                        <p class="small mb-0">Alianzas entre sectores para metas ambientales comunes</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <div class="d-flex align-items-start">
+                                                    <i class="fas fa-exchange-alt text-primary me-3 mt-1"></i>
+                                                    <div>
+                                                        <h6 class="mb-1">Intercambio de recursos circulares</h6>
+                                                        <p class="small mb-0">Redes industriales donde los residuos son recursos compartidos</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <div class="d-flex align-items-start">
+                                                    <i class="fas fa-chart-pie text-primary me-3 mt-1"></i>
+                                                    <div>
+                                                        <h6 class="mb-1">Metricas estandarizadas compartidas</h6>
+                                                        <p class="small mb-0">Indicadores comunes para medir progreso sostenible</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Safira Benefits -->
+                <div class="safira-section mb-5 rounded-4 overflow-hidden shadow-lg">
+                    <div class="row g-0">
+                        <div class="col-lg-8">
+                            <div class="p-4 p-md-5 h-100" style="background: linear-gradient(135deg, #1E72B7, #80BF21); color: white;">
+                                <h2 class="h3 mb-4 text-white">Safira Energía Chile: <span class="thin-text text-white">Innovación Sostenible Aplicada</span></h2>
+                                <p class="mb-4">Lideramos la transformación hacia operaciones industriales circulares y bajas en emisiones, integrando las últimas tecnologías verdes en soluciones prácticas.</p>
+
+                                <div class="row">
+                                    <div class="col-sm-6 mb-3">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <i class="fas fa-check-circle me-3 text-light-blue"></i>
+                                            <span>Gestión avanzada de residuos industriales</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 mb-3">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <i class="fas fa-check-circle me-3 text-light-blue"></i>
+                                            <span>Soluciones de economía circular aplicada</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 mb-3">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <i class="fas fa-check-circle me-3 text-light-blue"></i>
+                                            <span>Consultoría en descarbonización industrial</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 mb-3">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <i class="fas fa-check-circle me-3 text-light-blue"></i>
+                                            <span>Tecnologías de valorización de residuos</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="p-4 p-md-5 h-100 d-flex align-items-center" style="color: dakr;">
+                                <div class="text-center">
+                                    <i class="fas fa-headset fa-3x mb-3"></i>
+                                    <h4 class="mb-3 text-dark">¿Buscas implementar tecnologías verdes?</h4>
+                                    <p class="mb-4">Nuestros especialistas te guiarán hacia operaciones más sostenibles y eficientes</p>
+                                    <a href="https://www.hidronor.cl/servicios-integrales-en-residuos/" class="btn btn-subscribe btn-lg rounded-0 px-4">Conocer soluciones</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Summary Section -->
+                <div class="summary-section mb-5">
+                    <h2 class="text-center mb-4 text-blue">Impacto Transformador de las Tecnologías Verdes</h2>
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100 border-0 shadow-lg rounded-4">
+                                <div class="card-body p-4 text-center">
+                                    <div class="icon-wrapper mb-4 mx-auto">
+                                        <i class="fas fa-industry fa-3x text-success"></i>
+                                    </div>
+                                    <h4 class="card-title mb-3">Eficiencia Operacional</h4>
+                                    <p class="card-text">Las empresas que adoptan tecnologías verdes reportan mejoras del 20-40% en eficiencia energética y reducciones de costos operativos.</p>
+                                    <div class="mt-3">
+                                        <span class="display-6 fw-bold text-success">30-50%</span>
+                                        <p class="small">de reducción en huella de carbono</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card h-100 border-0 shadow-lg rounded-4">
+                                <div class="card-body p-4 text-center">
+                                    <div class="icon-wrapper mb-4 mx-auto">
+                                        <i class="fas fa-hand-holding-usd fa-3x text-info"></i>
+                                    </div>
+                                    <h4 class="card-title mb-3">Rentabilidad Sostenible</h4>
+                                    <p class="card-text">Las inversiones en tecnología verde muestran retornos competitivos, con periodos de recuperación cada vez más cortos.</p>
+                                    <div class="mt-3">
+                                        <span class="display-6 fw-bold text-info">20-35%</span>
+                                        <p class="small">de ROI en proyectos de sostenibilidad</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+
+                <!-- Final CTA -->
+                <div class="final-cta text-center p-5 rounded-4 shadow-lg mb-5" style="background: linear-gradient(135deg, #1E72B7, #80BF21); color: white;">
+                    <h3 class="h2 mb-3 text-white">¿Preparado para integrar tecnologías verdes en tu organización?</h3>
+                    <p class="mb-4 lead">Nuestros expertos en sostenibilidad te ayudarán a identificar las oportunidades más relevantes para tu operación</p>
+                    <a href="https://www.hidronor.cl/servicios-integrales-en-residuos/" class="btn btn-light btn-lg rounded-0 px-4 me-3">Explorar Soluciones</a>
+                    <a href="https://www.hidronor.cl/contacto/" class="btn btn-outline-light btn-lg rounded-0 px-4">Contactar Especialistas</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
