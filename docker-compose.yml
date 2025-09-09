@@ -5,15 +5,14 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-
     container_name: safiraweb
     command: sh -c "./start_server.sh"
     volumes:
-      - .:/app
+      - .:/home/python_web_app
     ports:
       - "8000:8000"
-    environment:
-      - .env
+    env_file:
+      - backend/.env
     depends_on:
       - postgres
 
@@ -25,9 +24,9 @@ services:
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_DB: your_db_name
-      POSTGRES_USER: your_db_user
-      POSTGRES_PASSWORD: your_db_password
-  
-  volumes:
-    postgres_data:
+      POSTGRES_DB: facturacion
+      POSTGRES_USER: esteban_lobos
+      POSTGRES_PASSWORD: 12345
+
+volumes:
+  postgres_data:
